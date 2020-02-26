@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class RotateCube : MonoBehaviour
 {
@@ -47,6 +49,10 @@ public class RotateCube : MonoBehaviour
                 barFirst.SetActive(true);
 
                 rotate = 1;
+
+
+                //Applique un délai pour changer de scène
+                DOVirtual.DelayedCall(3, GoToNextScene);
             }
 
         }
@@ -55,6 +61,12 @@ public class RotateCube : MonoBehaviour
             transform.Rotate(0, 3, 0);
         }
 
+    }
+
+    //méthode pour changer de scène
+    void GoToNextScene()
+    {
+        SceneManager.LoadScene("Reward1");
     }
 
     void OnMouseOver()
