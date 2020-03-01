@@ -13,6 +13,7 @@ public class RotateCube : MonoBehaviour
     public GameObject barEmpty;
     public GameObject barFirst;
     public GameObject jeans;
+    public GameObject smileWrong;
     int juste = 0;
     int rotate = 0;
 
@@ -21,7 +22,8 @@ public class RotateCube : MonoBehaviour
         smile.SetActive(true);
         smileRight.SetActive(false);
         barEmpty.SetActive(true);
-        barFirst.SetActive(false);
+        barFirst.SetActive(false); 
+        smileWrong.SetActive(false);
 
         AudioSource[] audios = GetComponents<AudioSource>();
         sonBon = audios[0];
@@ -39,7 +41,7 @@ public class RotateCube : MonoBehaviour
 
             if (juste == 0)
             {
-                sonPasBon.Play();
+                StartCoroutine(waiterWrong());
             }
             else
             {
@@ -63,6 +65,17 @@ public class RotateCube : MonoBehaviour
             transform.Rotate(0, 3, 0);
         }
 
+    }
+
+    IEnumerator waiterWrong()
+    {
+        smile.SetActive(false);
+        smileWrong.SetActive(true);
+        sonPasBon.Play();
+        //Wait for 4 seconds
+        yield return new WaitForSeconds(0.5f);
+        smileWrong.SetActive(false);
+        smile.SetActive(true);
     }
 
     //méthode pour changer de scène
