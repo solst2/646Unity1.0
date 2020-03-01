@@ -12,6 +12,7 @@ public class RotateCube : MonoBehaviour
     public GameObject smileRight;
     public GameObject barEmpty;
     public GameObject barFirst;
+    public GameObject jeans;
     int juste = 0;
     int rotate = 0;
 
@@ -47,6 +48,7 @@ public class RotateCube : MonoBehaviour
                 smileRight.SetActive(true);
                 barEmpty.SetActive(false);
                 barFirst.SetActive(true);
+                jeans.SetActive(false);
 
                 rotate = 1;
 
