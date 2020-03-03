@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class RotateCube : MonoBehaviour
 {
+
     public AudioSource sonBon;
     public AudioSource sonPasBon;
     public GameObject smile;
@@ -37,7 +38,7 @@ public class RotateCube : MonoBehaviour
         {
 
             //Destroy(gameObject);
-            Debug.Log("click");
+            Debug.Log("click => ");
 
             if (juste == 0)
             {
