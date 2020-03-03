@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class Reward : MonoBehaviour
 {
@@ -37,7 +39,14 @@ public class Reward : MonoBehaviour
                 explorer.SetActive(true);
                 break;
         }
-        
+
+        DOVirtual.DelayedCall(3, GoToNextScene);
+
+    }
+
+    void GoToNextScene()
+    {
+        SceneManager.LoadScene("A");
     }
 
     // Update is called once per frame
