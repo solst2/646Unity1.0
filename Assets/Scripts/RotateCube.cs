@@ -38,7 +38,7 @@ public class RotateCube : MonoBehaviour
         {
 
             //Destroy(gameObject);
-            Debug.Log("click => ");
+            Debug.Log("click => "+superChef.character);
 
             if (juste == 0)
             {
