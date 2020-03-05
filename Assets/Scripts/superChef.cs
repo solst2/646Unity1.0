@@ -11,6 +11,7 @@ public class superChef : MonoBehaviour
     public GameObject explorer;
     public GameObject fairy;
     public GameObject train;
+    
 
 
     // Start is called before the first frame update
@@ -44,6 +45,6 @@ public class superChef : MonoBehaviour
 
     void GoToNextScene()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level1_1");
     }
 }

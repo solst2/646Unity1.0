@@ -46,7 +46,7 @@ public class Reward : MonoBehaviour
 
     void GoToNextScene()
     {
-        SceneManager.LoadScene("A");
+        SceneManager.LoadScene("Level1_2");
     }
 
     // Update is called once per frame
