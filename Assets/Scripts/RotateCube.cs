@@ -47,6 +47,8 @@ public class RotateCube : MonoBehaviour
                 color = "blue";
                 break;
         }
+        //number of new level
+        superChef.level++;
         //bars all deactivate, depends on caracter activate one
         for (int j = 0; j < 4; j++)
         {
@@ -125,7 +127,7 @@ public class RotateCube : MonoBehaviour
     //méthode pour changer de scène
     void GoToNextScene()
     {
-        SceneManager.LoadScene("Reward1");
+        SceneManager.LoadScene("Reward"+ superChef.level);
     }
 
     void OnMouseOver()
