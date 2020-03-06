@@ -19,9 +19,9 @@ public class Reward2 : MonoBehaviour
     void Start()
     {
         canvasAstronaut.SetActive(true);
-        canvasExplorer.SetActive(true);
+        canvasExplorer.SetActive(false);
         canvasFairy.SetActive(false);
-        canvasTrain.SetActive(true);
+        canvasTrain.SetActive(false);
 
         character = superChef.character;
 
