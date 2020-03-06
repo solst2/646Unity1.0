@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 84268573}
   - component: {fileID: 84268572}
   m_Layer: 5
-  m_Name: bar1blue
+  m_Name: blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 106894326}
   - component: {fileID: 106894327}
   m_Layer: 5
-  m_Name: barEmptyblue
+  m_Name: blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 678d5d4fe5228b84f977eea87e688907, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2e4c4f96341aae4c99a02fad240f478, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 218817986}
   - component: {fileID: 218817987}
   m_Layer: 5
-  m_Name: barEmptypink
+  m_Name: pink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 614919608}
   - component: {fileID: 614919610}
   m_Layer: 5
-  m_Name: bar1green
+  m_Name: green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1085,7 +1085,7 @@ GameObject:
   - component: {fileID: 615916626}
   - component: {fileID: 615916625}
   m_Layer: 5
-  m_Name: bar1pink
+  m_Name: pink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 643287055}
   - component: {fileID: 643287056}
   m_Layer: 5
-  m_Name: barEmptybege
+  m_Name: bege
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1262,7 +1262,7 @@ GameObject:
   - component: {fileID: 702609088}
   - component: {fileID: 702609087}
   m_Layer: 5
-  m_Name: bar1bege
+  m_Name: bege
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1814,7 +1814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.099976, y: -112.20001}
+  m_AnchoredPosition: {x: -31.100006, y: -112.20001}
   m_SizeDelta: {x: 3843.9, y: 1887.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946767957
@@ -1947,7 +1947,7 @@ GameObject:
   - component: {fileID: 2075226379}
   - component: {fileID: 2075226378}
   m_Layer: 5
-  m_Name: barEmptygreen
+  m_Name: green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
