@@ -14,6 +14,7 @@ public class RotateCube : MonoBehaviour
     public GameObject barEmpty;
     public GameObject barFirst;
     public GameObject jeans;
+    public GameObject secondObject;
     public GameObject smileWrong;
     int juste = 0;
     int rotate = 0;
@@ -78,6 +79,11 @@ public class RotateCube : MonoBehaviour
                 smileRight.SetActive(true);
                 barEmpty.SetActive(false);
                 jeans.SetActive(false);
+                //if there is a second object to set false
+                if (secondObject)
+                {
+                    secondObject.SetActive(false);
+                }
 
                 //set bar with 1 active in the right color
                 barFirst.SetActive(true);
