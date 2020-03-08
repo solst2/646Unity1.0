@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
-public class Rewards : MonoBehaviour
+
+public class Reward2 : MonoBehaviour
 {
 
-    public GameObject canvasExplorer;
-    public GameObject canvasAstronaut;
-    public GameObject canvasFairy;
     public GameObject canvasTrain;
+    public GameObject canvasFairy;
+    public GameObject canvasAstronaut;
+    public GameObject canvasExplorer;
 
     public string character;
 
@@ -19,7 +20,7 @@ public class Rewards : MonoBehaviour
     void Start()
     {
         canvasAstronaut.SetActive(false);
-        canvasExplorer.SetActive(true);
+        canvasExplorer.SetActive(false);
         canvasFairy.SetActive(false);
         canvasTrain.SetActive(false);
 
@@ -42,6 +43,7 @@ public class Rewards : MonoBehaviour
         }
 
         DOVirtual.DelayedCall(3, GoToNextScene);
+
 
     }
 
