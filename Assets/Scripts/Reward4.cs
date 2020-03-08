@@ -18,7 +18,7 @@ public class Reward4 : MonoBehaviour
     void Start()
     {
         canvasAstronaut.SetActive(false);
-        canvasExplorer.SetActive(true);
+        canvasExplorer.SetActive(false);
         canvasFairy.SetActive(false);
         canvasTrain.SetActive(false);
 
