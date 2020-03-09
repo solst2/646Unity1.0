@@ -20,7 +20,7 @@ public class RotateCube : MonoBehaviour
     public Text scores;
     int juste = 0;
     int rotate = 0;
-    string color = "";
+    public static string color = "blue";
     int wrongClicks = 0;
 
     void Start()
