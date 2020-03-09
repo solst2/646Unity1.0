@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 958778654}
   - component: {fileID: 958778653}
   - component: {fileID: 958778652}
+  - component: {fileID: 958778655}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -451,7 +452,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.37173674, g: 0.8962264, b: 0.21560161, a: 1}
+      maxColor: {r: 0.8393841, g: 0.8980392, b: 0.21568626, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4879,6 +4880,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &958778655
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958778651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 39.20035, y: 24.288275, z: 29.920282}
+  m_Center: {x: 2.3222466, y: 3.0375156, z: 14.939832}
 --- !u!1 &1509201213
 GameObject:
   m_ObjectHideFlags: 0
