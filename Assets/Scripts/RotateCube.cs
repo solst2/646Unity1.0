@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
@@ -16,9 +17,11 @@ public class RotateCube : MonoBehaviour
     public GameObject jeans;
     public GameObject secondObject;
     public GameObject smileWrong;
+    public Text scores;
     int juste = 0;
     int rotate = 0;
-    string color = "";
+    public static string color = "blue";
+    int wrongClicks = 0;
 
     void Start()
     {
@@ -59,7 +62,8 @@ public class RotateCube : MonoBehaviour
         AudioSource[] audios = GetComponents<AudioSource>();
         sonBon = audios[0];
         sonPasBon = audios[1];
-
+        //score field
+        scores.text = "Score: " + superChef.score;
     }
 
     void Update()
@@ -98,11 +102,25 @@ public class RotateCube : MonoBehaviour
                 rotate = 1;
 
                 //make the right image bigger
-                transform.localScale += new Vector3(15, 15, 0);
+                transform.localScale += new Vector3(10, 10, 0);
 
 
                 //Applique un délai pour changer de scène
                 DOVirtual.DelayedCall(3, GoToNextScene);
+                // Edit score
+                if (wrongClicks ==0)
+                {
+                    superChef.score += 10;
+                } 
+                else if (wrongClicks <=5)
+                {
+                    superChef.score += 5;
+                }
+                else
+                {
+                    superChef.score += 2;
+                }
+                scores.text = "Score: " + superChef.score;
             }
 
         }
@@ -122,6 +140,8 @@ public class RotateCube : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         smileWrong.SetActive(false);
         smile.SetActive(true);
+
+        wrongClicks++;
     }
 
     //méthode pour changer de scène

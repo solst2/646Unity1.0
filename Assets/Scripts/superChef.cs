@@ -7,6 +7,7 @@ public class superChef : MonoBehaviour
 {
     public static string character="nothing";
     public static int level = 0;
+    public static int score = 0;
 
     public GameObject astronaut;
     public GameObject explorer;

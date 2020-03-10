@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15754922}
   - component: {fileID: 15754923}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Collisioner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 95768194}
   - component: {fileID: 95768195}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: rightwings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,6 +263,10 @@ PrefabInstance:
     - target: {fileID: 1000010285526238, guid: 847ad21e052823640b649f294605afb2, type: 3}
       propertyPath: m_Name
       value: Pyramid_Thin_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010285526238, guid: 847ad21e052823640b649f294605afb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011488240504, guid: 847ad21e052823640b649f294605afb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1045,7 +1049,7 @@ GameObject:
   - component: {fileID: 637912185}
   - component: {fileID: 637912184}
   - component: {fileID: 637912183}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PyramidCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1226,7 +1230,7 @@ GameObject:
   - component: {fileID: 657863469}
   - component: {fileID: 657863468}
   - component: {fileID: 657863467}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TrainCanva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1569,7 +1573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127379978}
   - component: {fileID: 1127379979}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: leftwings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1654,7 @@ GameObject:
   - component: {fileID: 1468645124}
   - component: {fileID: 1468645123}
   - component: {fileID: 1468645122}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: 'AstronautCanvas '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1971,7 +1975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1761225530}
   - component: {fileID: 1761225533}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: fairybody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2052,7 +2056,7 @@ GameObject:
   - component: {fileID: 2038048249}
   - component: {fileID: 2038048248}
   - component: {fileID: 2038048247}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FairyCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -379,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 406386200}
   - component: {fileID: 406386201}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: saturne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 478054488}
   - component: {fileID: 478054487}
   - component: {fileID: 478054486}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: tgv2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 767810845}
   - component: {fileID: 767810846}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: tgv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1213678692}
   - component: {fileID: 1213678693}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Collisioner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 1301949876}
   - component: {fileID: 1301949875}
   - component: {fileID: 1301949874}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: mars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,7 +1078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011488240504, guid: 847ad21e052823640b649f294605afb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -417.5
+      value: -417
       objectReference: {fileID: 0}
     - target: {fileID: 4000011488240504, guid: 847ad21e052823640b649f294605afb2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1143,7 +1143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000010285526238, guid: 847ad21e052823640b649f294605afb2, type: 3}
       propertyPath: m_Layer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011488240504, guid: 847ad21e052823640b649f294605afb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1213,7 +1213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441234982}
   - component: {fileID: 1441234983}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Collisioner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1435,7 +1435,7 @@ GameObject:
   - component: {fileID: 1475074038}
   - component: {fileID: 1475074037}
   - component: {fileID: 1475074036}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: leftwings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1563,7 +1563,7 @@ GameObject:
   - component: {fileID: 1670917597}
   - component: {fileID: 1670917596}
   - component: {fileID: 1670917595}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PyramidCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1661,7 +1661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008991514}
   - component: {fileID: 2008991515}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: rightwings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
