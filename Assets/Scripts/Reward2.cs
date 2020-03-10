@@ -41,7 +41,7 @@ public class Reward2 : MonoBehaviour
                 canvasExplorer.SetActive(true);
                 break;
         }
-
+        Debug.Log("Is Here Solange");
         DOVirtual.DelayedCall(4, GoToNextScene);
 
 
