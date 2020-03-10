@@ -107,6 +107,7 @@ public class RotateCube : MonoBehaviour
 
                 //Applique un délai pour changer de scène
                 DOVirtual.DelayedCall(3, GoToNextScene);
+
                 // Edit score
                 if (wrongClicks ==0)
                 {

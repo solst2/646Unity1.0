@@ -40,7 +40,7 @@ public class Reward3 : MonoBehaviour
                 break;
         }
 
-        DOVirtual.DelayedCall(4, GoToNextScene);
+        DOVirtual.DelayedCall(10, GoToNextScene);
 
 
     }
