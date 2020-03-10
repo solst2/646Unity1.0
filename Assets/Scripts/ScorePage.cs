@@ -9,9 +9,15 @@ public class ScorePage : MonoBehaviour
     public GameObject[] levels;
     public GameObject[] characters;
     float maxScore = 50;
+    Dictionary<string, Color32> colors = new Dictionary<string, Color32>();
 
     void Start()
     {
+        //add colors
+        colors.Add("blue", new Color32(68, 114, 196, 255));
+        colors.Add("bege", new Color32(192, 163, 75, 255));
+        colors.Add("green", new Color32(62, 165, 60, 255));
+        colors.Add("pink", new Color32(196, 81, 201, 255));
         //default settings
         foreach (Slider s in scores)
         {
@@ -30,6 +36,9 @@ public class ScorePage : MonoBehaviour
             levels[0].transform.GetChild(j).gameObject.SetActive(false);
         }
         levels[0].transform.Find(RotateCube.color).gameObject.SetActive(true);
+        //scorebar right color
+        scores[0].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color = 
+            colors[RotateCube.color];
         //characters
         foreach (GameObject g in characters)
         {
