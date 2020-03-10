@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
-public class Reward5 : MonoBehaviour
+public class Reward_moving : MonoBehaviour
 {
 
     public GameObject canvasExplorer;
@@ -12,7 +12,6 @@ public class Reward5 : MonoBehaviour
     public GameObject canvasFairy;
     public GameObject canvasAstronaut;
     public string character;
-
 
 
     // Start is called before the first frame update
@@ -41,14 +40,14 @@ public class Reward5 : MonoBehaviour
                 break;
         }
 
-        DOVirtual.DelayedCall(2, GoToNextScene);
+        DOVirtual.DelayedCall(5, GoToNextScene);
 
 
     }
 
     void GoToNextScene()
     {
-        SceneManager.LoadScene("Reward_moving");
+        SceneManager.LoadScene("Reward_finish");
     }
 
 
