@@ -25,7 +25,7 @@ public class ScorePage : MonoBehaviour
         }
         //for level one
         scores[0].value = CalculateScore();
-        for (int j = 0; j < 4; j++)
+        for (int j = 0; j < 6; j++)
         {
             levels[0].transform.GetChild(j).gameObject.SetActive(false);
         }
@@ -58,7 +58,7 @@ public class ScorePage : MonoBehaviour
 
     float CalculateScore()
     {
-        return 40 / maxScore;
-        //return superChef.score / maxScore;
+        //return 40 / maxScore;
+        return superChef.score / maxScore;
     }
 }

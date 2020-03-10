@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RewardFinish : MonoBehaviour
 {
-
+    private void Start()
+    {
+        Debug.Log("start");
+        StartCoroutine(waiterFinish());
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -24,5 +30,13 @@ public class RewardFinish : MonoBehaviour
                 }
             }
         }
+    }
+    
+    IEnumerator waiterFinish()
+    {
+        Debug.Log("Wait 10 seconds");
+        //Wait for 10 seconds
+        yield return new WaitForSeconds(10f);
+        SceneManager.LoadScene("ScorePage1");
     }
 }
