@@ -42,6 +42,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Reward_finish.unity
     guid: dbea01236d8c9a545b2ca91d26ed9d7b
   - enabled: 1
-    path: Assets/Scenes/Level1_Score.unity
-    guid: fcc20afb3aeca2849acff7904456f8b8
+    path: Assets/Scenes/ScorePage1.unity
+    guid: 3796f51836206fb46aa9db1622e45238
   m_configObjects: {}
