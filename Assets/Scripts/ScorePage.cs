@@ -8,6 +8,7 @@ public class ScorePage : MonoBehaviour
     public Slider[] scores;
     public GameObject[] levels;
     public GameObject[] characters;
+    public Text[] percent;
     float maxScore = 50;
     Dictionary<string, Color32> colors = new Dictionary<string, Color32>();
 
@@ -36,6 +37,7 @@ public class ScorePage : MonoBehaviour
             levels[0].transform.GetChild(j).gameObject.SetActive(false);
         }
         levels[0].transform.Find(RotateCube.color).gameObject.SetActive(true);
+        percent[0].text = (CalculateScore()*100) + "%";
         //scorebar right color
         scores[0].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color = 
             colors[RotateCube.color];
