@@ -680,13 +680,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 631080058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8313b9e54fafb1b4e82903f4cd027315, type: 3}
+  m_Script: {fileID: 11500000, guid: 2325d7d6ba0babe4db370f9f41579b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvasExplorer: {fileID: 1117755957}
-  canvasTrain: {fileID: 0}
-  canvasFairy: {fileID: 0}
-  canvasAstronaut: {fileID: 0}
+  canvasTrain: {fileID: 1002959597}
+  canvasFairy: {fileID: 1548658461}
+  canvasAstronaut: {fileID: 1035146359}
   character: 
 --- !u!1 &656625852
 GameObject:
