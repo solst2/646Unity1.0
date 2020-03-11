@@ -11,6 +11,7 @@ public class Reward_moving : MonoBehaviour
     public GameObject canvasTrain;
     public GameObject canvasFairy;
     public GameObject canvasAstronaut;
+    public Camera background;
     public string character;
 
 
@@ -42,6 +43,8 @@ public class Reward_moving : MonoBehaviour
 
         DOVirtual.DelayedCall(6, GoToNextScene);
 
+        //background
+        background.GetComponent<Camera>().backgroundColor = superChef.background[RotateCube.color];
 
     }
 

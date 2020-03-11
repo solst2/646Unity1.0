@@ -11,6 +11,7 @@ public class Reward : MonoBehaviour
     public GameObject explorer;
     public GameObject fairy;
     public GameObject train;
+    public Camera background;
 
     public string characterChosen;
 
@@ -42,6 +43,8 @@ public class Reward : MonoBehaviour
 
         DOVirtual.DelayedCall(4, GoToNextScene);
 
+        //background
+        background.GetComponent<Camera>().backgroundColor = superChef.background[RotateCube.color];
     }
 
     void GoToNextScene()
