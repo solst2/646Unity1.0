@@ -18,9 +18,10 @@ public class RotateCube : MonoBehaviour
     public GameObject secondObject;
     public GameObject smileWrong;
     public Text scores;
+    public GameObject background;
     int juste = 0;
     int rotate = 0;
-    public static string color = "blue";
+    public static string color = "pink";
     int wrongClicks = 0;
 
     void Start()
@@ -38,13 +39,13 @@ public class RotateCube : MonoBehaviour
                 color = "blue";
                 break;
             case "explorateur":
-                color = "bege";
+                color = "yellow";
                 break;
             case "HuaYao_01":
                 color = "pink";
                 break;
             case "trainChief":
-                color = "green";
+                color = "red";
                 break;
             default:
                 color = "blue";
@@ -64,6 +65,8 @@ public class RotateCube : MonoBehaviour
         sonPasBon = audios[1];
         //score field
         scores.text = "Score: " + superChef.score;
+        //background
+        background.GetComponent<Image>().color = superChef.background[color];
     }
 
     void Update()

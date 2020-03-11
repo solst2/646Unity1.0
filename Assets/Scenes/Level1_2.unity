@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 1231321212}
   - component: {fileID: 1231321211}
   m_Layer: 5
-  m_Name: bege
+  m_Name: yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1243,7 +1243,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0fd051cfcb382644d93acb2f85b7c24b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 937291dc2af8b3e4e8c019b5be006ee8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1266,7 +1266,7 @@ GameObject:
   - component: {fileID: 1336630522}
   - component: {fileID: 1336630521}
   m_Layer: 5
-  m_Name: green
+  m_Name: red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1336,7 +1336,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a56b70233f126ac4d83f9322cbe97222, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ad4720c9886b764b8bf3d63282907e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1595,7 +1595,7 @@ GameObject:
   - component: {fileID: 1690787128}
   - component: {fileID: 1690787129}
   m_Layer: 5
-  m_Name: green
+  m_Name: red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1657,7 +1657,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 95b4de123ab89794b8efade99c2a70ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cec90ae31d72b9f4582ff6caf1e82225, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1679,7 +1679,7 @@ GameObject:
   - component: {fileID: 1696489050}
   - component: {fileID: 1696489051}
   m_Layer: 5
-  m_Name: bege
+  m_Name: yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1741,7 +1741,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86a7fc58c7f835241b238f79b8bd3922, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61b49cf3e0afb3d4499f4e4e45dfa41f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1963,7 +1963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.100052, y: -112.20003}
+  m_AnchoredPosition: {x: -31.100037, y: -112.20001}
   m_SizeDelta: {x: 3843.9, y: 1887.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2103821285
@@ -2268,6 +2268,7 @@ MonoBehaviour:
   secondObject: {fileID: 0}
   smileWrong: {fileID: 491119490}
   scores: {fileID: 248033282}
+  background: {fileID: 2103821283}
 --- !u!212 &2137786064
 SpriteRenderer:
   m_ObjectHideFlags: 0

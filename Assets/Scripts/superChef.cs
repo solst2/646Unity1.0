@@ -8,6 +8,7 @@ public class superChef : MonoBehaviour
     public static string character="nothing";
     public static int level = 0;
     public static int score = 0;
+    public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
 
     public GameObject astronaut;
     public GameObject explorer;
@@ -19,7 +20,11 @@ public class superChef : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //add backgroundcolors
+        background.Add("blue", new Color32(190, 234, 250, 255));
+        background.Add("pink", new Color32(190, 234, 250, 255));
+        background.Add("yellow", new Color32(243, 237, 158, 255));
+        background.Add("red", new Color32(229, 111, 120, 255));
     }
 
     // Update is called once per frame

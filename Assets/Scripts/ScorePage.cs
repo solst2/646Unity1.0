@@ -9,6 +9,7 @@ public class ScorePage : MonoBehaviour
     public GameObject[] levels;
     public GameObject[] characters;
     public Text[] percent;
+    public GameObject background;
     float maxScore = 50;
     Dictionary<string, Color32> colors = new Dictionary<string, Color32>();
 
@@ -16,8 +17,8 @@ public class ScorePage : MonoBehaviour
     {
         //add colors
         colors.Add("blue", new Color32(68, 114, 196, 255));
-        colors.Add("bege", new Color32(192, 163, 75, 255));
-        colors.Add("green", new Color32(62, 165, 60, 255));
+        colors.Add("yellow", new Color32(232,218,0, 255));
+        colors.Add("red", new Color32(228,27,43, 255));
         colors.Add("pink", new Color32(196, 81, 201, 255));
         //default settings
         foreach (Slider s in scores)
@@ -64,6 +65,8 @@ public class ScorePage : MonoBehaviour
                 characters[0].SetActive(true);
                 break;
         }
+        //background
+        background.GetComponent<Image>().color = superChef.background[RotateCube.color];
     }
 
 
