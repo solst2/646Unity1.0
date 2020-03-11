@@ -19,6 +19,7 @@ public class RotateCube : MonoBehaviour
     public GameObject smileWrong;
     public Text scores;
     public GameObject background;
+    Dictionary<int, Vector3> targetZoom = new Dictionary<int, Vector3>();
     int juste = 0;
     int rotate = 0;
     public static string color = "pink";
@@ -26,6 +27,20 @@ public class RotateCube : MonoBehaviour
 
     void Start()
     {
+        //Zoom of target level 1
+        targetZoom.Add(1, new Vector3(5, 5, 0));
+        //Zoom of target level 2
+        targetZoom.Add(2, new Vector3(10, 10, 0));
+        //Zoom of target level 3
+        targetZoom.Add(3, new Vector3(2, 2, 0));
+        //Zoom of target level 4
+        targetZoom.Add(4, new Vector3(5, 5, 0));
+        //Zoom of target level 5
+        targetZoom.Add(5, new Vector3(5, 5, 0));
+
+        //number of new level
+        superChef.level++;
+
         //gameobjects activated
         smile.SetActive(true);
         smileRight.SetActive(false);
@@ -51,8 +66,6 @@ public class RotateCube : MonoBehaviour
                 color = "blue";
                 break;
         }
-        //number of new level
-        superChef.level++;
         //bars all deactivate, depends on caracter activate one
         for (int j = 0; j < 4; j++)
         {
@@ -76,7 +89,6 @@ public class RotateCube : MonoBehaviour
 
             //Destroy(gameObject);
 
-            Debug.Log(superChef.character);
             if (juste == 0)
             {
                 StartCoroutine(waiterWrong());
@@ -105,7 +117,7 @@ public class RotateCube : MonoBehaviour
                 rotate = 1;
 
                 //make the right image bigger
-                transform.localScale += new Vector3(10, 10, 0);
+                transform.localScale += targetZoom[superChef.level];
 
 
                 //Applique un délai pour changer de scène
