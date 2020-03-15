@@ -50,7 +50,7 @@ public class Reward_moving : MonoBehaviour
 
     void GoToNextScene()
     {
-        SceneManager.LoadScene("Reward_finish");
+        SceneManager.LoadScene("RewardFinish");
     }
 
 

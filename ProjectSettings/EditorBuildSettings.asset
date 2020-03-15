@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Reward5.unity
     guid: db1101eb86e756c44b1fac219ec6d0af
   - enabled: 1
+    path: Assets/Scenes/RewardFinish.unity
+    guid: a61c6bcce865f3040ac4f6fcf699676b
+  - enabled: 0
     path: Assets/Scenes/Reward_finish.unity
     guid: dbea01236d8c9a545b2ca91d26ed9d7b
   - enabled: 1
