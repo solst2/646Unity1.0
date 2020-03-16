@@ -52,6 +52,14 @@ public class superChef : MonoBehaviour
 
     void GoToNextScene()
     {
-        SceneManager.LoadScene("Tutorial1");
+        if(ScriptTuto1.tutoplayed==0)
+        {
+
+            SceneManager.LoadScene("Tutorial1");
+        }
+        else
+        {
+            SceneManager.LoadScene("Level1_1");
+        }
     }
 }

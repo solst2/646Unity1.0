@@ -7,6 +7,8 @@ using DG.Tweening;
 
 public class ScriptTuto1 : MonoBehaviour
 {
+    public static int tutoplayed = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class ScriptTuto1 : MonoBehaviour
 
     void GoToNextScene()
     {
+        tutoplayed = 1;
         SceneManager.LoadScene("Level1_1");
     }
 }
