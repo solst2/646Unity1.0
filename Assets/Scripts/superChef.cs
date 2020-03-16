@@ -52,6 +52,6 @@ public class superChef : MonoBehaviour
 
     void GoToNextScene()
     {
-        SceneManager.LoadScene("Level1_1");
+        SceneManager.LoadScene("Tutorial1");
     }
 }
