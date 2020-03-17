@@ -44,7 +44,7 @@ public class Reward3 : MonoBehaviour
         DOVirtual.DelayedCall(4, GoToNextScene);
 
         //background
-        background.GetComponent<Camera>().backgroundColor = superChef.background[RotateCube.color];
+        background.GetComponent<Camera>().backgroundColor = superChef.backgroundCamera[RotateCube.color];
 
     }
 

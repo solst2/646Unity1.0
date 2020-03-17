@@ -10,6 +10,7 @@ public class superChef : MonoBehaviour
     public static int level = 0;
     public static int score = 0;
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
+    public static Dictionary<string, Color32> backgroundCamera = new Dictionary<string, Color32>();
     public static int actualNiveau = 1;
     public static Dictionary<int, Boolean[]> infosNiveau = new Dictionary<int, Boolean[]>();
     public static Dictionary<int, int[]> pointsPerLevel = new Dictionary<int, int[]>();
@@ -29,6 +30,11 @@ public class superChef : MonoBehaviour
         background.Add("pink", new Color32(190, 234, 250, 255));
         background.Add("yellow", new Color32(243, 237, 158, 255));
         background.Add("red", new Color32(251, 210, 202, 255));
+        //add backgroundcolors for the camera settings
+        backgroundCamera.Add("blue", new Color32(159, 196, 210, 255));
+        backgroundCamera.Add("pink", new Color32(159, 196, 210, 255));
+        backgroundCamera.Add("yellow", new Color32(204, 199, 133, 255));
+        backgroundCamera.Add("red", new Color32(211, 176, 169, 255));
         //default values to the infosNiveau
         Boolean[] trueValues = {true,true,true,true,true };
         for(int i = 0; i < 5; i++)
