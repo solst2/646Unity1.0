@@ -2523,7 +2523,6 @@ MonoBehaviour:
   - {fileID: 1643103244}
   - {fileID: 455097351}
   - {fileID: 1344928860}
-  - {fileID: 0}
   characters:
   - {fileID: 24456598}
   - {fileID: 1953643286}
@@ -2531,6 +2530,9 @@ MonoBehaviour:
   - {fileID: 1955665794}
   percent:
   - {fileID: 812448099}
+  - {fileID: 1390719134}
+  - {fileID: 188529241}
+  - {fileID: 338020736}
   background: {fileID: 232330828}
 --- !u!114 &1277886391
 MonoBehaviour:
