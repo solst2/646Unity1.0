@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScorePage : MonoBehaviour
@@ -72,7 +74,33 @@ public class ScorePage : MonoBehaviour
 
     float CalculateScore()
     {
-        //return 40 / maxScore;
-        return superChef.score / maxScore;
+        int tempScore = 0;
+        foreach (int i in superChef.pointsPerLevel[superChef.actualNiveau])
+        {
+            tempScore += i;
+        }
+        return tempScore / maxScore;
+    }
+
+    public void repeat1()
+    {
+        if (CalculateScore() == 1)
+        {
+            return;
+        }
+        //change the actual Niveau
+        superChef.actualNiveau = 1;
+        int level = 0;
+        //check the points
+        foreach(Boolean i in superChef.infosNiveau[superChef.actualNiveau])
+        {
+            level++;
+            if (i)
+            {
+                SceneManager.LoadScene("Level" + superChef.actualNiveau + "_" + level);
+                superChef.level = level - 1;
+                break;
+            }
+        }
     }
 }
