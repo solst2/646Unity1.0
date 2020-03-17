@@ -28,7 +28,7 @@ public class superChef : MonoBehaviour
         background.Add("blue", new Color32(190, 234, 250, 255));
         background.Add("pink", new Color32(190, 234, 250, 255));
         background.Add("yellow", new Color32(243, 237, 158, 255));
-        background.Add("red", new Color32(229, 111, 120, 255));
+        background.Add("red", new Color32(251, 210, 202, 255));
         //default values to the infosNiveau
         Boolean[] trueValues = {true,true,true,true,true };
         for(int i = 0; i < 5; i++)
