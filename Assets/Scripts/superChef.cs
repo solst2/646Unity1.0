@@ -31,13 +31,13 @@ public class superChef : MonoBehaviour
         background.Add("red", new Color32(229, 111, 120, 255));
         //default values to the infosNiveau
         Boolean[] trueValues = {true,true,true,true,true };
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 5; i++)
         {
             infosNiveau.Add(i, trueValues);
         }
         //default Values level
         int[] zero = { 0, 0, 0, 0, 0 };
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             pointsPerLevel.Add(i, zero);
         }

@@ -33,17 +33,25 @@ public class ScorePage : MonoBehaviour
         {
             g.transform.GetChild(1).gameObject.SetActive(false);
         }
-        //for level one
-        scores[0].value = CalculateScore();
-        for (int j = 0; j < 6; j++)
+        //for levels
+        for(int niv = 0;niv < scores.Length; niv++)
         {
-            levels[0].transform.GetChild(j).gameObject.SetActive(false);
+            //change the niveau for the calculations
+            superChef.actualNiveau = niv;
+            scores[niv].value = CalculateScore();
+
+            for (int j = 0; j < 6; j++)
+            {
+                levels[niv].transform.GetChild(j).gameObject.SetActive(false);
+            }
+
+            levels[niv].transform.Find(RotateCube.color).gameObject.SetActive(true);
+            percent[niv].text = (CalculateScore() * 100) + "%";
+
+            //scorebar right color
+            scores[niv].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color =
+                colors[RotateCube.color];
         }
-        levels[0].transform.Find(RotateCube.color).gameObject.SetActive(true);
-        percent[0].text = (CalculateScore()*100) + "%";
-        //scorebar right color
-        scores[0].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color = 
-            colors[RotateCube.color];
         //characters
         foreach (GameObject g in characters)
         {
@@ -82,14 +90,14 @@ public class ScorePage : MonoBehaviour
         return tempScore / maxScore;
     }
 
-    public void repeat1()
+    public void repeat1(int niveau)
     {
-        if (CalculateScore() == 1)
+        superChef.actualNiveau = niveau;
+        // 1  ->  all is done || 0  -> nothing is done in that level
+        if (CalculateScore() == 1 || CalculateScore() == 0)
         {
             return;
         }
-        //change the actual Niveau
-        superChef.actualNiveau = 1;
         int level = 0;
         //check the points
         foreach(Boolean i in superChef.infosNiveau[superChef.actualNiveau])
