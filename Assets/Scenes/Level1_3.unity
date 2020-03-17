@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,13 +136,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44444697}
-  m_LocalRotation: {x: -0.46956056, y: -0.8828728, z: -0.0032728221, w: -0.006153643}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalRotation: {x: 0.0045622485, y: -0.99975246, z: 0.021664962, w: -0.00221175}
+  m_LocalPosition: {x: 0, y: 0, z: 2.9999838}
   m_LocalScale: {x: 21.312603, y: 21.022892, z: 2.9731188}
   m_Children: []
   m_Father: {fileID: 180376176}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: -180.799, z: 56.013004}
+  m_LocalEulerAnglesHint: {x: 2.482, y: -180.26498, z: -0.52900004}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 278, y: 11}
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ab8baf126ab2e0f4c9e9ccabbf4aa211, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 953557d83b6f5134ca2addc6ed262249, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2148,7 +2148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.099976, y: -112.20001}
+  m_AnchoredPosition: {x: -31.09999, y: -112.20003}
   m_SizeDelta: {x: 3843.9, y: 1887.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506675421
