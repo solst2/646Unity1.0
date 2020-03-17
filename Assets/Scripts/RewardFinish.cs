@@ -37,6 +37,6 @@ public class RewardFinish : MonoBehaviour
         Debug.Log("Wait 10 seconds");
         //Wait for 10 seconds
         yield return new WaitForSeconds(10f);
-        SceneManager.LoadScene("ScorePage1");
+        SceneManager.LoadScene("ScorePage");
     }
 }
