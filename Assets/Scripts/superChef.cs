@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,8 @@ public class superChef : MonoBehaviour
     public static int level = 0;
     public static int score = 0;
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
+    public static int actualNiveau = 1;
+    public static Dictionary<int, Boolean[]> infosNiveau = new Dictionary<int, Boolean[]>();
 
     public GameObject astronaut;
     public GameObject explorer;
@@ -25,6 +28,12 @@ public class superChef : MonoBehaviour
         background.Add("pink", new Color32(190, 234, 250, 255));
         background.Add("yellow", new Color32(243, 237, 158, 255));
         background.Add("red", new Color32(229, 111, 120, 255));
+        //default values to the infosNiveau
+        Boolean[] trueValues = {true,true,true,true,true };
+        for(int i = 0; i < 4; i++)
+        {
+            infosNiveau.Add(i, trueValues);
+        }
     }
 
     // Update is called once per frame

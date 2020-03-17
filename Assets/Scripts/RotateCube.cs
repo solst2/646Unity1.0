@@ -127,6 +127,7 @@ public class RotateCube : MonoBehaviour
                 if (wrongClicks ==0)
                 {
                     superChef.score += 10;
+                    superChef.infosNiveau[superChef.actualNiveau][superChef.level-1] = false;
                 } 
                 else if (wrongClicks <=5)
                 {

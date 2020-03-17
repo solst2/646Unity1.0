@@ -52,7 +52,24 @@ public class Reward2 : MonoBehaviour
 
     void GoToNextScene()
     {
-        SceneManager.LoadScene("Level1_3");
+        Debug.Log(superChef.level);
+        //next level or higher
+        for (int i = superChef.level+1; i < 7; i++)
+        {
+            //no more level open -> finish scene
+            if (i == 6)
+            {
+                SceneManager.LoadScene("RewardFinish");
+                break;
+            }
+            //next level or after that is a level open
+            if (superChef.infosNiveau[superChef.actualNiveau][i-1])
+            {
+                Debug.Log("Level" + superChef.actualNiveau + "_" + i);
+                SceneManager.LoadScene("Level" + superChef.actualNiveau + "_" + i);
+                break;
+            }
+        }
     }
 
 
