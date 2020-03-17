@@ -12,6 +12,7 @@ public class superChef : MonoBehaviour
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
     public static int actualNiveau = 1;
     public static Dictionary<int, Boolean[]> infosNiveau = new Dictionary<int, Boolean[]>();
+    public static Dictionary<int, int[]> pointsPerLevel = new Dictionary<int, int[]>();
 
     public GameObject astronaut;
     public GameObject explorer;
@@ -33,6 +34,12 @@ public class superChef : MonoBehaviour
         for(int i = 0; i < 4; i++)
         {
             infosNiveau.Add(i, trueValues);
+        }
+        //default Values level
+        int[] zero = { 0, 0, 0, 0, 0 };
+        for (int i = 0; i < 4; i++)
+        {
+            pointsPerLevel.Add(i, zero);
         }
     }
 

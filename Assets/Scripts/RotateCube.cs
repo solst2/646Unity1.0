@@ -80,6 +80,8 @@ public class RotateCube : MonoBehaviour
         scores.text = "Score: " + superChef.score;
         //background
         background.GetComponent<Image>().color = superChef.background[color];
+        //actual score
+        calculateScore();
     }
 
     void Update()
@@ -126,18 +128,23 @@ public class RotateCube : MonoBehaviour
                 // Edit score
                 if (wrongClicks ==0)
                 {
-                    superChef.score += 10;
+                    //set the level as done
                     superChef.infosNiveau[superChef.actualNiveau][superChef.level-1] = false;
+                    //safe the new value in existing points
+                    superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 10;
                 } 
                 else if (wrongClicks <=5)
                 {
-                    superChef.score += 5;
+                    //safe the new value in existing points
+                    superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 5;
                 }
                 else
                 {
-                    superChef.score += 2;
+                    //safe the new value in existing points
+                    superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 2;
                 }
-                scores.text = "Score: " + superChef.score;
+
+                 calculateScore();
             }
 
         }
@@ -146,6 +153,18 @@ public class RotateCube : MonoBehaviour
             transform.Rotate(0, 3, 0);
         }
 
+    }
+
+    public void calculateScore()
+    {
+
+        int tempScore = 0;
+        foreach (int i in superChef.pointsPerLevel[superChef.actualNiveau])
+        {
+            tempScore += i;
+        }
+        //set score
+        scores.text = "Score: " + tempScore;
     }
 
     IEnumerator waiterWrong()
