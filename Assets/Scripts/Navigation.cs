@@ -35,4 +35,11 @@ public class Navigation : MonoBehaviour
         }
         SceneManager.LoadScene("Character");
     }
+
+    public void Niveau2()
+    {
+        superChef.actualNiveau = 2;
+        SceneManager.LoadScene("Level2_1");
+
+    }
 }

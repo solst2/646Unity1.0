@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class RotateCube : MonoBehaviour
 {
-
+    //Niveau 1 and 2
     public AudioSource sonBon;
     public AudioSource sonPasBon;
     public GameObject smile;
@@ -24,6 +24,8 @@ public class RotateCube : MonoBehaviour
     int rotate = 0;
     public static string color = "pink";
     int wrongClicks = 0;
+    //Niveau 2
+    public GameObject figure;
 
     void Start()
     {
@@ -82,6 +84,17 @@ public class RotateCube : MonoBehaviour
         background.GetComponent<Image>().color = superChef.background[color];
         //actual score
         calculateScore();
+
+        //Just for Niveau 2
+        if(superChef.actualNiveau == 2)
+        {
+            Debug.Log("Test");
+            //set active depends on gender
+            figure.transform.GetChild(0).gameObject.SetActive(false);
+            figure.transform.GetChild(1).gameObject.SetActive(false);
+            figure.transform.Find(superChef.gender).gameObject.SetActive(true);
+            figure.SetActive(true);
+        }
     }
 
     void Update()
@@ -98,7 +111,11 @@ public class RotateCube : MonoBehaviour
             else
             {
                 sonBon.Play();
-                smile.SetActive(false);
+                //just for Niveau 1 -> smile disapear / for Niveau 2 -> the arm should stay
+                if (superChef.actualNiveau == 1)
+                {
+                    smile.SetActive(false);
+                }
                 smileRight.SetActive(true);
                 barEmpty.SetActive(false);
                 jeans.SetActive(false);
@@ -115,6 +132,18 @@ public class RotateCube : MonoBehaviour
                     barFirst.transform.GetChild(j).gameObject.SetActive(false);
                 }
                 barFirst.transform.Find(color).gameObject.SetActive(true);
+
+                //Just for Niveau 2
+                if(superChef.actualNiveau == 2)
+                {
+                    figure.SetActive(false);
+                    //set active depends on gender
+                    smileRight.transform.GetChild(0).gameObject.SetActive(false);
+                    smileRight.transform.GetChild(1).gameObject.SetActive(false);
+                    smileRight.transform.Find(superChef.gender).gameObject.SetActive(true);
+                    smileRight.SetActive(true);
+                }
+
 
                 rotate = 1;
 

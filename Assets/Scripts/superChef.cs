@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class superChef : MonoBehaviour
 {
-    public static string character="nothing";
+    public static string character="Astronaut";
     public static int level = 0;
     public static int score = 0;
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
     public static Dictionary<string, Color32> backgroundCamera = new Dictionary<string, Color32>();
     public static int actualNiveau = 1;
+    public static String gender = "girl";
     public static Dictionary<int, Boolean[]> infosNiveau = new Dictionary<int, Boolean[]>();
     public static Dictionary<int, int[]> pointsPerLevel = new Dictionary<int, int[]>();
 
@@ -47,6 +48,14 @@ public class superChef : MonoBehaviour
         {
             pointsPerLevel.Add(i, zero);
         }
+        //Niveau 2 Gender -> default girl
+        System.Random r = new System.Random();
+        int random = r.Next(0, 1);
+        Debug.Log("random: " + random);
+        if(random == 1)
+        {
+            gender = "boy";
+        }
     }
 
     // Update is called once per frame
@@ -73,8 +82,11 @@ public class superChef : MonoBehaviour
     }
 
     void GoToNextScene()
-    {
-        if(ScriptTuto1.tutoplayed==0)
+    {/*
+        actualNiveau = 2;
+        SceneManager.LoadScene("Level2_1");
+        */
+        if (ScriptTuto1.tutoplayed==0)
         {
 
             SceneManager.LoadScene("Tutorial1");
