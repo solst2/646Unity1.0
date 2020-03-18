@@ -37,7 +37,7 @@ public class ScorePage : MonoBehaviour
         for(int niv = 0;niv < scores.Length; niv++)
         {
             //change the niveau for the calculations
-            superChef.actualNiveau = niv;
+            superChef.actualNiveau = niv+1;
             scores[niv].value = CalculateScore();
 
             for (int j = 0; j < 6; j++)
