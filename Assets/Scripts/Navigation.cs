@@ -11,19 +11,18 @@ public class Navigation : MonoBehaviour
     public void BackButton()
     {
         superChef.level = 0;
-        SceneManager.LoadScene("Character");
         //make default
         //default values to the infosNiveau
         Boolean[] trueValues = { true, true, true, true, true };
         for (int i = 0; i < 5; i++)
         {
-            superChef.infosNiveau.Add(i, trueValues);
+            superChef.infosNiveau[i] = trueValues;
         }
         //default Values level
         int[] zero = { 0, 0, 0, 0, 0 };
         for (int i = 0; i < 5; i++)
         {
-            superChef.pointsPerLevel.Add(i, zero);
+            superChef.pointsPerLevel[i] = zero;
         }
         //Niveau 2 Gender -> default girl
         superChef.gender = "girl";
@@ -34,5 +33,6 @@ public class Navigation : MonoBehaviour
         {
             superChef.gender = "boy";
         }
+        SceneManager.LoadScene("Character");
     }
 }
