@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5595a05281b75274aaad0bdf34cb5dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewardCounter: 0
+  rewardCounter: 4
   sound: {fileID: 3745485678673105905}
 --- !u!65 &65566853356997824
 BoxCollider:
