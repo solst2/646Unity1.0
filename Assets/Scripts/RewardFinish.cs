@@ -8,7 +8,6 @@ public class RewardFinish : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Erstellt");
         StartCoroutine(waiterFinish());
     }
 
