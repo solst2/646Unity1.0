@@ -38,13 +38,13 @@ public class superChef : MonoBehaviour
         backgroundCamera.Add("red", new Color32(211, 176, 169, 255));
         //default values to the infosNiveau
         Boolean[] trueValues = {true,true,true,true,true };
-        for(int i = 0; i < 5; i++)
+        for(int i = 1; i < 5; i++)
         {
             infosNiveau.Add(i, trueValues);
         }
         //default Values level
         int[] zero = { 0, 0, 0, 0, 0 };
-        for (int i = 0; i < 5; i++)
+        for (int i = 1; i < 5; i++)
         {
             pointsPerLevel.Add(i, zero);
         }
@@ -82,10 +82,10 @@ public class superChef : MonoBehaviour
     }
 
     void GoToNextScene()
-    {/*
+    {
         actualNiveau = 2;
         SceneManager.LoadScene("Level2_1");
-        */
+        /*
         if (ScriptTuto1.tutoplayed==0)
         {
 
@@ -94,6 +94,6 @@ public class superChef : MonoBehaviour
         else
         {
             SceneManager.LoadScene("Level1_1");
-        }
+        }*/
     }
 }

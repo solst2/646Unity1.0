@@ -88,7 +88,6 @@ public class RotateCube : MonoBehaviour
         //Just for Niveau 2
         if(superChef.actualNiveau == 2)
         {
-            Debug.Log("Test");
             //set active depends on gender
             figure.transform.GetChild(0).gameObject.SetActive(false);
             figure.transform.GetChild(1).gameObject.SetActive(false);
@@ -148,6 +147,7 @@ public class RotateCube : MonoBehaviour
                 rotate = 1;
 
                 //make the right image bigger
+                Debug.Log("level " + superChef.level);
                 transform.localScale += targetZoom[superChef.level];
 
 

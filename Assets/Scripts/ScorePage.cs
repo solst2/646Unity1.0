@@ -39,18 +39,21 @@ public class ScorePage : MonoBehaviour
             //change the niveau for the calculations
             superChef.actualNiveau = niv+1;
             scores[niv].value = CalculateScore();
-
-            for (int j = 0; j < 6; j++)
+            if (scores[niv].value != 0)
             {
-                levels[niv].transform.GetChild(j).gameObject.SetActive(false);
+                for (int j = 0; j < 6; j++)
+                {
+                    levels[niv].transform.GetChild(j).gameObject.SetActive(false);
+                }
+
+                levels[niv].transform.Find(RotateCube.color).gameObject.SetActive(true);
+                percent[niv].text = (CalculateScore() * 100) + "%";
+
+                //scorebar right color
+                scores[niv].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color =
+                    colors[RotateCube.color];
             }
 
-            levels[niv].transform.Find(RotateCube.color).gameObject.SetActive(true);
-            percent[niv].text = (CalculateScore() * 100) + "%";
-
-            //scorebar right color
-            scores[niv].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color =
-                colors[RotateCube.color];
         }
         //characters
         foreach (GameObject g in characters)
@@ -80,7 +83,7 @@ public class ScorePage : MonoBehaviour
     }
 
 
-    float CalculateScore()
+    public float CalculateScore()
     {
         int tempScore = 0;
         foreach (int i in superChef.pointsPerLevel[superChef.actualNiveau])

@@ -36,10 +36,29 @@ public class Navigation : MonoBehaviour
         SceneManager.LoadScene("Character");
     }
 
-    public void Niveau2()
-    {
+    public void nextNiveau()
+    {/*
+        for (int i=1;1<5;i++)
+        {
+            Debug.Log("niveau" + i);
+            int tempScore = 0;
+            foreach (int j in superChef.pointsPerLevel[i])
+            {
+                tempScore += j;
+            }
+            Debug.Log("tempScore: " + tempScore);
+            //0  -> nothing is done in that level start
+            if (tempScore == 0)
+            {
+                superChef.actualNiveau = i;
+                SceneManager.LoadScene("Level"+i+"_1");
+                return;
+            }
+        }*/
         superChef.actualNiveau = 2;
+        superChef.level = 0;
         SceneManager.LoadScene("Level2_1");
 
     }
+
 }
