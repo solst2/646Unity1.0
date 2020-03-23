@@ -17,9 +17,6 @@ public class CollisionRewardElement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Destroy object after 4seconds
-        Object.Destroy(gameObject, 4.0f);
-
         //Look if the touch and the object is on the same position -> if yes detsroy element
         if (Input.GetMouseButtonDown(0))
         {
@@ -34,6 +31,7 @@ public class CollisionRewardElement : MonoBehaviour
                 {
                     Destroy(bc.gameObject);
                     rewardCounter++;
+                    create(bc.gameObject);
                     Debug.Log(rewardCounter);
                     sound.Play();
 
@@ -42,10 +40,20 @@ public class CollisionRewardElement : MonoBehaviour
         }
 
         //10 destroyed Elements, go to nxt Scene
-        if (rewardCounter == 5)
+        if (rewardCounter == 7)
         {
             SceneManager.LoadScene("ScorePage1");
         }
+
+        //Destroy object after 4seconds
+        Object.Destroy(gameObject, 4.0f);
+    }
+
+    private void create(GameObject element)
+    {
+        element.gameObject.transform.localScale -= new Vector3(0.3f, 0.3f, 0.3f);
+        Instantiate(element, element.transform.position, Quaternion.identity);
+        Debug.Log("Erstellt");
     }
 }
 

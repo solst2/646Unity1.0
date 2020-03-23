@@ -18,6 +18,8 @@ public class RotateCube : MonoBehaviour
     public GameObject secondObject;
     public GameObject smileWrong;
     public Text scores;
+    public Text back;
+    public Text niveau;
     public GameObject background;
     Dictionary<int, Vector3> targetZoom = new Dictionary<int, Vector3>();
     int juste = 0;
@@ -79,7 +81,11 @@ public class RotateCube : MonoBehaviour
         sonBon = audios[0];
         sonPasBon = audios[1];
         //score field
-        scores.text = "Score: " + superChef.score;
+        scores.text = changeLangage.names[changeLangage.setLanguage, 1] + " " + superChef.score;
+        //back field
+        back.text = changeLangage.names[changeLangage.setLanguage, 3];
+        //niveau field
+        niveau.text = changeLangage.names[changeLangage.setLanguage, 0]+" 1";
         //background
         background.GetComponent<Image>().color = superChef.background[color];
         //actual score
@@ -192,7 +198,7 @@ public class RotateCube : MonoBehaviour
             tempScore += i;
         }
         //set score
-        scores.text = "Score: " + tempScore;
+        scores.text = changeLangage.names[changeLangage.setLanguage, 1] + " " + tempScore;
     }
 
     IEnumerator waiterWrong()

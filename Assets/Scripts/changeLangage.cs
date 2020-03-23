@@ -13,8 +13,8 @@ public class changeLangage : MonoBehaviour
     public enum word { Level, Score, Repeat, Exit }
     public word setWord;
 
-    //Here is the liste of words
-    public string[,] names = new string[4, 4] {
+    //Here is the liste of words from 0 to 3 
+    public static string[,] names = new string[4, 4] {
 
          { "Niveau","Score","Répéter","Retour"}, //French  
          { "Ebene","Punktzahl","Wiederholen","Zurück"}, //German
@@ -64,10 +64,15 @@ public class changeLangage : MonoBehaviour
                 Debug.Log("Language is " + hit.transform.name); // ensure you picked right object
                 Debug.Log("word is " + names[(int)setLanguage, 0]); // ensure you picked right object
                 //setLanguage = hit.transform.name;
-                //GoToNextScene();
+                GoToNextScene();
             }
         }
 
         //this.GetComponent<Text>().text = names[(int)setLanguage, (int)setWord];
+    }
+
+    void GoToNextScene()
+    {
+        SceneManager.LoadScene("Character");
     }
 }

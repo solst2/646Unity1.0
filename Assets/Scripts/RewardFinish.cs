@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class RewardFinish : MonoBehaviour
 {
+
     private void Start()
     {
-        Debug.Log("start");
         StartCoroutine(waiterFinish());
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -31,7 +31,8 @@ public class RewardFinish : MonoBehaviour
             }
         }
     }
-    
+
+
     IEnumerator waiterFinish()
     {
         Debug.Log("Wait 10 seconds");
