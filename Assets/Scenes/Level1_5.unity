@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 5331789}
   - component: {fileID: 5331788}
   m_Layer: 5
-  m_Name: Text
+  m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -795,7 +795,10 @@ MonoBehaviour:
   secondObject: {fileID: 1527707630}
   smileWrong: {fileID: 1358252156}
   scores: {fileID: 997640602}
+  back: {fileID: 5331788}
+  niveau: {fileID: 1274611970}
   background: {fileID: 1551097407}
+  figure: {fileID: 0}
 --- !u!212 &364396037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1374,7 +1377,7 @@ GameObject:
   - component: {fileID: 1274611971}
   - component: {fileID: 1274611970}
   m_Layer: 5
-  m_Name: Text
+  m_Name: niveau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1984,7 +1987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.100037, y: -112.20001}
+  m_AnchoredPosition: {x: -31.100052, y: -112.20003}
   m_SizeDelta: {x: 3843.9, y: 1887.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1551097409
