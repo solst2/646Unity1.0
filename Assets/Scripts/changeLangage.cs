@@ -13,14 +13,14 @@ public class changeLangage : MonoBehaviour
     public enum word { Level, Score, Repeat, Exit }
     public word setWord;
 
-    //Here is the liste of words from 0 to 3 
-    public static string[,] names = new string[4, 4] {
+    //Here is the liste of words from 0 to 4 
+    public static string[,] names = new string[4, 5] {
 
-         { "Niveau","Score","Répéter","Retour"}, //French  
-         { "Ebene","Punktzahl","Wiederholen","Zurück"}, //German
-         { "Level", "Score", "Repeat", "Back" }, //English 
-         { "Nivel","Puntuación ","Repita","Volver"} //Spanish
-         
+         { "Niveau","Score","Répéter","Retour", "Suivant"}, //French  
+         { "Ebene","Punktzahl","Wiederholen","Zurück", "weiter"}, //German
+         { "Level", "Score", "Repeat", "Back", "Next" }, //English 
+         { "Nivel","Puntuación ","Repita","Volver", "Continuar"} //Spanish
+
     };
 
     // Start is called before the first frame update

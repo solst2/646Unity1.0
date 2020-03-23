@@ -11,12 +11,22 @@ public class ScorePage : MonoBehaviour
     public GameObject[] levels;
     public GameObject[] characters;
     public Text[] percent;
+    public Text[] repeat;
+    public Text back;
+    public Text next;
     public GameObject background;
     float maxScore = 50;
     Dictionary<string, Color32> colors = new Dictionary<string, Color32>();
 
     void Start()
     {
+        //depents on language, change repeat value
+        for(int i = 0;i< 4; i++)
+        {
+            repeat[i].text = changeLangage.names[changeLangage.setLanguage, 2];
+        }
+        back.text= changeLangage.names[changeLangage.setLanguage, 3];
+        next.text = changeLangage.names[changeLangage.setLanguage, 4];
         //add colors
         colors.Add("blue", new Color32(68, 114, 196, 255));
         colors.Add("yellow", new Color32(232,218,0, 255));
