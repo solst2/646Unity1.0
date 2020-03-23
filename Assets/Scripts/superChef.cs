@@ -50,7 +50,7 @@ public class superChef : MonoBehaviour
         }
         //Niveau 2 Gender -> default girl
         System.Random r = new System.Random();
-        int random = r.Next(0, 1);
+        int random = r.Next(0, 2);
         Debug.Log("random: " + random);
         if(random == 1)
         {
@@ -82,10 +82,10 @@ public class superChef : MonoBehaviour
     }
 
     void GoToNextScene()
-    {
+    {/*
         actualNiveau = 2;
         SceneManager.LoadScene("Level2_1");
-        /*
+        */
         if (ScriptTuto1.tutoplayed==0)
         {
 
@@ -94,6 +94,6 @@ public class superChef : MonoBehaviour
         else
         {
             SceneManager.LoadScene("Level1_1");
-        }*/
+        }
     }
 }

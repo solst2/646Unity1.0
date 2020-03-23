@@ -925,7 +925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.70100003}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 15.000053, y: 205.00003}
+  m_AnchoredPosition: {x: 15.000053, y: 205}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &961135745
@@ -1181,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.70100003}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 15.000053, y: 205.00003}
+  m_AnchoredPosition: {x: 15.000053, y: 205}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1120909276
@@ -2519,6 +2519,8 @@ MonoBehaviour:
   secondObject: {fileID: 1320751148}
   smileWrong: {fileID: 2579289}
   scores: {fileID: 922838968}
+  back: {fileID: 250566803}
+  niveau: {fileID: 2030830786}
   background: {fileID: 1925314480}
   figure: {fileID: 1568731042}
 --- !u!212 &1963309452

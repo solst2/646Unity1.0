@@ -31,6 +31,9 @@ public class RotateCube : MonoBehaviour
 
     void Start()
     {
+        //test resons
+        PrintArray();
+
         //Zoom of target level 1
         targetZoom.Add(1, new Vector3(3, 3, 0));
         //Zoom of target level 2
@@ -228,5 +231,19 @@ public class RotateCube : MonoBehaviour
     void OnMouseExit()
     {
         juste = 0;
+    }
+
+    public void PrintArray()
+    {
+        for (int i = 1; i < 5; i++)
+        {
+            Debug.Log("niveau" + i);
+            for (int j = 0; j < 5; j++)
+            {
+
+                Debug.Log("level" + j);
+                Debug.Log(superChef.pointsPerLevel[i][j]);
+            }
+        }
     }
 }

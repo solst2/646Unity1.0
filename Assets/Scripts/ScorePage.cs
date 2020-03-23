@@ -17,6 +17,10 @@ public class ScorePage : MonoBehaviour
 
     void Start()
     {
+
+        //test resons
+        PrintArray();
+
         //add colors
         colors.Add("blue", new Color32(68, 114, 196, 255));
         colors.Add("yellow", new Color32(232,218,0, 255));
@@ -34,23 +38,26 @@ public class ScorePage : MonoBehaviour
             g.transform.GetChild(1).gameObject.SetActive(false);
         }
         //for levels
-        for(int niv = 0;niv < scores.Length; niv++)
+        Debug.Log("scores.Length " + scores.Length);
+        for (int niv0 = 0;niv0 < scores.Length; niv0++)
         {
+            Debug.Log("actual Niveau to adapt:" + niv0);
             //change the niveau for the calculations
-            superChef.actualNiveau = niv+1;
-            scores[niv].value = CalculateScore();
-            if (scores[niv].value != 0)
+            //superChef.actualNiveau = niv0+1;
+            scores[niv0].value = CalculateScore(niv0 + 1);
+            Debug.Log(scores[niv0].value + " this value != 0 -> change rounds");
+            if (scores[niv0].value != 0)
             {
                 for (int j = 0; j < 6; j++)
                 {
-                    levels[niv].transform.GetChild(j).gameObject.SetActive(false);
+                    levels[niv0].transform.GetChild(j).gameObject.SetActive(false);
                 }
 
-                levels[niv].transform.Find(RotateCube.color).gameObject.SetActive(true);
-                percent[niv].text = (CalculateScore() * 100) + "%";
+                levels[niv0].transform.Find(RotateCube.color).gameObject.SetActive(true);
+                percent[niv0].text = (CalculateScore(niv0 + 1) * 100) + "%";
 
                 //scorebar right color
-                scores[niv].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color =
+                scores[niv0].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color =
                     colors[RotateCube.color];
             }
 
@@ -82,6 +89,19 @@ public class ScorePage : MonoBehaviour
         background.GetComponent<Image>().color = superChef.background[RotateCube.color];
     }
 
+    public void PrintArray()
+    {
+        for(int i = 1; i < 5; i++)
+        {
+            Debug.Log("niveau"+i);
+            for(int j = 0; j < 5; j++)
+            {
+
+                Debug.Log("level" + j);
+                Debug.Log(superChef.pointsPerLevel[i][j]);
+            }
+        }
+    }
 
     public float CalculateScore()
     {
@@ -90,6 +110,17 @@ public class ScorePage : MonoBehaviour
         {
             tempScore += i;
         }
+        Debug.Log("Level " + superChef.actualNiveau + " tempScore: " + tempScore);
+        return tempScore / maxScore;
+    }
+    public float CalculateScore(int niv)
+    {
+        int tempScore = 0;
+        foreach (int i in superChef.pointsPerLevel[niv])
+        {
+            tempScore += i;
+        }
+        Debug.Log("Level " + niv + " tempScore: " + tempScore);
         return tempScore / maxScore;
     }
 
