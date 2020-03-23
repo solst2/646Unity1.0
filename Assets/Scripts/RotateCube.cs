@@ -23,7 +23,6 @@ public class RotateCube : MonoBehaviour
     public GameObject background;
     public int vec3a;
     public int vec3b;
-    Dictionary<int, Vector3> targetZoom = new Dictionary<int, Vector3>();
     int juste = 0;
     int rotate = 0;
     public static string color = "pink";
@@ -33,17 +32,6 @@ public class RotateCube : MonoBehaviour
 
     void Start()
     {
-        //Zoom of target level 1
-        targetZoom.Add(1, new Vector3(3, 3, 0));
-        //Zoom of target level 2
-        targetZoom.Add(2, new Vector3(8, 8, 0));
-        //Zoom of target level 3
-        targetZoom.Add(3, new Vector3(0, 0, 0));
-        //Zoom of target level 4
-        targetZoom.Add(4, new Vector3(5, 5, 0));
-        //Zoom of target level 5
-        targetZoom.Add(5, new Vector3(4, 4, 0));
-
         //number of new level
         superChef.level++;
 
