@@ -20,7 +20,7 @@ public class Navigation : MonoBehaviour
         }
         //default Values level
         int[] zero = { 0, 0, 0, 0, 0 };
-        for (int i = 0; i < 5; i++)
+        for (int i = 1; i < 5; i++)
         {
             superChef.pointsPerLevel[i] = zero;
         }
@@ -37,8 +37,9 @@ public class Navigation : MonoBehaviour
     }
 
     public void nextNiveau()
-    {/*
-        for (int i=1;1<5;i++)
+    {   
+        // at the moment just 2 niveaus are done -> change it to add the next niveau
+        for (int i=1;i<3;i++)
         {
             Debug.Log("niveau" + i);
             int tempScore = 0;
@@ -51,13 +52,14 @@ public class Navigation : MonoBehaviour
             if (tempScore == 0)
             {
                 superChef.actualNiveau = i;
+                superChef.level = 0;
                 SceneManager.LoadScene("Level"+i+"_1");
                 return;
             }
-        }*/
+        }/*
         superChef.actualNiveau = 2;
         superChef.level = 0;
-        SceneManager.LoadScene("Level2_1");
+        SceneManager.LoadScene("Level2_1");*/
 
     }
 

@@ -21,6 +21,8 @@ public class RotateCube : MonoBehaviour
     public Text back;
     public Text niveau;
     public GameObject background;
+    public int vec3a;
+    public int vec3b;
     Dictionary<int, Vector3> targetZoom = new Dictionary<int, Vector3>();
     int juste = 0;
     int rotate = 0;
@@ -31,9 +33,6 @@ public class RotateCube : MonoBehaviour
 
     void Start()
     {
-        //test resons
-        PrintArray();
-
         //Zoom of target level 1
         targetZoom.Add(1, new Vector3(3, 3, 0));
         //Zoom of target level 2
@@ -156,9 +155,8 @@ public class RotateCube : MonoBehaviour
                 rotate = 1;
 
                 //make the right image bigger
-                Debug.Log("level " + superChef.level);
-                transform.localScale += targetZoom[superChef.level];
-
+                // transform.localScale += targetZoom[superChef.level];
+                transform.localScale += new Vector3(vec3a, vec3b, 0);
 
                 //Applique un délai pour changer de scène
                 DOVirtual.DelayedCall(3, GoToNextScene);

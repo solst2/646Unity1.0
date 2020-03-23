@@ -66,6 +66,10 @@ public class Reward4 : MonoBehaviour
                 Debug.Log("Level" + superChef.actualNiveau + "_" + i);
                 SceneManager.LoadScene("Level" + superChef.actualNiveau + "_" + i);
                 break;
+            } //when it was false, then the global level is +1
+            else
+            {
+                superChef.level++;
             }
         }
     }

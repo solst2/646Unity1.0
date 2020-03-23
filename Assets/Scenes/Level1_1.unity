@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -404,6 +404,8 @@ MonoBehaviour:
   back: {fileID: 1248905415}
   niveau: {fileID: 267385519}
   background: {fileID: 1946767955}
+  vec3a: 3
+  vec3b: 3
   figure: {fileID: 0}
 --- !u!212 &208823826
 SpriteRenderer:
@@ -1989,7 +1991,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.09999, y: -112.20003}
+  m_AnchoredPosition: {x: -31.099976, y: -112.20001}
   m_SizeDelta: {x: 3843.9, y: 1887.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946767957

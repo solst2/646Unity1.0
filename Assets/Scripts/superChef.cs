@@ -12,7 +12,7 @@ public class superChef : MonoBehaviour
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
     public static Dictionary<string, Color32> backgroundCamera = new Dictionary<string, Color32>();
     public static int actualNiveau = 1;
-    public static String gender = "girl";
+    public static String gender = "boy";
     public static Dictionary<int, Boolean[]> infosNiveau = new Dictionary<int, Boolean[]>();
     public static Dictionary<int, int[]> pointsPerLevel = new Dictionary<int, int[]>();
 
@@ -37,16 +37,14 @@ public class superChef : MonoBehaviour
         backgroundCamera.Add("yellow", new Color32(204, 199, 133, 255));
         backgroundCamera.Add("red", new Color32(211, 176, 169, 255));
         //default values to the infosNiveau
-        Boolean[] trueValues = {true,true,true,true,true };
         for(int i = 1; i < 5; i++)
         {
-            infosNiveau.Add(i, trueValues);
+            infosNiveau.Add(i, new Boolean[] { true, true, true, true, true });
         }
         //default Values level
-        int[] zero = { 0, 0, 0, 0, 0 };
         for (int i = 1; i < 5; i++)
         {
-            pointsPerLevel.Add(i, zero);
+            pointsPerLevel.Add(i, new int[] { 0, 0, 0, 0, 0 });
         }
         //Niveau 2 Gender -> default girl
         System.Random r = new System.Random();

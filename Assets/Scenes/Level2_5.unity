@@ -382,6 +382,8 @@ MonoBehaviour:
   back: {fileID: 1481461345}
   niveau: {fileID: 1917485862}
   background: {fileID: 750027655}
+  vec3a: 5
+  vec3b: 5
   figure: {fileID: 627973933}
 --- !u!212 &127173271
 SpriteRenderer:
