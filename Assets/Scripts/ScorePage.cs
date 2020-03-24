@@ -11,12 +11,22 @@ public class ScorePage : MonoBehaviour
     public GameObject[] levels;
     public GameObject[] characters;
     public Text[] percent;
+    public Text[] repeat;
+    public Text back;
+    public Text next;
     public GameObject background;
     float maxScore = 50;
     Dictionary<string, Color32> colors = new Dictionary<string, Color32>();
 
     void Start()
     {
+        //depents on language, change repeat value
+        for(int i = 0;i< 4; i++)
+        {
+            repeat[i].text = changeLangage.names[changeLangage.setLanguage, 2];
+        }
+        back.text= changeLangage.names[changeLangage.setLanguage, 3];
+        next.text = changeLangage.names[changeLangage.setLanguage, 4];
         //add colors
         colors.Add("blue", new Color32(68, 114, 196, 255));
         colors.Add("yellow", new Color32(232,218,0, 255));
@@ -34,23 +44,34 @@ public class ScorePage : MonoBehaviour
             g.transform.GetChild(1).gameObject.SetActive(false);
         }
         //for levels
-        for(int niv = 0;niv < scores.Length; niv++)
+        for (int niv0 = 0;niv0 < scores.Length; niv0++)
         {
             //change the niveau for the calculations
-            superChef.actualNiveau = niv+1;
-            scores[niv].value = CalculateScore();
+            //superChef.actualNiveau = niv0+1;
+            scores[niv0].value = CalculateScore(niv0 + 1);
 
+            //disable all
             for (int j = 0; j < 6; j++)
             {
-                levels[niv].transform.GetChild(j).gameObject.SetActive(false);
+                levels[niv0].transform.GetChild(j).gameObject.SetActive(false);
             }
 
-            levels[niv].transform.Find(RotateCube.color).gameObject.SetActive(true);
-            percent[niv].text = (CalculateScore() * 100) + "%";
+            //if the level is done
+            if (scores[niv0].value != 0)
+            {
 
-            //scorebar right color
-            scores[niv].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color =
-                colors[RotateCube.color];
+                levels[niv0].transform.Find(RotateCube.color).gameObject.SetActive(true);
+                percent[niv0].text = (CalculateScore(niv0 + 1) * 100) + "%";
+
+                //scorebar right color
+                scores[niv0].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color =
+                    colors[RotateCube.color];
+            }
+            else  //when the level is not done, just activate grey rondel
+            {
+                levels[niv0].transform.GetChild(0).gameObject.SetActive(true);
+            }
+
         }
         //characters
         foreach (GameObject g in characters)
@@ -79,11 +100,33 @@ public class ScorePage : MonoBehaviour
         background.GetComponent<Image>().color = superChef.background[RotateCube.color];
     }
 
+    public void PrintArray()
+    {
+        for(int i = 1; i < 5; i++)
+        {
+            Debug.Log("niveau"+i);
+            for(int j = 0; j < 5; j++)
+            {
 
-    float CalculateScore()
+                Debug.Log("level" + j);
+                Debug.Log(superChef.pointsPerLevel[i][j]);
+            }
+        }
+    }
+
+    public float CalculateScore()
     {
         int tempScore = 0;
         foreach (int i in superChef.pointsPerLevel[superChef.actualNiveau])
+        {
+            tempScore += i;
+        }
+        return tempScore / maxScore;
+    }
+    public float CalculateScore(int niv)
+    {
+        int tempScore = 0;
+        foreach (int i in superChef.pointsPerLevel[niv])
         {
             tempScore += i;
         }

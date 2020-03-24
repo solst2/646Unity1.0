@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 5331789}
   - component: {fileID: 5331788}
   m_Layer: 5
-  m_Name: Text
+  m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -795,7 +795,12 @@ MonoBehaviour:
   secondObject: {fileID: 1527707630}
   smileWrong: {fileID: 1358252156}
   scores: {fileID: 997640602}
+  back: {fileID: 5331788}
+  niveau: {fileID: 1274611970}
   background: {fileID: 1551097407}
+  vec3a: 4
+  vec3b: 4
+  figure: {fileID: 0}
 --- !u!212 &364396037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1374,7 +1379,7 @@ GameObject:
   - component: {fileID: 1274611971}
   - component: {fileID: 1274611970}
   m_Layer: 5
-  m_Name: Text
+  m_Name: niveau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

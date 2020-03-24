@@ -18,8 +18,11 @@ public class RotateCube : MonoBehaviour
     public GameObject secondObject;
     public GameObject smileWrong;
     public Text scores;
+    public Text back;
+    public Text niveau;
     public GameObject background;
-    Dictionary<int, Vector3> targetZoom = new Dictionary<int, Vector3>();
+    public int vec3a;
+    public int vec3b;
     int juste = 0;
     int rotate = 0;
     public static string color = "pink";
@@ -29,17 +32,6 @@ public class RotateCube : MonoBehaviour
 
     void Start()
     {
-        //Zoom of target level 1
-        targetZoom.Add(1, new Vector3(3, 3, 0));
-        //Zoom of target level 2
-        targetZoom.Add(2, new Vector3(8, 8, 0));
-        //Zoom of target level 3
-        targetZoom.Add(3, new Vector3(0, 0, 0));
-        //Zoom of target level 4
-        targetZoom.Add(4, new Vector3(5, 5, 0));
-        //Zoom of target level 5
-        targetZoom.Add(5, new Vector3(4, 4, 0));
-
         //number of new level
         superChef.level++;
 
@@ -79,7 +71,11 @@ public class RotateCube : MonoBehaviour
         sonBon = audios[0];
         sonPasBon = audios[1];
         //score field
-        scores.text = "Score: " + superChef.score;
+        scores.text = changeLangage.names[changeLangage.setLanguage, 1] + " " + superChef.score;
+        //back field
+        back.text = changeLangage.names[changeLangage.setLanguage, 3];
+        //niveau field
+        niveau.text = changeLangage.names[changeLangage.setLanguage, 0]+" "+superChef.actualNiveau;
         //background
         background.GetComponent<Image>().color = superChef.background[color];
         //actual score
@@ -88,7 +84,6 @@ public class RotateCube : MonoBehaviour
         //Just for Niveau 2
         if(superChef.actualNiveau == 2)
         {
-            Debug.Log("Test");
             //set active depends on gender
             figure.transform.GetChild(0).gameObject.SetActive(false);
             figure.transform.GetChild(1).gameObject.SetActive(false);
@@ -148,11 +143,12 @@ public class RotateCube : MonoBehaviour
                 rotate = 1;
 
                 //make the right image bigger
-                transform.localScale += targetZoom[superChef.level];
-
+                // transform.localScale += targetZoom[superChef.level];
+                transform.localScale += new Vector3(vec3a, vec3b, 0);
 
                 //Applique un délai pour changer de scène
-                DOVirtual.DelayedCall(3, GoToNextScene);
+                //DOVirtual.DelayedCall(3, GoToNextScene);
+                StartCoroutine(GoToNextSceneN());
 
                 // Edit score
                 if (wrongClicks ==0)
@@ -192,7 +188,7 @@ public class RotateCube : MonoBehaviour
             tempScore += i;
         }
         //set score
-        scores.text = "Score: " + tempScore;
+        scores.text = changeLangage.names[changeLangage.setLanguage, 1] + " " + tempScore;
     }
 
     IEnumerator waiterWrong()
@@ -200,12 +196,19 @@ public class RotateCube : MonoBehaviour
         smile.SetActive(false);
         smileWrong.SetActive(true);
         sonPasBon.Play();
-        //Wait for 4 seconds
+        //Wait for 0.5 seconds
         yield return new WaitForSeconds(0.5f);
         smileWrong.SetActive(false);
         smile.SetActive(true);
 
         wrongClicks++;
+    }
+
+    IEnumerator GoToNextSceneN()
+    {
+        //Wait for seconds
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Reward" + superChef.level);
     }
 
     //méthode pour changer de scène
@@ -222,5 +225,19 @@ public class RotateCube : MonoBehaviour
     void OnMouseExit()
     {
         juste = 0;
+    }
+
+    public void PrintArray()
+    {
+        for (int i = 1; i < 5; i++)
+        {
+            Debug.Log("niveau" + i);
+            for (int j = 0; j < 5; j++)
+            {
+
+                Debug.Log("level" + j);
+                Debug.Log(superChef.pointsPerLevel[i][j]);
+            }
+        }
     }
 }

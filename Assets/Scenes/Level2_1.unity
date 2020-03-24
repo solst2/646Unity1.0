@@ -2680,7 +2680,11 @@ MonoBehaviour:
   secondObject: {fileID: 768206052}
   smileWrong: {fileID: 2080399412}
   scores: {fileID: 1913864552}
+  back: {fileID: 1639738507}
+  niveau: {fileID: 463010267}
   background: {fileID: 1805073745}
+  vec3a: 3
+  vec3b: 3
   figure: {fileID: 926027220}
 --- !u!212 &2134038683
 SpriteRenderer:

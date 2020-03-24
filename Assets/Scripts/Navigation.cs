@@ -13,16 +13,14 @@ public class Navigation : MonoBehaviour
         superChef.level = 0;
         //make default
         //default values to the infosNiveau
-        Boolean[] trueValues = { true, true, true, true, true };
         for (int i = 0; i < 5; i++)
         {
-            superChef.infosNiveau[i] = trueValues;
+            superChef.infosNiveau[i] = new Boolean[] { true, true, true, true, true };
         }
         //default Values level
-        int[] zero = { 0, 0, 0, 0, 0 };
-        for (int i = 0; i < 5; i++)
+        for (int i = 1; i < 5; i++)
         {
-            superChef.pointsPerLevel[i] = zero;
+            superChef.pointsPerLevel[i] = new int[] { 0, 0, 0, 0, 0 };
         }
         //Niveau 2 Gender -> default girl
         superChef.gender = "girl";
@@ -36,10 +34,31 @@ public class Navigation : MonoBehaviour
         SceneManager.LoadScene("Character");
     }
 
-    public void Niveau2()
-    {
+    public void nextNiveau()
+    {   
+        // at the moment just 2 niveaus are done -> change it to add the next niveau
+        for (int i=1;i<3;i++)
+        {
+            Debug.Log("niveau" + i);
+            int tempScore = 0;
+            foreach (int j in superChef.pointsPerLevel[i])
+            {
+                tempScore += j;
+            }
+            Debug.Log("tempScore: " + tempScore);
+            //0  -> nothing is done in that level start
+            if (tempScore == 0)
+            {
+                superChef.actualNiveau = i;
+                superChef.level = 0;
+                SceneManager.LoadScene("Level"+i+"_1");
+                return;
+            }
+        }/*
         superChef.actualNiveau = 2;
-        SceneManager.LoadScene("Level2_1");
+        superChef.level = 0;
+        SceneManager.LoadScene("Level2_1");*/
 
     }
+
 }
