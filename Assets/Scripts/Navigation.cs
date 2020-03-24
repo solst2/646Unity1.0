@@ -13,16 +13,14 @@ public class Navigation : MonoBehaviour
         superChef.level = 0;
         //make default
         //default values to the infosNiveau
-        Boolean[] trueValues = { true, true, true, true, true };
         for (int i = 0; i < 5; i++)
         {
-            superChef.infosNiveau[i] = trueValues;
+            superChef.infosNiveau[i] = new Boolean[] { true, true, true, true, true };
         }
         //default Values level
-        int[] zero = { 0, 0, 0, 0, 0 };
         for (int i = 1; i < 5; i++)
         {
-            superChef.pointsPerLevel[i] = zero;
+            superChef.pointsPerLevel[i] = new int[] { 0, 0, 0, 0, 0 };
         }
         //Niveau 2 Gender -> default girl
         superChef.gender = "girl";
