@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
@@ -19,5 +20,10 @@ public class Main : MonoBehaviour
         Web = GetComponent<Web>();
         TeacherInfo = GetComponent<TeacherInfo>();
 
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("Language");
     }
 }
