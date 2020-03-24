@@ -11,6 +11,7 @@ public class Navigation : MonoBehaviour
     public void BackButton()
     {
         superChef.level = 0;
+        superChef.actualNiveau = 1;
         //make default
         //default values to the infosNiveau
         for (int i = 0; i < 5; i++)
