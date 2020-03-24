@@ -42,11 +42,19 @@ public class Reward5 : MonoBehaviour
                 break;
         }
 
-        DOVirtual.DelayedCall(2, GoToNextScene);
+        //DOVirtual.DelayedCall(2, GoToNextScene);
 
         //background
         background.GetComponent<Camera>().backgroundColor = superChef.backgroundCamera[RotateCube.color];
 
+        StartCoroutine(GoToNextSceneN());
+    }
+
+    IEnumerator GoToNextSceneN()
+    {
+        //Wait for seconds
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Reward_moving");
     }
 
     void GoToNextScene()

@@ -147,7 +147,8 @@ public class RotateCube : MonoBehaviour
                 transform.localScale += new Vector3(vec3a, vec3b, 0);
 
                 //Applique un délai pour changer de scène
-                DOVirtual.DelayedCall(3, GoToNextScene);
+                //DOVirtual.DelayedCall(3, GoToNextScene);
+                StartCoroutine(GoToNextSceneN());
 
                 // Edit score
                 if (wrongClicks ==0)
@@ -195,12 +196,19 @@ public class RotateCube : MonoBehaviour
         smile.SetActive(false);
         smileWrong.SetActive(true);
         sonPasBon.Play();
-        //Wait for 4 seconds
+        //Wait for 0.5 seconds
         yield return new WaitForSeconds(0.5f);
         smileWrong.SetActive(false);
         smile.SetActive(true);
 
         wrongClicks++;
+    }
+
+    IEnumerator GoToNextSceneN()
+    {
+        //Wait for seconds
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Reward" + superChef.level);
     }
 
     //méthode pour changer de scène
