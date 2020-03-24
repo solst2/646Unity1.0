@@ -75,7 +75,7 @@ public class RotateCube : MonoBehaviour
         //back field
         back.text = changeLangage.names[changeLangage.setLanguage, 3];
         //niveau field
-        niveau.text = changeLangage.names[changeLangage.setLanguage, 0]+" 1";
+        niveau.text = changeLangage.names[changeLangage.setLanguage, 0]+" "+superChef.actualNiveau;
         //background
         background.GetComponent<Image>().color = superChef.background[color];
         //actual score
