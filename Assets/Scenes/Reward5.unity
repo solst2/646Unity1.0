@@ -534,8 +534,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasExplorer: {fileID: 1268643693}
-  canvasTrain: {fileID: 1478851101}
-  canvasFairy: {fileID: 564817640}
+  canvasTrain: {fileID: 564817640}
+  canvasFairy: {fileID: 1478851101}
   canvasAstronaut: {fileID: 250439838}
   background: {fileID: 321887973}
   character: 
