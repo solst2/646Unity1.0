@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CollisionRewardElement : MonoBehaviour
 {
-    public int rewardCounter = 0;
     public AudioSource sound;
 
     // Start is called before the first frame update
@@ -30,24 +29,18 @@ public class CollisionRewardElement : MonoBehaviour
                 if (bc != null)
                 {
                     Destroy(bc.gameObject);
-                    rewardCounter++;
                     create(bc.gameObject);
-                    Debug.Log(rewardCounter);
                     sound.Play();
 
                 }
             }
         }
 
-        //10 destroyed Elements, go to nxt Scene
-        if (rewardCounter == 7)
-        {
-            SceneManager.LoadScene("ScorePage1");
-        }
 
         //Destroy object after 4seconds
         Object.Destroy(gameObject, 4.0f);
     }
+
 
     private void create(GameObject element)
     {
