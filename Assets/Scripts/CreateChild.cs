@@ -8,8 +8,14 @@ public class CreateChild : MonoBehaviour
 {
     public InputField NameInput;
     public InputField SurnameInput;
-    public InputField ImageInput;
+    public Image ImageChild;
     public Button SubmitButton;
+
+    //Sound sources
+   // public AudioSource FairySound;
+   // public AudioSource AstronautSound;
+   // public AudioSource ExplorateurSound;
+   // public AudioSource TrainSound;
 
     //Select the right Character
     public Button FairyButton;
@@ -33,23 +39,27 @@ public class CreateChild : MonoBehaviour
     public void Fairy() {
         Debug.Log("1");
         FK_Character = "1";
+        //FairySound.Play();
     }
 
     public void Astronaut()
     {
         Debug.Log("2");
         FK_Character = "2";
+        //AstronautSound.Play();
     }
 
     public void Explorateur()
     {
         Debug.Log("3");
         FK_Character = "3";
+        //ExplorateurSound.Play();
     }
 
     public void Train()
     {
         Debug.Log("4");
         FK_Character = "4";
+        //TrainSound.Play();
     }
 }
