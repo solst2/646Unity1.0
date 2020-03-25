@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 232330829}
   - component: {fileID: 232330831}
   - component: {fileID: 232330830}
+  - component: {fileID: 232330832}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -300,7 +301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.099976, y: -112.20001}
+  m_AnchoredPosition: {x: -31.100037, y: -112.20001}
   m_SizeDelta: {x: 3843.9, y: 1887.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232330830
@@ -338,6 +339,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232330828}
   m_CullTransparentMesh: 0
+--- !u!114 &232330832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232330828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc95f00cdec6ac43acc4655931b53b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 710312013}
+  name: {fileID: 1364553185}
+  surname: {fileID: 446362428}
+  register: {fileID: 1158649792}
 --- !u!1 &334743932
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,11 +527,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465193c9da5fd3847a47f444c026f735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameChild: 
-  surnameChild: 
-  inputName: {fileID: 38389307}
-  inputSurname: {fileID: 933348514}
-  textDisplay: {fileID: 185549134}
+  NameInput: {fileID: 0}
+  SurnameInput: {fileID: 0}
+  ImageInput: {fileID: 0}
+  SubmitButton: {fileID: 0}
+  FairyButton: {fileID: 0}
+  AstronautButton: {fileID: 0}
+  ExplorateurButton: {fileID: 0}
+  TrainButton: {fileID: 0}
 --- !u!4 &528738252
 Transform:
   m_ObjectHideFlags: 0
@@ -1040,6 +1060,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  repeat: []
+  back: {fileID: 0}
+  next: {fileID: 0}
   background: {fileID: 232330828}
 --- !u!114 &1277886391
 MonoBehaviour:

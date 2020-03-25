@@ -92,7 +92,7 @@ public class Web : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", name);
         form.AddField("surname", surname);
-        //form.AddField("fk_Character", fk_Character);
+        form.AddField("fk_Character", fk_Character);
         form.AddField("fk_Teacher", fk_Teacher);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/RegisterChild.php", form))

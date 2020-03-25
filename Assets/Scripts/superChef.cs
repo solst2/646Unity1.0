@@ -20,7 +20,9 @@ public class superChef : MonoBehaviour
     public GameObject explorer;
     public GameObject fairy;
     public GameObject train;
-    
+    public GameObject language;
+
+    RaycastHit hit;
 
 
     // Start is called before the first frame update
@@ -62,7 +64,7 @@ public class superChef : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //Debug.Log("click");
-            RaycastHit hit;
+            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             //chartere controller
@@ -84,11 +86,15 @@ public class superChef : MonoBehaviour
         actualNiveau = 2;
         SceneManager.LoadScene("Level2_1");
         */
-        if (ScriptTuto1.tutoplayed==0)
+        if (hit.transform.name.Trim().Equals("fr_smile"))
+        {
+            SceneManager.LoadScene("Language");
+        }
+        else if (ScriptTuto1.tutoplayed==0)
         {
 
             SceneManager.LoadScene("Tutorial1");
-        }
+        }        
         else
         {
             SceneManager.LoadScene("Level1_1");

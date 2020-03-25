@@ -10,6 +10,7 @@ public class Main : MonoBehaviour
     public Web Web;
     public TeacherInfo TeacherInfo;
     public Login Login;
+    public CreateChild CreateChild;
 
     public GameObject TeacherProfile;
 
@@ -24,6 +25,6 @@ public class Main : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Language");
+        SceneManager.LoadScene("Character");
     }
 }
