@@ -28,6 +28,12 @@ public class superChef : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //smile depends on language
+        for (int j = 0; j < 4; j++)
+        {
+            language.transform.GetChild(j).gameObject.SetActive(false);
+        }
+        language.transform.Find(changeLangage.setLanguage.ToString()).gameObject.SetActive(true);
         //add backgroundcolors
         background.Add("blue", new Color32(190, 234, 250, 255));
         background.Add("pink", new Color32(190, 234, 250, 255));
@@ -86,7 +92,8 @@ public class superChef : MonoBehaviour
         actualNiveau = 2;
         SceneManager.LoadScene("Level2_1");
         */
-        if (hit.transform.name.Trim().Equals("fr_smile"))
+        if (hit.transform.name.Trim().Equals("0")|| hit.transform.name.Trim().Equals("1")|| 
+            hit.transform.name.Trim().Equals("2")|| hit.transform.name.Trim().Equals("3"))
         {
             SceneManager.LoadScene("Language");
         }
