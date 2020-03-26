@@ -52,7 +52,17 @@ public class Navigation : MonoBehaviour
             {
                 superChef.actualNiveau = i;
                 superChef.level = 0;
-                SceneManager.LoadScene("Level"+i+"_1");
+                
+                if (Tuto2.tutoplayed == 0)
+                {
+
+                    SceneManager.LoadScene("Tutorial2");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Level" + i + "_1");
+                }
+
                 return;
             }
         }/*
