@@ -13,6 +13,7 @@ public class RewardElements : MonoBehaviour
     void Start()
     {
         InvokeRepeating("Spawn", delay, delay);
+        
     }
 
     private void Update()
