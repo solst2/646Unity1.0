@@ -406,7 +406,6 @@ MonoBehaviour:
   background: {fileID: 1946767955}
   vec3a: 3
   vec3b: 3
-  figure: {fileID: 0}
 --- !u!212 &208823826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -677,7 +676,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12, y: 12, z: 0.2}
+  m_Size: {x: 9, y: 9, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &218817985
 GameObject:
@@ -1602,6 +1601,7 @@ GameObject:
   - component: {fileID: 847219942}
   - component: {fileID: 847219941}
   - component: {fileID: 847219945}
+  - component: {fileID: 847219946}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1700,6 +1700,18 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &847219945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847219940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75471f84a38a67844944847f80e51fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &847219946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1952,7 +1964,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 847219945}
         m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:

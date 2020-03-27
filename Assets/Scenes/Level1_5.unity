@@ -723,7 +723,6 @@ MonoBehaviour:
   background: {fileID: 1551097407}
   vec3a: 4
   vec3b: 4
-  figure: {fileID: 0}
 --- !u!212 &364396037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1369,7 +1368,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 568568914}
         m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:

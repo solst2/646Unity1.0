@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 180376174}
   - component: {fileID: 180376173}
   - component: {fileID: 180376177}
+  - component: {fileID: 180376178}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -527,6 +528,18 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &180376177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180376172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75471f84a38a67844944847f80e51fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &180376178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -810,7 +823,6 @@ MonoBehaviour:
   background: {fileID: 1506675419}
   vec3a: 0
   vec3b: 0
-  figure: {fileID: 0}
 --- !u!212 &303014714
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2184,7 +2196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 180376177}
         m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
