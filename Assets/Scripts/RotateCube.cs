@@ -27,8 +27,6 @@ public class RotateCube : MonoBehaviour
     int rotate = 0;
     public static string color = "pink";
     int wrongClicks = 0;
-    //Niveau 2
-    public GameObject figure;
 
     void Start()
     {
@@ -85,10 +83,17 @@ public class RotateCube : MonoBehaviour
         if(superChef.actualNiveau == 2)
         {
             //set active depends on gender
-            figure.transform.GetChild(0).gameObject.SetActive(false);
-            figure.transform.GetChild(1).gameObject.SetActive(false);
-            figure.transform.Find(superChef.gender).gameObject.SetActive(true);
-            figure.SetActive(true);
+            smile.transform.GetChild(0).gameObject.SetActive(false);
+            smile.transform.GetChild(1).gameObject.SetActive(false);
+            smile.transform.Find(superChef.gender).gameObject.SetActive(true);
+            //set active depends on gender
+            smileRight.transform.GetChild(0).gameObject.SetActive(false);
+            smileRight.transform.GetChild(1).gameObject.SetActive(false);
+            smileRight.transform.Find(superChef.gender).gameObject.SetActive(true);
+            //set active depends on gender
+            smileWrong.transform.GetChild(0).gameObject.SetActive(false);
+            smileWrong.transform.GetChild(1).gameObject.SetActive(false);
+            smileWrong.transform.Find(superChef.gender).gameObject.SetActive(true);
         }
     }
 
@@ -128,26 +133,12 @@ public class RotateCube : MonoBehaviour
                 }
                 barFirst.transform.Find(color).gameObject.SetActive(true);
 
-                //Just for Niveau 2
-                if(superChef.actualNiveau == 2)
-                {
-                    figure.SetActive(false);
-                    //set active depends on gender
-                    smileRight.transform.GetChild(0).gameObject.SetActive(false);
-                    smileRight.transform.GetChild(1).gameObject.SetActive(false);
-                    smileRight.transform.Find(superChef.gender).gameObject.SetActive(true);
-                    smileRight.SetActive(true);
-                }
-
-
                 rotate = 1;
 
                 //make the right image bigger
-                // transform.localScale += targetZoom[superChef.level];
                 transform.localScale += new Vector3(vec3a, vec3b, 0);
 
                 //Applique un délai pour changer de scène
-                //DOVirtual.DelayedCall(3, GoToNextScene);
                 StartCoroutine(GoToNextSceneN());
 
                 // Edit score
