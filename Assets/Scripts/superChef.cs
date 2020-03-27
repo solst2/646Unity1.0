@@ -22,6 +22,9 @@ public class superChef : MonoBehaviour
     public GameObject train;
     public GameObject language;
 
+    public String nextLevel = "1";
+    public GameObject levels;
+
     RaycastHit hit;
 
 
@@ -34,6 +37,10 @@ public class superChef : MonoBehaviour
             language.transform.GetChild(j).gameObject.SetActive(false);
         }
         language.transform.Find(changeLangage.setLanguage.ToString()).gameObject.SetActive(true);
+        //levels
+        levels.transform.Find("level2").gameObject.SetActive(true);
+        levels.transform.Find("level2g").gameObject.SetActive(false);
+
         //add backgroundcolors
         background.Add("blue", new Color32(190, 234, 250, 255));
         background.Add("pink", new Color32(190, 234, 250, 255));
@@ -78,7 +85,20 @@ public class superChef : MonoBehaviour
             {
                // StartCoroutine(ScaleMe(hit.transform));
                 Debug.Log("You selected the " + hit.transform.name); // ensure you picked right object
-
+                if (hit.transform.name.Trim().Equals("level2"))
+                {
+                    nextLevel = "2";
+                    levels.transform.Find("level2g").gameObject.SetActive(true);
+                    levels.transform.Find("level2").gameObject.SetActive(false);
+                    return;
+                }
+                if (hit.transform.name.Trim().Equals("level2g"))
+                {
+                    nextLevel = "1";
+                    levels.transform.Find("level2g").gameObject.SetActive(false);
+                    levels.transform.Find("level2").gameObject.SetActive(true);
+                    return;
+                }
                 character = hit.transform.name;
                 GoToNextScene();
             }
@@ -92,16 +112,25 @@ public class superChef : MonoBehaviour
         actualNiveau = 2;
         SceneManager.LoadScene("Level2_1");
         */
-        if (hit.transform.name.Trim().Equals("0")|| hit.transform.name.Trim().Equals("1")|| 
-            hit.transform.name.Trim().Equals("2")|| hit.transform.name.Trim().Equals("3"))
+        if (hit.transform.name.Trim().Equals("0") || hit.transform.name.Trim().Equals("1") ||
+            hit.transform.name.Trim().Equals("2") || hit.transform.name.Trim().Equals("3"))
         {
             SceneManager.LoadScene("Language");
         }
-        else if (ScriptTuto1.tutoplayed==0)
+        else if (nextLevel.Equals("2"))
         {
-
+            actualNiveau = 2;
+            if (Tuto2.tutoplayed == 0)
+            {
+                SceneManager.LoadScene("Tutorial2");
+                return;
+            }
+            SceneManager.LoadScene("Level2_1");
+        }
+        else if (ScriptTuto1.tutoplayed == 0)
+        {
             SceneManager.LoadScene("Tutorial1");
-        }        
+        }
         else
         {
             SceneManager.LoadScene("Level1_1");

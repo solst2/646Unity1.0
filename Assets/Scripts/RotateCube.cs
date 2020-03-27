@@ -111,11 +111,7 @@ public class RotateCube : MonoBehaviour
             else
             {
                 sonBon.Play();
-                //just for Niveau 1 -> smile disapear / for Niveau 2 -> the arm should stay
-                if (superChef.actualNiveau == 1)
-                {
-                    smile.SetActive(false);
-                }
+                smile.SetActive(false);
                 smileRight.SetActive(true);
                 barEmpty.SetActive(false);
                 jeans.SetActive(false);

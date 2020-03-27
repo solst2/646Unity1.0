@@ -52,7 +52,7 @@ public class Reward3 : MonoBehaviour
     IEnumerator GoToNextSceneN()
     {
         //Wait for seconds
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         Debug.Log(superChef.level);
         //next level or higher
         for (int i = superChef.level + 1; i < 7; i++)
