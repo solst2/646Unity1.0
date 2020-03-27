@@ -52,12 +52,7 @@ public class Reward_moving : MonoBehaviour
     IEnumerator GoToNextSceneN()
     {
         //Wait for seconds
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("RewardFinish");
-    }
-
-    void GoToNextScene()
-    {
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("RewardFinish");
     }
 
