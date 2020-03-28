@@ -37,7 +37,7 @@ public class RewardElements : MonoBehaviour
         }
 
         //10 destroyed Elements, go to nxt Scene
-        if (rewardCounter == 7)
+        if (rewardCounter == 4)
         {
             StartCoroutine(GoToNextSceneN());
             //SceneManager.LoadScene("ScorePage1");

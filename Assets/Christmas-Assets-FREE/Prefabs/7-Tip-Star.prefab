@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5595a05281b75274aaad0bdf34cb5dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewardCounter: 4
   sound: {fileID: 3745485678673105905}
 --- !u!65 &65566853356997824
 BoxCollider:
@@ -126,7 +125,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 2.5, y: 2.5, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &54401619627515596
 Rigidbody:
@@ -154,9 +153,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a9c40305676e6614d88ea392ed46922b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 79d47e6cb05714846aaf084c652f1bbe, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.501
+  m_Volume: 0.376
   m_Pitch: 1
   Loop: 0
   Mute: 0
