@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RewardElements : MonoBehaviour
 {
     public float delay = 3f;
     public GameObject cube;
+    public Text next;
     int rewardCounter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("Spawn", delay, delay);
-        
+        //next field
+        next.text = changeLangage.names[changeLangage.setLanguage, 4];
+
     }
 
     private void Update()

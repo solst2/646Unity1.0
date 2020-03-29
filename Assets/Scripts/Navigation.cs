@@ -35,6 +35,12 @@ public class Navigation : MonoBehaviour
         SceneManager.LoadScene("Character");
     }
 
+    public void nextToScore()
+    {
+
+        SceneManager.LoadScene("ScorePage1");
+    }
+
     public void nextNiveau()
     {   
         // at the moment just 2 niveaus are done -> change it to add the next niveau
