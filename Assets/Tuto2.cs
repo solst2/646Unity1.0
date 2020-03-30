@@ -12,7 +12,7 @@ public class Tuto2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DOVirtual.DelayedCall(4, GoToNextScene);
+        DOVirtual.DelayedCall(5, GoToNextScene);
     }
 
     // Update is called once per frame
