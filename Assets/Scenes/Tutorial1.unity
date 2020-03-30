@@ -210,7 +210,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340250401}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 323a7871a65e2bb4f9ed617b79f93332, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6b07d78dcfda5964488218ba3a9c64a9, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -300,8 +300,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340250401}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 0.1, y: 0.79999995, z: -10.586376}
-  m_LocalScale: {x: 32, y: 22, z: 11}
+  m_LocalPosition: {x: 0.1, y: 1.1, z: -10.586376}
+  m_LocalScale: {x: 39.137077, y: 21.674355, z: 11}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
