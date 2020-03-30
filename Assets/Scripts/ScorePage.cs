@@ -12,6 +12,7 @@ public class ScorePage : MonoBehaviour
     public GameObject[] characters;
     public Text[] percent;
     public Text[] repeat;
+    public Text[] level;
     public Text back;
     public Text next;
     public GameObject background;
@@ -24,6 +25,7 @@ public class ScorePage : MonoBehaviour
         for(int i = 0;i< 4; i++)
         {
             repeat[i].text = changeLangage.names[changeLangage.setLanguage, 2];
+            level[i].text = changeLangage.names[changeLangage.setLanguage, 0] + " "+(i+1);
         }
         back.text= changeLangage.names[changeLangage.setLanguage, 3];
         next.text = changeLangage.names[changeLangage.setLanguage, 4];
