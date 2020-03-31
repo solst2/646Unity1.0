@@ -188,6 +188,19 @@ public class RotateCube : MonoBehaviour
         smileWrong.SetActive(false);
         smile.SetActive(true);
 
+        //with niveau 2, we do the no part twice
+        if (superChef.actualNiveau == 2)
+        {
+            yield return new WaitForSeconds(0.3f);
+            smile.SetActive(false);
+            smileWrong.SetActive(true);
+            sonPasBon.Play();
+            //Wait for 0.5 seconds
+            yield return new WaitForSeconds(0.5f);
+            smileWrong.SetActive(false);
+            smile.SetActive(true);
+        }
+
         wrongClicks++;
     }
 
