@@ -207,14 +207,8 @@ public class RotateCube : MonoBehaviour
     IEnumerator GoToNextSceneN()
     {
         //Wait for seconds
-        if (superChef.actualNiveau == 1)
-        {
-            yield return new WaitForSeconds(2f);
-        }
-        else
-        {
-            yield return new WaitForSeconds(4f);
-        }
+        yield return new WaitForSeconds(4f);
+
         SceneManager.LoadScene("Reward" + superChef.level);
     }
 
