@@ -8,7 +8,7 @@ public class Web : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(GetUsers());
+        //StartCoroutine(GetUsers());
         //StartCoroutine(Login("testuser", "12345"));
         //StartCoroutine(RegisterTeacher("testuser2", "12345"));
     }
@@ -33,10 +33,10 @@ public class Web : MonoBehaviour
         }
     }
 
-    public IEnumerator Login(string username, string password)
+    public IEnumerator Login(string email, string password)
     {
         WWWForm form = new WWWForm();
-        form.AddField("loginUser", username);
+        form.AddField("loginEmail", email);
         form.AddField("loginPass", password);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/Login.php", form))
@@ -50,7 +50,7 @@ public class Web : MonoBehaviour
             else
             {
                 Debug.Log(www.downloadHandler.text);
-                Main.Instance.TeacherInfo.SetCredentials(username, password);
+                Main.Instance.TeacherInfo.SetCredentials(email, password);
                 Main.Instance.TeacherInfo.SetTeacherID(www.downloadHandler.text);
 
                 if (www.downloadHandler.text.Contains("Wrong Credentials") || www.downloadHandler.text.Contains("Username does not exist"))
@@ -66,10 +66,12 @@ public class Web : MonoBehaviour
         }
     }
 
-    /*public IEnumerator RegisterTeacher(string username, string password)
+    public IEnumerator RegisterTeacher(string name, string surname, string email, string password)
     {
         WWWForm form = new WWWForm();
-        form.AddField("loginUser", username);
+        form.AddField("loginName", name);
+        form.AddField("loginSurname", surname);
+        form.AddField("loginEmail", email);
         form.AddField("loginPass", password);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/RegisterTeacher.php", form))
@@ -85,7 +87,7 @@ public class Web : MonoBehaviour
                 Debug.Log(www.downloadHandler.text);
             }
         }
-    }*/
+    }
 
     public IEnumerator RegisterChild(string name, string surname, string fk_Character, string fk_Teacher)
     {

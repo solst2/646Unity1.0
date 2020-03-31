@@ -8,8 +8,8 @@ public class TeacherInfo : MonoBehaviour
     string Password;
     string Email;
 
-    public void SetCredentials(string username, string password) {
-        Username = username;
+    public void SetCredentials(string email, string password) {
+        Email = email;
         Password = password;
     }
 
