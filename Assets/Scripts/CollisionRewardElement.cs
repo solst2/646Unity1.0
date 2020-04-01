@@ -19,12 +19,14 @@ public class CollisionRewardElement : MonoBehaviour
         //Look if the touch and the object is on the same position -> if yes detsroy element
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Mouse");
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 
             if (Physics.Raycast(ray, out hit))
             {
+                Debug.Log("Mouse2");
                 BoxCollider bc = hit.collider as BoxCollider;
                 if (bc != null)
                 {
@@ -41,7 +43,7 @@ public class CollisionRewardElement : MonoBehaviour
         Object.Destroy(gameObject, 4.0f);
     }
 
-
+    //Create at this position new stars
     private void create(GameObject element)
     {
         element.gameObject.transform.localScale -= new Vector3(0.3f, 0.3f, 0.3f);
