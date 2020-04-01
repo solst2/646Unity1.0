@@ -16,10 +16,10 @@ public class changeLangage : MonoBehaviour
     //Here is the liste of words from 0 to 4 
     public static string[,] names = new string[4, 5] {
 
-         { "Niveau","Score","Répéter","Retour", "Suivant"}, //French  
-         { "Ebene","Punktzahl","Wiederholen","Zurück", "weiter"}, //German
-         { "Level", "Score", "Repeat", "Back", "Next" }, //English 
-         { "Nivel","Puntuación ","Repita","Volver", "Continuar"} //Spanish
+         { "Niveau","Score","répéter","retour", "suivant"}, //French  
+         { "Ebene","Punktzahl","wiederholen","zurück", "weiter"}, //German
+         { "Level", "Score", "repeat", "back", "next" }, //English 
+         { "Nivel","Puntuación ","repetir","volver", "continuar"} //Spanish
 
     };
 
