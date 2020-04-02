@@ -45,6 +45,7 @@ public class DragObject : MonoBehaviour
         else
         {
             Level3.sonPasBon1.Play();
+            Level3.wrongClicks = Level3.wrongClicks + 0.5;
             Debug.Log("no"+Distance);
             transform.position = positionBase;
         }

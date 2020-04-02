@@ -26,7 +26,7 @@ public class Level3 : MonoBehaviour
     int juste = 0;
     int rotate = 0;
     public static string color = "pink";
-    int wrongClicks = 0;
+    public static double wrongClicks = 0;
     public static Boolean eyes;
     public static Boolean arm;
     public static AudioSource sonBon1;
@@ -80,9 +80,9 @@ public class Level3 : MonoBehaviour
         //niveau field
         niveau.text = changeLangage.names[changeLangage.setLanguage, 0] + " " + superChef.actualNiveau;
         //background
-        //background.GetComponent<Image>().color = superChef.background[color];
+        background.GetComponent<Image>().color = superChef.background[color];
         //actual score
-        //calculateScore();
+        calculateScore();
         //if it is right
         eyes = false;
         arm = false;
