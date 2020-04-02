@@ -10,6 +10,7 @@ public class DragObject : MonoBehaviour
     private float mZCoord;
     public GameObject correct;
 
+
     private void OnMouseDown()
     {
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
@@ -26,14 +27,24 @@ public class DragObject : MonoBehaviour
     {
         float Distance = Vector3.Distance(this.transform.position, correct.transform.position);
 
-        if (Distance < 20)
+        if (Distance < 20 && (this.transform.name.Equals("1")|| this.transform.name.Equals("2")))
         {
+            if (this.transform.name.Equals("1"))
+            {
+                Level3.eyes = true;
+            }
+            else
+            {
+                Level3.arm = true;
+            }
+            Level3.sonBon1.Play();
             Debug.Log("Yeah");
             Destroy(gameObject);
             correct.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f); 
         }
         else
         {
+            Level3.sonPasBon1.Play();
             Debug.Log("no"+Distance);
             transform.position = positionBase;
         }
@@ -57,6 +68,7 @@ public class DragObject : MonoBehaviour
 
         //At the start we hide the correct eyes
         correct.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+
     }
 
     // Update is called once per frame

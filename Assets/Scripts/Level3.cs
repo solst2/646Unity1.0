@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using System;
 
 public class Level3 : MonoBehaviour
 {
 
-    //Niveau 1 and 2
     public AudioSource sonBon;
     public AudioSource sonPasBon;
     public GameObject smile;
     public GameObject smileRight;
     public GameObject barEmpty;
     public GameObject barFirst;
+    public GameObject target; 
+    public GameObject correctEyes;
     public Text scores;
     public Text back;
     public Text niveau;
@@ -25,9 +27,15 @@ public class Level3 : MonoBehaviour
     int rotate = 0;
     public static string color = "pink";
     int wrongClicks = 0;
+    public static Boolean eyes;
+    public static Boolean arm;
+    public static AudioSource sonBon1;
+    public static AudioSource sonPasBon1;
 
     void Start()
     {
+        sonBon1 = sonBon;
+        sonPasBon1 = sonPasBon;
         //number of new level
         superChef.level++;
 
@@ -75,64 +83,64 @@ public class Level3 : MonoBehaviour
         //background.GetComponent<Image>().color = superChef.background[color];
         //actual score
         //calculateScore();
+        //if it is right
+        eyes = false;
+        arm = false;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && rotate == 0)
+        if (eyes && arm)
         {
 
-            //Destroy(gameObject);
 
-            if (juste == 1)
+            sonBon.Play();
+            smile.SetActive(false);
+            smileRight.SetActive(true);
+            barEmpty.SetActive(false);
+
+            //set bar with 1 active in the right color
+            barFirst.SetActive(true);
+            for (int j = 0; j < 4; j++)
             {
-                sonBon.Play();
-                smile.SetActive(false);
-                smileRight.SetActive(true);
-                barEmpty.SetActive(false);
+                barFirst.transform.GetChild(j).gameObject.SetActive(false);
+            }
+            barFirst.transform.Find(color).gameObject.SetActive(true);
 
-                //set bar with 1 active in the right color
-                barFirst.SetActive(true);
-                for (int j = 0; j < 4; j++)
-                {
-                    barFirst.transform.GetChild(j).gameObject.SetActive(false);
-                }
-                barFirst.transform.Find(color).gameObject.SetActive(true);
+            rotate = 1;
 
-                rotate = 1;
+            //make the right image bigger
+            transform.localScale += new Vector3(vec3a, vec3b, 0);
 
-                //make the right image bigger
-                transform.localScale += new Vector3(vec3a, vec3b, 0);
+            //Applique un délai pour changer de scène
+            StartCoroutine(GoToNextSceneN());
 
-                //Applique un délai pour changer de scène
-                StartCoroutine(GoToNextSceneN());
-
-                // Edit score
-                if (wrongClicks == 0)
-                {
-                    //set the level as done
-                    superChef.infosNiveau[superChef.actualNiveau][superChef.level - 1] = false;
-                    //safe the new value in existing points
-                    superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 10;
-                }
-                else if (wrongClicks <= 5)
-                {
-                    //safe the new value in existing points
-                    superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 5;
-                }
-                else
-                {
-                    //safe the new value in existing points
-                    superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 2;
-                }
-
-                calculateScore();
+            // Edit score
+            if (wrongClicks == 0)
+            {
+                //set the level as done
+                superChef.infosNiveau[superChef.actualNiveau][superChef.level - 1] = false;
+                //safe the new value in existing points
+                superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 10;
+            }
+            else if (wrongClicks <= 5)
+            {
+                //safe the new value in existing points
+                superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 5;
+            }
+            else
+            {
+                //safe the new value in existing points
+                superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 2;
             }
 
-        }
+            calculateScore();
+            //delete the eyes
+            correctEyes.GetComponent<Renderer>().material.color = new Color(0f, 0f, 0f, 0f);
+        }    
         if (rotate == 1)
         {
-            transform.Rotate(0, 3, 0);
+            target.transform.Rotate(0, 3, 0);
         }
 
     }
