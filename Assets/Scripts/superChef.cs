@@ -40,6 +40,8 @@ public class superChef : MonoBehaviour
         //levels
         levels.transform.Find("level2").gameObject.SetActive(true);
         levels.transform.Find("level2g").gameObject.SetActive(false);
+        levels.transform.Find("level3").gameObject.SetActive(true);
+        levels.transform.Find("level3g").gameObject.SetActive(false);
 
         //add backgroundcolors
         background.Add("blue", new Color32(190, 234, 250, 255));
@@ -99,6 +101,20 @@ public class superChef : MonoBehaviour
                     levels.transform.Find("level2").gameObject.SetActive(true);
                     return;
                 }
+                if (hit.transform.name.Trim().Equals("level3"))
+                {
+                    nextLevel = "3";
+                    levels.transform.Find("level3g").gameObject.SetActive(true);
+                    levels.transform.Find("level3").gameObject.SetActive(false);
+                    return;
+                }
+                if (hit.transform.name.Trim().Equals("level3g"))
+                {
+                    nextLevel = "1";
+                    levels.transform.Find("level3g").gameObject.SetActive(false);
+                    levels.transform.Find("level3").gameObject.SetActive(true);
+                    return;
+                }
                 character = hit.transform.name;
                 GoToNextScene();
             }
@@ -116,6 +132,16 @@ public class superChef : MonoBehaviour
             hit.transform.name.Trim().Equals("2") || hit.transform.name.Trim().Equals("3"))
         {
             SceneManager.LoadScene("Language");
+        }
+        else if (nextLevel.Equals("3"))
+        {
+            actualNiveau = 3;
+            /*if (Tuto3.tutoplayed == 0)
+            {
+                SceneManager.LoadScene("Tutorial3");
+                return;
+            }*/
+            SceneManager.LoadScene("Level3_1");
         }
         else if (nextLevel.Equals("2"))
         {

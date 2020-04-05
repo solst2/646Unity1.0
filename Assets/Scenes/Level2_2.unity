@@ -504,14 +504,14 @@ RectTransform:
   m_GameObject: {fileID: 387974947}
   m_LocalRotation: {x: -0, y: -0.99997574, z: -0, w: -0.0069698296}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 19.878635, y: 13.968233, z: 0.7646233}
+  m_LocalScale: {x: 50, y: 50, z: 0.7646233}
   m_Children: []
   m_Father: {fileID: 955338093}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180.799, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -219, y: -20}
+  m_AnchoredPosition: {x: -234, y: 19}
   m_SizeDelta: {x: 7, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &387974949
@@ -621,8 +621,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 8, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4, y: 2.5, z: 0.2}
+  m_Center: {x: 0, y: -0.2, z: 0}
 --- !u!82 &387974951
 AudioSource:
   m_ObjectHideFlags: 0
@@ -783,7 +783,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 290b953853493c74a998ab9bc824345b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20508bec98785a342abb94554865fa76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

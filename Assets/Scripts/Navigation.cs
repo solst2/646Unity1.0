@@ -78,4 +78,11 @@ public class Navigation : MonoBehaviour
 
     }
 
+    public void goToScene(int i)
+    {
+        superChef.actualNiveau = i;
+        superChef.level = 0;
+        SceneManager.LoadScene("Level"+i+"_1");
+    }
+
 }
