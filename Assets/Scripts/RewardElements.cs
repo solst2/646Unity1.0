@@ -22,7 +22,7 @@ public class RewardElements : MonoBehaviour
 
     private void Update()
     {
-
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -32,7 +32,7 @@ public class RewardElements : MonoBehaviour
                 if (hit.collider.gameObject == gameObject) Destroy(gameObject);
             }
         }
-
+        */
 
         /* for 3d
         //Look if the touch and the object is on the same position -> if yes detsroy element
