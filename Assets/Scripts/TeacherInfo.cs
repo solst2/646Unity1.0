@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TeacherInfo : MonoBehaviour
 {
@@ -16,4 +17,10 @@ public class TeacherInfo : MonoBehaviour
     public void SetTeacherID(string id) {
         PK_Teacher = id;
     }
+
+    public void CreatChildButton()
+    {
+        SceneManager.LoadScene("CreateChild");
+    }
+
 }

@@ -28,12 +28,15 @@ public class CreateChild : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SubmitButton.onClick.AddListener(() =>
+        /*SubmitButton.onClick.AddListener(() =>
         {
             StartCoroutine(Main.Instance.Web.RegisterChild(NameInput.text, SurnameInput.text, FK_Character, FK_Teacher));
-            //Main.Instance.TeacherProfile.SetActive(true);
-            //Main.Instance.CreateChild.gameObject.SetActive(false);
-        });
+        });*/
+    }
+
+    public void CreatChild() {
+        StartCoroutine(Main.Instance.Web.RegisterChild(NameInput.text, SurnameInput.text, FK_Character, FK_Teacher));
+        SceneManager.LoadScene("ChildScene");
     }
 
     public void Fairy() {

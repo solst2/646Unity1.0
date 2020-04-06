@@ -11,6 +11,7 @@ public class Main : MonoBehaviour
     public TeacherInfo TeacherInfo;
     public Login Login;
     public CreateChild CreateChild;
+    public ChildInfo ChildInfo;
 
     public GameObject TeacherProfile;
 
@@ -20,6 +21,7 @@ public class Main : MonoBehaviour
         Instance = this;
         Web = GetComponent<Web>();
         TeacherInfo = GetComponent<TeacherInfo>();
+        ChildInfo = GetComponent<ChildInfo>();
 
     }
 
