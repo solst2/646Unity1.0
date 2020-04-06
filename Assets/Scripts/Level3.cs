@@ -31,9 +31,11 @@ public class Level3 : MonoBehaviour
     public static Boolean arm;
     public static AudioSource sonBon1;
     public static AudioSource sonPasBon1;
+    Boolean updateDone = false;
 
     void Start()
     {
+        wrongClicks = 0;
         sonBon1 = sonBon;
         sonPasBon1 = sonPasBon;
         //number of new level
@@ -90,9 +92,10 @@ public class Level3 : MonoBehaviour
 
     void Update()
     {
-        if (eyes && arm)
+        if (eyes && arm && !updateDone)
         {
-
+            //just go ones through this
+            updateDone = true;
 
             sonBon.Play();
             smile.SetActive(false);
@@ -115,6 +118,7 @@ public class Level3 : MonoBehaviour
             //Applique un délai pour changer de scène
             StartCoroutine(GoToNextSceneN());
 
+            Debug.Log("wrongClicks" + wrongClicks);
             // Edit score
             if (wrongClicks == 0)
             {
@@ -147,6 +151,7 @@ public class Level3 : MonoBehaviour
 
     public void calculateScore()
     {
+        //PrintArray();
         int tempScore = 0;
         foreach (int i in superChef.pointsPerLevel[superChef.actualNiveau])
         {
@@ -163,6 +168,20 @@ public class Level3 : MonoBehaviour
         yield return new WaitForSeconds(4f);
 
         SceneManager.LoadScene("Reward" + superChef.level);
+    }
+
+    public void PrintArray()
+    {
+        for (int i = 1; i < 5; i++)
+        {
+            Debug.Log("niveau" + i);
+            for (int j = 0; j < 5; j++)
+            {
+
+                Debug.Log("level" + j);
+                Debug.Log(superChef.pointsPerLevel[i][j]);
+            }
+        }
     }
 
 }
