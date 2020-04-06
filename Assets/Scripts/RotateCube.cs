@@ -169,6 +169,7 @@ public class RotateCube : MonoBehaviour
 
     public void calculateScore()
     {
+        //PrintArray();
         int tempScore = 0;
         foreach (int i in superChef.pointsPerLevel[superChef.actualNiveau])
         {

@@ -27,7 +27,7 @@ public class DragObject : MonoBehaviour
     {
         float Distance = Vector3.Distance(this.transform.position, correct.transform.position);
 
-        if (Distance < 20 && (this.transform.name.Equals("1")|| this.transform.name.Equals("2")))
+        if ((Distance < 20 && (this.transform.name.Equals("1"))|| (Distance < 50 && this.transform.name.Equals("2"))))
         {
             if (this.transform.name.Equals("1"))
             {
