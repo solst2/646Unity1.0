@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -9,6 +10,7 @@ public class Web : MonoBehaviour
     void Start()
     {
         //StartCoroutine(GetUsers());
+        //StartCoroutine(GetSelectedChild("1"));
         //StartCoroutine(Login("testuser", "12345"));
         //StartCoroutine(RegisterTeacher("testuser2", "12345"));
     }
@@ -156,6 +158,64 @@ public class Web : MonoBehaviour
                 string jsonArray = www.downloadHandler.text;
 
                 callback(jsonArray);
+            }
+        }
+    }
+
+    public IEnumerator GetSelectedChild(string PK_Child)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("PK_Child", PK_Child);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/GetSelectedChild.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                //Show Results as text
+                string valuesFromDB = www.downloadHandler.text;
+           
+                string[] strlist = valuesFromDB.Split(',');
+
+                Debug.Log(www.downloadHandler.text);
+                Main.Instance.ChildInfo.SetChildInfo(strlist[0], strlist[1], strlist[2], strlist[3], strlist[4], strlist[5], strlist[6], strlist[7], strlist[8], strlist[9]);
+            }
+        }
+    }
+
+    public IEnumerator UpdateChild(string PK_Child, string Name, string Surname, string Score1, string Score2, string Score3, string Score4, string Score5, string Niveau, string Level, string FK_Character)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("PK_Child", PK_Child);
+        form.AddField("Name", Name);
+        form.AddField("Surname", Surname);
+        form.AddField("Score1", Score1);
+        form.AddField("Score2", Score2);
+        form.AddField("Score3", Score3);
+        form.AddField("Score4", Score4);
+        form.AddField("Score5", Score5);
+        form.AddField("Niveau", Niveau);
+        form.AddField("Level", Level);
+        form.AddField("FK_Character", FK_Character);
+
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/UpdateChild.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                //Show Results as text
+                Debug.Log(www.downloadHandler.text);
             }
         }
     }

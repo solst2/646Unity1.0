@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TeacherInfo : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class TeacherInfo : MonoBehaviour
     string Username;
     string Password;
     string Email;
+    public Text email;
+
+    void Start()
+    {
+        email.text = Email;
+    }
 
     public void SetCredentials(string email, string password) {
         Email = email;

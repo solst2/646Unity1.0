@@ -16,7 +16,7 @@ public class ChildInfo : MonoBehaviour
     string Niveau;
     string FK_Character;
 
-    public void SetCredentials(string name, string surname, string score1, string score2, string score3, string score4, string score5, string level, string niveau, string fK_Character)
+    public void SetChildInfo(string name, string surname, string score1, string score2, string score3, string score4, string score5, string level, string niveau, string fK_Character)
     {
         Name = name;
         Surname = surname;
