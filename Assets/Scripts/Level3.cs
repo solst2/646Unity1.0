@@ -71,10 +71,6 @@ public class Level3 : MonoBehaviour
             barEmpty.transform.GetChild(j).gameObject.SetActive(false);
         }
         barEmpty.transform.Find(color).gameObject.SetActive(true);
-        //audio
-        AudioSource[] audios = GetComponents<AudioSource>();
-        sonBon = audios[0];
-        sonPasBon = audios[1];
         //score field
         scores.text = changeLangage.names[changeLangage.setLanguage, 1] + " " + superChef.score;
         //back field
