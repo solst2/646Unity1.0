@@ -14,12 +14,14 @@ public class changeLangage : MonoBehaviour
     public word setWord;
 
     //Here is the liste of words from 0 to 4 
-    public static string[,] names = new string[4, 5] {
+    public static string[,] names = new string[6, 5] {
 
          { "Niveau","Score","répéter","retour", "suivant"}, //French  
          { "Ebene","Punktzahl","wiederholen","zurück", "weiter"}, //German
+         { "Livello", "punteggio", "ripetizione", "ritorno", "prossimo"}, //Italian
          { "Level", "Score", "repeat", "back", "next" }, //English 
-         { "Nivel","Puntuación ","repetir","volver", "continuar"} //Spanish
+         { "Nivel","Puntuación ","repetir","volver", "continuar"}, //Spanish
+         { "レベル", "スコア", "リピート", "リターン", "ネクスト"} //Japanish
 
     };
 
@@ -52,13 +54,19 @@ public class changeLangage : MonoBehaviour
                     case "de":
                         setLanguage = 1;
                         break;
-                    case "uk":
+                    case "it":
                         setLanguage = 2;
                         break;
-                    case "es":
+                    case "uk":
                         setLanguage = 3;
                         break;
-                        
+                    case "es":
+                        setLanguage = 4;
+                        break;
+                    case "jp":
+                        setLanguage = 5;
+                        break;
+
                 }
 
                 Debug.Log("Language is " + hit.transform.name); // ensure you picked right object

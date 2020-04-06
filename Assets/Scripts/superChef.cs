@@ -32,7 +32,7 @@ public class superChef : MonoBehaviour
     void Start()
     {
         //smile depends on language
-        for (int j = 0; j < 4; j++)
+        for (int j = 0; j < 6; j++)
         {
             language.transform.GetChild(j).gameObject.SetActive(false);
         }
