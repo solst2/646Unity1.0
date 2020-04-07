@@ -68,8 +68,6 @@ public class RotateCube : MonoBehaviour
         AudioSource[] audios = GetComponents<AudioSource>();
         sonBon = audios[0];
         sonPasBon = audios[1];
-        //score field
-        scores.text = changeLangage.names[changeLangage.setLanguage, 1] + " " + superChef.score;
         //back field
         back.text = changeLangage.names[changeLangage.setLanguage, 3];
         //niveau field

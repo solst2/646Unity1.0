@@ -71,8 +71,6 @@ public class Level3 : MonoBehaviour
             barEmpty.transform.GetChild(j).gameObject.SetActive(false);
         }
         barEmpty.transform.Find(color).gameObject.SetActive(true);
-        //score field
-        scores.text = changeLangage.names[changeLangage.setLanguage, 1] + " " + superChef.score;
         //back field
         back.text = changeLangage.names[changeLangage.setLanguage, 3];
         //niveau field

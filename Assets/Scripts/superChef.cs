@@ -8,7 +8,6 @@ public class superChef : MonoBehaviour
 {
     public static string character="Astronaut";
     public static int level = 0;
-    public static int score = 0;
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
     public static Dictionary<string, Color32> backgroundCamera = new Dictionary<string, Color32>();
     public static int actualNiveau = 1;
