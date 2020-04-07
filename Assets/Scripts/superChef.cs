@@ -6,11 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class superChef : MonoBehaviour
 {
-    public static string character="Astronaut";
+    //Child info
+    public static string name;
+    public static string surname;
+    public static string score1;
+    public static string score2;
+    public static string score3;
+    public static string score4;
+    public static string score5;
+    public static string levelDB;
+    public static string niveau;
+    public static string fk_Character;
+
+    //old
     public static int level = 0;
+    public static int actualNiveau = 1;
+    public static string character="Astronaut";
+
+
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
     public static Dictionary<string, Color32> backgroundCamera = new Dictionary<string, Color32>();
-    public static int actualNiveau = 1;
     public static String gender = "boy";
     public static Dictionary<int, Boolean[]> infosNiveau = new Dictionary<int, Boolean[]>();
     public static Dictionary<int, int[]> pointsPerLevel = new Dictionary<int, int[]>();
