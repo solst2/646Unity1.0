@@ -183,7 +183,18 @@ public class Web : MonoBehaviour
                 string[] strlist = valuesFromDB.Split(',');
 
                 Debug.Log(www.downloadHandler.text);
-                Main.Instance.ChildInfo.SetChildInfo(strlist[0], strlist[1], strlist[2], strlist[3], strlist[4], strlist[5], strlist[6], strlist[7], strlist[8], strlist[9]);
+                Debug.Log(strlist[9]);
+                superChef.name = strlist[0];
+                superChef.surname = strlist[1];
+                superChef.score1 = strlist[2];
+                superChef.score2 = strlist[3];
+                superChef.score3 = strlist[4];
+                superChef.score4 = strlist[5];
+                superChef.score5 = strlist[6];
+                superChef.levelDB = strlist[7];
+                superChef.niveau = strlist[8];
+                superChef.fk_Character = strlist[9];
+                //Main.Instance.ChildInfo.SetChildInfo(strlist[0], strlist[1], strlist[2], strlist[3], strlist[4], strlist[5], strlist[6], strlist[7], strlist[8], strlist[9]);
             }
         }
     }

@@ -62,6 +62,7 @@ public class Childrens : MonoBehaviour
             item.transform.Find("Surname").GetComponent<Text>().text = childInfoJson["Surname"];
             item.transform.Find("Character").GetComponent<Text>().text = childInfoJson["Niveau"];
 
+
             //continue to the next item
 
         }
