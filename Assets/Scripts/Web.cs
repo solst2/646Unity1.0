@@ -10,7 +10,6 @@ public class Web : MonoBehaviour
     void Start()
     {
         //StartCoroutine(GetUsers());
-        //StartCoroutine(GetSelectedChild("1"));
         //StartCoroutine(Login("testuser", "12345"));
         //StartCoroutine(RegisterTeacher("testuser2", "12345"));
     }
@@ -183,9 +182,8 @@ public class Web : MonoBehaviour
                 string[] strlist = valuesFromDB.Split(',');
 
                 Debug.Log(www.downloadHandler.text);
-                Debug.Log(strlist[9]);
-                superChef.name = strlist[0];
-                superChef.surname = strlist[1];
+                superChef.childname = strlist[0];
+                superChef.childsurname = strlist[1];
                 superChef.score1 = strlist[2];
                 superChef.score2 = strlist[3];
                 superChef.score3 = strlist[4];
@@ -194,7 +192,6 @@ public class Web : MonoBehaviour
                 superChef.levelDB = strlist[7];
                 superChef.niveau = strlist[8];
                 superChef.fk_Character = strlist[9];
-                //Main.Instance.ChildInfo.SetChildInfo(strlist[0], strlist[1], strlist[2], strlist[3], strlist[4], strlist[5], strlist[6], strlist[7], strlist[8], strlist[9]);
             }
         }
     }

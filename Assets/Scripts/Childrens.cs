@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using SimpleJSON;
+using UnityEngine.SceneManagement;
 
 public class Childrens : MonoBehaviour
 {
@@ -62,9 +63,21 @@ public class Childrens : MonoBehaviour
             item.transform.Find("Surname").GetComponent<Text>().text = childInfoJson["Surname"];
             item.transform.Find("Character").GetComponent<Text>().text = childInfoJson["Niveau"];
 
+            //Listener to the playButton
+            item.transform.Find("PlayButton").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                playButton(PK_Child);
+            });
 
             //continue to the next item
 
         }
     }
+
+    public void playButton(string PK_Child) {
+
+        SceneManager.LoadScene("Character");
+        superChef.PK_Child = PK_Child;
+    }
+
 }

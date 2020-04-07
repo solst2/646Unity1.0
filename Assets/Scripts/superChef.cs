@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class superChef : MonoBehaviour
 {
     //Child info
-    public static string name;
-    public static string surname;
+    public static string PK_Child;
+    public static string childname;
+    public static string childsurname;
     public static string score1;
     public static string score2;
     public static string score3;
@@ -45,6 +46,9 @@ public class superChef : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        StartCoroutine(Main.Instance.Web.GetSelectedChild(PK_Child));
+
         //smile depends on language
         for (int j = 0; j < 6; j++)
         {
