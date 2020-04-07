@@ -13,7 +13,7 @@ public class TeacherInfo : MonoBehaviour
 
     void Start()
     {
-        email.text = Email;
+        //email.text = Email;
     }
 
     public void SetCredentials(string email, string password) {
