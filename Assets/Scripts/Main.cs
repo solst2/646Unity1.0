@@ -10,6 +10,7 @@ public class Main : MonoBehaviour
     public Web Web;
     public TeacherInfo TeacherInfo;
     public Login Login;
+    public CreateTeacher CreateTeacher;
     public CreateChild CreateChild;
     public ChildInfo ChildInfo;
 

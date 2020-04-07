@@ -22,8 +22,5 @@ public class CreateTeacher : MonoBehaviour
     public void call()
     {
         StartCoroutine(Main.Instance.Web.RegisterTeacher(NameInput.text, SurnameInput.text, EmailInput.text, PasswordInput.text));
-        Login.SetActive(true);
-        Register.SetActive(false);
-
     }
 }

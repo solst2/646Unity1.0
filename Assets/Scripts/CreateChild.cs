@@ -36,7 +36,6 @@ public class CreateChild : MonoBehaviour
 
     public void CreatChild() {
         StartCoroutine(Main.Instance.Web.RegisterChild(NameInput.text, SurnameInput.text, FK_Character, FK_Teacher));
-        SceneManager.LoadScene("ChildScene");
     }
 
     public void Fairy() {

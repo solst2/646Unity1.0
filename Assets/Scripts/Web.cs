@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Web : MonoBehaviour
 {
+    //Errormessage
+    public Text ErrorMessage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,9 +59,13 @@ public class Web : MonoBehaviour
                 Main.Instance.TeacherInfo.SetCredentials(email, password);
                 Main.Instance.TeacherInfo.SetTeacherID(www.downloadHandler.text);
 
-                if (www.downloadHandler.text.Contains("Wrong Credentials") || www.downloadHandler.text.Contains("Username does not exist"))
+                if (www.downloadHandler.text.Contains("Wrong Credentials"))
                 {
-                    Debug.Log("TryAgain");
+                    ErrorMessage.text = "Wrong Credentials";
+                }
+                else if (www.downloadHandler.text.Contains("Email does not exist"))
+                {
+                    ErrorMessage.text = "Email does not exist";
                 }
                 else {
                     //If we logged in correctly
@@ -85,7 +94,16 @@ public class Web : MonoBehaviour
             }
             else
             {
-                Debug.Log(www.downloadHandler.text);
+                if (!www.downloadHandler.text.Contains("New record created successfully"))
+                {
+                    ErrorMessage.text = "Teacher could not be created";
+                }
+                else
+                {
+                    //If we created the teacher correctly
+                    Main.Instance.CreateTeacher.gameObject.SetActive(false);
+                    Main.Instance.Login.gameObject.SetActive(true);
+                }
             }
         }
     }
@@ -108,7 +126,17 @@ public class Web : MonoBehaviour
             }
             else
             {
-                Debug.Log(www.downloadHandler.text);
+                if (!www.downloadHandler.text.Contains("New record created successfully"))
+                {
+                    ErrorMessage.text = "Child could not be created";
+                }
+                else
+                {
+                    //If we created the child correctly
+                    SceneManager.LoadScene("ChildScene");
+                    Main.Instance.TeacherProfile.SetActive(true);
+                    Main.Instance.Login.gameObject.SetActive(false);
+                }
             }
         }
     }

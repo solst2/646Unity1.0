@@ -98,4 +98,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial3.unity
     guid: e8ae1203e9ad0cf4a85f11b22ff05ae4
+  - enabled: 1
+    path: Assets/Scenes/CreateChild.unity
+    guid: 41ab2c21082eece47bd5dee595111eb4
   m_configObjects: {}
