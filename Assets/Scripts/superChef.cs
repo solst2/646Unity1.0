@@ -128,18 +128,19 @@ public class superChef : MonoBehaviour
         SceneManager.LoadScene("Level2_1");
         */
         if (hit.transform.name.Trim().Equals("0") || hit.transform.name.Trim().Equals("1") ||
-            hit.transform.name.Trim().Equals("2") || hit.transform.name.Trim().Equals("3"))
+            hit.transform.name.Trim().Equals("2") || hit.transform.name.Trim().Equals("3") ||
+            hit.transform.name.Trim().Equals("4") || hit.transform.name.Trim().Equals("5"))
         {
             SceneManager.LoadScene("Language");
         }
         else if (nextLevel.Equals("3"))
         {
             actualNiveau = 3;
-            /*if (Tuto3.tutoplayed == 0)
+            if (tuto3.tutoplayed == 0)
             {
                 SceneManager.LoadScene("Tutorial3");
                 return;
-            }*/
+            }
             SceneManager.LoadScene("Level3_1");
         }
         else if (nextLevel.Equals("2"))
