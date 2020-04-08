@@ -231,16 +231,16 @@ public class Web : MonoBehaviour
                         superChef.pointsPerLevel.Add(i, new int[] { Int32.Parse(scoreAlone[0]), Int32.Parse(scoreAlone[1]),
                             Int32.Parse(scoreAlone[2]), Int32.Parse(scoreAlone[3]), Int32.Parse(scoreAlone[4])});
 
-                        superChef.infosNiveau.Add(i, new Boolean[] { !scoreAlone[0].Equals("0"), !scoreAlone[1].Equals("0"),
-                            !scoreAlone[2].Equals("0"), !scoreAlone[3].Equals("0"), !scoreAlone[4].Equals("0") });
+                        superChef.infosNiveau.Add(i, new Boolean[] { scoreAlone[0].Equals("0"), scoreAlone[1].Equals("0"),
+                            scoreAlone[2].Equals("0"), scoreAlone[3].Equals("0"), scoreAlone[4].Equals("0") });
                     }
                     catch (Exception e)
                     {
                         superChef.pointsPerLevel[i] = new int[] { Int32.Parse(scoreAlone[0]), Int32.Parse(scoreAlone[1]),
                             Int32.Parse(scoreAlone[2]), Int32.Parse(scoreAlone[3]), Int32.Parse(scoreAlone[4])};
 
-                        superChef.infosNiveau[i] = new Boolean[] { !scoreAlone[0].Equals("0"), !scoreAlone[1].Equals("0"),
-                            !scoreAlone[2].Equals("0"), !scoreAlone[3].Equals("0"), !scoreAlone[4].Equals("0") };
+                        superChef.infosNiveau[i] = new Boolean[] { scoreAlone[0].Equals("0"), scoreAlone[1].Equals("0"),
+                            scoreAlone[2].Equals("0"), scoreAlone[3].Equals("0"), scoreAlone[4].Equals("0") };
                     }
                 }
                 superChef.level = Int32.Parse(strlist[7]);

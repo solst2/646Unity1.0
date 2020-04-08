@@ -93,6 +93,8 @@ public class RotateCube : MonoBehaviour
             smileWrong.transform.GetChild(1).gameObject.SetActive(false);
             smileWrong.transform.Find(superChef.gender).gameObject.SetActive(true);
         }
+
+        PrintArray();
     }
 
     void Update()
@@ -209,6 +211,7 @@ public class RotateCube : MonoBehaviour
         yield return new WaitForSeconds(4f);
 
         SceneManager.LoadScene("Reward" + superChef.level);
+        superChef.dataloaded = true;
     }
 
     void OnMouseOver()
