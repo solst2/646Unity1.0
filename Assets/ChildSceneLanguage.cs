@@ -21,30 +21,36 @@ public class ChildSceneLanguage : MonoBehaviour
     public Text createGallery;
     public Text createCreate;
 
-    public string[,] loginNames = new string[4, 4] {
+    public string[,] loginNames = new string[6, 4] {
 
          { "Connexion","Entrez votre nom d'utilisateur","Entrez le mot de passe","Connexion"}, //French  
          { "Anmeldung","Benutzername eingeben","Passwort eingeben","Anmeldung"}, //German
+         { "Login", "Inserisci nome utente", "Inserisci password", "Login"}, //Italian
          { "Login","Enter username","Enter password","Login"}, //English 
-         { "Ingresa en","Introduzca el nombre de usuario","Introduzca la contraseña","Ingresa en"} //Spanish
+         { "Ingresa en","Introduzca el nombre de usuario","Introduzca la contraseña","Ingresa en"}, //Spanish
+         { "ログイン", "ユーザー名を入力", "パスワードを入力", "ログイン"}, //Japanish
 
     };
 
-    public string[,] teacherProfilNames = new string[4, 1] {
+    public string[,] teacherProfilNames = new string[6, 1] {
 
          { "Ajouter un enfant"}, //French  
          { "Neues Kind anlegen"}, //German
+         { "Aggiungi un bambino"}, //Italian
          { "Create new Child"}, //English 
-         { "Crear un niño"} //Spanish
+         { "Crear un niño"}, //Spanish
+         { "子を加える"} //Japanish
 
     };
 
-    public string[,] createNames = new string[4, 6] {
+    public string[,] createNames = new string[6, 6] {
 
          { "Inscrire un nouvel enfant", "Entrer le nom", "Entrer le nom de famille", "Appareil photo", "Galerie", "Ajouter un enfant"}, //French  
          { "Neues Kind registrieren", "Name eingeben", "Nachname eingeben", "Kamera", "Galerie", "Neues Kind erstellen"}, //German
+         { "Registra nuovo bambino", "Inserisci nome", "Inserisci cognome", "Macchina fotografica", "Galleria", "Crea nuovo bambino"}, //Italian 
          { "Register new Child","Enter name","Enter surname","Camera","Gallery","Create new Child"}, //English 
-         { "Registrar nuevo niño", "Introducir nombre", "Introducir apellido", "Cámara", "Galería", "Crear nuevo niño"} //Spanish
+         { "Registrar nuevo niño", "Introducir nombre", "Introducir apellido", "Cámara", "Galería", "Crear nuevo niño"}, //Spanish
+         { "新しい子の登録", "名前を入力", "苗字を入力", "カメラ", "ギャラリー", "新しい子の作成"} //Japanish 
 
     };
 
