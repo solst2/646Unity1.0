@@ -18,6 +18,7 @@ public class superChef : MonoBehaviour
     public static string levelDB;
     public static string niveau;
     public static string fk_Character;
+    public static Boolean dataloaded = false;
 
     //old
     public static int level = 0;

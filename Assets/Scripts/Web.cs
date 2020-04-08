@@ -265,6 +265,7 @@ public class Web : MonoBehaviour
                         break;
                 }
             }
+            superChef.dataloaded = true;
         }
     }
 

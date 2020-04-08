@@ -19,87 +19,91 @@ public class ScorePage : MonoBehaviour
     float maxScore = 50;
     Dictionary<string, Color32> colors = new Dictionary<string, Color32>();
 
-    void Start()
+    void Update()
     {
-        //depents on language, change repeat value
-        for(int i = 0;i< 4; i++)
+        if (superChef.dataloaded == true)
         {
-            repeat[i].text = changeLangage.names[changeLangage.setLanguage, 2];
-            level[i].text = changeLangage.names[changeLangage.setLanguage, 0] + " "+(i+1);
-        }
-        back.text= changeLangage.names[changeLangage.setLanguage, 3];
-        next.text = changeLangage.names[changeLangage.setLanguage, 4];
-        //add colors
-        colors.Add("blue", new Color32(68, 114, 196, 255));
-        colors.Add("yellow", new Color32(232,218,0, 255));
-        colors.Add("red", new Color32(228,27,43, 255));
-        colors.Add("pink", new Color32(196, 81, 201, 255));
-        //default settings
-        foreach (Slider s in scores)
-        {
-            s.enabled = false;
-            s.value = 0;
-        }
-        //deactivate temporarely the done level points
-        foreach (GameObject g in levels)
-        {
-            g.transform.GetChild(1).gameObject.SetActive(false);
-        }
-        //for levels
-        for (int niv0 = 0;niv0 < scores.Length; niv0++)
-        {
-            //change the niveau for the calculations
-            //superChef.actualNiveau = niv0+1;
-            scores[niv0].value = CalculateScore(niv0 + 1);
-
-            //disable all
-            for (int j = 0; j < 6; j++)
+            //depents on language, change repeat value
+            for (int i = 0; i < 4; i++)
             {
-                levels[niv0].transform.GetChild(j).gameObject.SetActive(false);
+                repeat[i].text = changeLangage.names[changeLangage.setLanguage, 2];
+                level[i].text = changeLangage.names[changeLangage.setLanguage, 0] + " " + (i + 1);
             }
-
-            //if the level is done
-            if (scores[niv0].value != 0)
+            back.text = changeLangage.names[changeLangage.setLanguage, 3];
+            next.text = changeLangage.names[changeLangage.setLanguage, 4];
+            //add colors
+            colors.Add("blue", new Color32(68, 114, 196, 255));
+            colors.Add("yellow", new Color32(232, 218, 0, 255));
+            colors.Add("red", new Color32(228, 27, 43, 255));
+            colors.Add("pink", new Color32(196, 81, 201, 255));
+            //default settings
+            foreach (Slider s in scores)
             {
-
-                levels[niv0].transform.Find(RotateCube.color).gameObject.SetActive(true);
-                percent[niv0].text = (CalculateScore(niv0 + 1) * 100) + "%";
-
-                //scorebar right color
-                scores[niv0].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color =
-                    colors[RotateCube.color];
+                s.enabled = false;
+                s.value = 0;
             }
-            else  //when the level is not done, just activate grey rondel
+            //deactivate temporarely the done level points
+            foreach (GameObject g in levels)
             {
-                levels[niv0].transform.GetChild(0).gameObject.SetActive(true);
+                g.transform.GetChild(1).gameObject.SetActive(false);
             }
+            //for levels
+            for (int niv0 = 0; niv0 < scores.Length; niv0++)
+            {
+                //change the niveau for the calculations
+                //superChef.actualNiveau = niv0+1;
+                scores[niv0].value = CalculateScore(niv0 + 1);
 
+                //disable all
+                for (int j = 0; j < 6; j++)
+                {
+                    levels[niv0].transform.GetChild(j).gameObject.SetActive(false);
+                }
+
+                //if the level is done
+                if (scores[niv0].value != 0)
+                {
+
+                    levels[niv0].transform.Find(RotateCube.color).gameObject.SetActive(true);
+                    percent[niv0].text = (CalculateScore(niv0 + 1) * 100) + "%";
+
+                    //scorebar right color
+                    scores[niv0].transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color =
+                        colors[RotateCube.color];
+                }
+                else  //when the level is not done, just activate grey rondel
+                {
+                    levels[niv0].transform.GetChild(0).gameObject.SetActive(true);
+                }
+
+            }
+            //characters
+            foreach (GameObject g in characters)
+            {
+                g.SetActive(false);
+            }
+            switch (superChef.character)
+            {
+                case "Astronaut":
+                    characters[0].SetActive(true);
+                    break;
+                case "explorateur":
+                    characters[1].SetActive(true);
+                    break;
+                case "HuaYao_01":
+                    characters[2].SetActive(true);
+                    break;
+                case "trainChief":
+                    characters[3].SetActive(true);
+                    break;
+                default:
+                    characters[0].SetActive(true);
+                    break;
+            }
+            //background
+            background.GetComponent<Image>().color = superChef.background[RotateCube.color];
         }
-        //characters
-        foreach (GameObject g in characters)
-        {
-            g.SetActive(false);
-        }
-        switch (superChef.character)
-        {
-            case "Astronaut":
-                characters[0].SetActive(true);
-                break;
-            case "explorateur":
-                characters[1].SetActive(true);
-                break;
-            case "HuaYao_01":
-                characters[2].SetActive(true);
-                break;
-            case "trainChief":
-                characters[3].SetActive(true);
-                break;
-            default:
-                characters[0].SetActive(true);
-                break;
-        }
-        //background
-        background.GetComponent<Image>().color = superChef.background[RotateCube.color];
+        superChef.dataloaded = false;
     }
 
     public void PrintArray()
