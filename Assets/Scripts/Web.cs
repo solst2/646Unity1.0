@@ -220,6 +220,50 @@ public class Web : MonoBehaviour
                 superChef.levelDB = strlist[7];
                 superChef.niveau = strlist[8];
                 superChef.fk_Character = strlist[9];
+
+                //new infos
+                for (int i = 1; i < 5; i++)
+                {
+                    string[] scoreAlone = strlist[i+1].Split('-');
+
+                    try
+                    {
+                        superChef.pointsPerLevel.Add(i, new int[] { Int32.Parse(scoreAlone[0]), Int32.Parse(scoreAlone[1]),
+                            Int32.Parse(scoreAlone[2]), Int32.Parse(scoreAlone[3]), Int32.Parse(scoreAlone[4])});
+
+                        superChef.infosNiveau.Add(i, new Boolean[] { !scoreAlone[0].Equals("0"), !scoreAlone[1].Equals("0"),
+                            !scoreAlone[2].Equals("0"), !scoreAlone[3].Equals("0"), !scoreAlone[4].Equals("0") });
+                    }
+                    catch (Exception e)
+                    {
+                        superChef.pointsPerLevel[i] = new int[] { Int32.Parse(scoreAlone[0]), Int32.Parse(scoreAlone[1]),
+                            Int32.Parse(scoreAlone[2]), Int32.Parse(scoreAlone[3]), Int32.Parse(scoreAlone[4])};
+
+                        superChef.infosNiveau[i] = new Boolean[] { !scoreAlone[0].Equals("0"), !scoreAlone[1].Equals("0"),
+                            !scoreAlone[2].Equals("0"), !scoreAlone[3].Equals("0"), !scoreAlone[4].Equals("0") };
+                    }
+                }
+                superChef.level = Int32.Parse(strlist[7]);
+                superChef.actualNiveau = Int32.Parse(strlist[8]);
+                //change to real version, this switch case is just to try
+                switch (strlist[9])
+                {
+                    case "0":
+                        superChef.character = "Astronaut";
+                        break;
+                    case "1":
+                        superChef.character = "explorateur";
+                        break;
+                    case "2":
+                        superChef.character = "HuaYao_01";
+                        break;
+                    case "3":
+                        superChef.character = "trainChief";
+                        break;
+                    default:
+                        superChef.character = "Astronaut";
+                        break;
+                }
             }
         }
     }

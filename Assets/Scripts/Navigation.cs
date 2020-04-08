@@ -10,7 +10,7 @@ public class Navigation : MonoBehaviour
     //Back to the Character Scene
     public void BackButton()
     {
-        superChef.level = 0;
+        /*superChef.level = 0;
         superChef.actualNiveau = 1;
         //make default
         //default values to the infosNiveau
@@ -22,17 +22,32 @@ public class Navigation : MonoBehaviour
         for (int i = 1; i < 5; i++)
         {
             superChef.pointsPerLevel[i] = new int[] { 0, 0, 0, 0, 0 };
-        }
-        //Niveau 2 Gender -> default girl
-        superChef.gender = "girl";
+        }*/
+        //Niveau 2 Gender
         System.Random r = new System.Random();
-        int random = r.Next(0, 1);
+        int random = r.Next(0, 2);
         Debug.Log("random: " + random);
         if (random == 1)
         {
             superChef.gender = "boy";
         }
-        SceneManager.LoadScene("Character");
+        SceneManager.LoadScene("ScorePage1");
+    }
+
+    public void BackButtonScorePage()
+    {
+        SceneManager.LoadScene("ChildScene");
+        // teacherProfil aktiviäru
+        Main.Instance.TeacherProfile.SetActive(true);
+        Main.Instance.Login.gameObject.SetActive(false);
+    }
+
+    public void BackButtonLogoutTeacher()
+    {
+        SceneManager.LoadScene("ChildScene");
+        // teacherProfil aktiviäru
+        Main.Instance.TeacherProfile.SetActive(false);
+        Main.Instance.Login.gameObject.SetActive(true);
     }
 
     public void nextToScore()
@@ -43,9 +58,41 @@ public class Navigation : MonoBehaviour
 
     public void nextNiveau()
     {   
-        // at the moment just 2 niveaus are done -> change it to add the next niveau
+        // at the moment just 3 niveaus are done -> change it to add the next niveau
         for (int i=1;i<3;i++)
         {
+            Debug.Log("niveau" + i);
+            int levelNotDone = 0;
+            foreach (int j in superChef.pointsPerLevel[i])
+            {
+                //level in the niveau is not done 
+                if (j==0)
+                {
+                    superChef.actualNiveau = i;
+                    superChef.level = levelNotDone;
+
+                    if (i == 1 && ScriptTuto1.tutoplayed == 0)
+                    {
+                        SceneManager.LoadScene("Tutorial1");
+                        return;
+                    }
+                    if (i == 2 && Tuto2.tutoplayed == 0)
+                    {
+                        SceneManager.LoadScene("Tutorial2");
+                        return;
+                    }
+                    if (i == 3 && tuto3.tutoplayed == 0)
+                    {
+                        SceneManager.LoadScene("Tutorial2");
+                        return;
+                    }
+
+                    SceneManager.LoadScene("Level" + i + "_1");
+                    return;
+                }
+                levelNotDone++;
+            }
+            /*
             Debug.Log("niveau" + i);
             int tempScore = 0;
             foreach (int j in superChef.pointsPerLevel[i])
@@ -77,11 +124,8 @@ public class Navigation : MonoBehaviour
 
                 SceneManager.LoadScene("Level" + i + "_1");
                 return;
-            }
-        }/*
-        superChef.actualNiveau = 2;
-        superChef.level = 0;
-        SceneManager.LoadScene("Level2_1");*/
+            }*/
+        }
 
     }
 

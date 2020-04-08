@@ -125,6 +125,7 @@ public class ScorePage : MonoBehaviour
         }
         return tempScore / maxScore;
     }
+
     public float CalculateScore(int niv)
     {
         int tempScore = 0;
