@@ -212,11 +212,11 @@ public class Web : MonoBehaviour
                 Debug.Log(www.downloadHandler.text);
                 superChef.childname = strlist[0];
                 superChef.childsurname = strlist[1];
-                superChef.score1 = strlist[2];
-                superChef.score2 = strlist[3];
-                superChef.score3 = strlist[4];
-                superChef.score4 = strlist[5];
-                superChef.score5 = strlist[6];
+                superChef.score[0] = strlist[2];
+                superChef.score[1] = strlist[3];
+                superChef.score[2] = strlist[4];
+                superChef.score[3] = strlist[5];
+                superChef.score[4] = strlist[6];
                 superChef.levelDB = strlist[7];
                 superChef.niveau = strlist[8];
                 superChef.fk_Character = strlist[9];

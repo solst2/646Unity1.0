@@ -32,10 +32,17 @@ public class ScorePage : MonoBehaviour
             back.text = changeLangage.names[changeLangage.setLanguage, 3];
             next.text = changeLangage.names[changeLangage.setLanguage, 4];
             //add colors
-            colors.Add("blue", new Color32(68, 114, 196, 255));
-            colors.Add("yellow", new Color32(232, 218, 0, 255));
-            colors.Add("red", new Color32(228, 27, 43, 255));
-            colors.Add("pink", new Color32(196, 81, 201, 255));
+            try
+            {
+                colors.Add("blue", new Color32(68, 114, 196, 255));
+                colors.Add("yellow", new Color32(232, 218, 0, 255));
+                colors.Add("red", new Color32(228, 27, 43, 255));
+                colors.Add("pink", new Color32(196, 81, 201, 255));
+            }
+            catch (Exception e)
+            {
+                //colors allready added
+            }
             //default settings
             foreach (Slider s in scores)
             {

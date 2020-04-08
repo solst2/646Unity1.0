@@ -10,11 +10,7 @@ public class superChef : MonoBehaviour
     public static string PK_Child;
     public static string childname;
     public static string childsurname;
-    public static string score1;
-    public static string score2;
-    public static string score3;
-    public static string score4;
-    public static string score5;
+    public static string[] score = new string[5];
     public static string levelDB;
     public static string niveau;
     public static string fk_Character;
@@ -144,15 +140,24 @@ public class superChef : MonoBehaviour
  
     }
 
-    void writeInfosIntoString()
+    public static void writeInfosIntoString()
     {
         for (int i = 1; i < 5; i++)
         {
+            String temp = "";
+            int tempNumber = 0;
             foreach (int j in superChef.pointsPerLevel[i])
             {
-
+                if (tempNumber == 0)
+                {
+                    tempNumber = 1;
+                    temp = temp + j;
+                }
+                temp= temp+"-"+j;
             }
+            score[i - 1]=temp;
         }
+        Main.Instance.Web.UpdateChild(PK_Child, childname, childsurname, score[0], score[1], score[2], score[3], score[4], niveau, levelDB, fk_Character);
     }
 
     void GoToNextScene()

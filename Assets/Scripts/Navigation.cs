@@ -59,7 +59,7 @@ public class Navigation : MonoBehaviour
     public void nextNiveau()
     {   
         // at the moment just 3 niveaus are done -> change it to add the next niveau
-        for (int i=1;i<3;i++)
+        for (int i=1;i<4;i++)
         {
             Debug.Log("niveau" + i);
             int levelNotDone = 0;
@@ -133,6 +133,21 @@ public class Navigation : MonoBehaviour
     {
         superChef.actualNiveau = i;
         superChef.level = 0;
+        if (i == 1 && ScriptTuto1.tutoplayed == 0)
+        {
+            SceneManager.LoadScene("Tutorial1");
+            return;
+        }
+        if (i == 2 && Tuto2.tutoplayed == 0)
+        {
+            SceneManager.LoadScene("Tutorial2");
+            return;
+        }
+        if (i == 3 && tuto3.tutoplayed == 0)
+        {
+            SceneManager.LoadScene("Tutorial2");
+            return;
+        }
         SceneManager.LoadScene("Level"+i+"_1");
     }
 

@@ -209,6 +209,7 @@ public class RotateCube : MonoBehaviour
     {
         //Wait for seconds
         yield return new WaitForSeconds(4f);
+        superChef.writeInfosIntoString();
 
         SceneManager.LoadScene("Reward" + superChef.level);
         superChef.dataloaded = true;

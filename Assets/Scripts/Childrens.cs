@@ -75,7 +75,6 @@ public class Childrens : MonoBehaviour
     }
 
     public void playButton(string PK_Child) {
-
         SceneManager.LoadScene("ScorePage1");
         superChef.PK_Child = PK_Child;
     }

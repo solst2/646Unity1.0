@@ -23,7 +23,6 @@ public class Main : MonoBehaviour
         Web = GetComponent<Web>();
         TeacherInfo = GetComponent<TeacherInfo>();
         ChildInfo = GetComponent<ChildInfo>();
-
     }
 
 }
