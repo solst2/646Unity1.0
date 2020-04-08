@@ -271,6 +271,9 @@ public class Web : MonoBehaviour
 
     public IEnumerator UpdateChild(string PK_Child, string Name, string Surname, string Score1, string Score2, string Score3, string Score4, string Score5, string Niveau, string Level, string FK_Character)
     {
+
+        Debug.Log("UpdateChild");
+
         WWWForm form = new WWWForm();
         form.AddField("PK_Child", PK_Child);
         form.AddField("Name", Name);
@@ -287,8 +290,9 @@ public class Web : MonoBehaviour
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/UpdateChild.php", form))
         {
+         
             yield return www.SendWebRequest();
-
+            Debug.Log("DB2");
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);

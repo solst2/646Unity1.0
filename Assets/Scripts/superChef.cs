@@ -19,7 +19,7 @@ public class superChef : MonoBehaviour
     //old
     public static int level = 0;
     public static int actualNiveau = 1;
-    public static string character="Astronaut";
+    public static string character = "Astronaut";
 
 
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
@@ -83,7 +83,7 @@ public class superChef : MonoBehaviour
         System.Random r = new System.Random();
         int random = r.Next(0, 2);
         Debug.Log("random: " + random);
-        if(random == 1)
+        if (random == 1)
         {
             gender = "boy";
         }
@@ -137,27 +137,7 @@ public class superChef : MonoBehaviour
             }
         }
         */
- 
-    }
 
-    public static void writeInfosIntoString()
-    {
-        for (int i = 1; i < 5; i++)
-        {
-            String temp = "";
-            int tempNumber = 0;
-            foreach (int j in superChef.pointsPerLevel[i])
-            {
-                if (tempNumber == 0)
-                {
-                    tempNumber = 1;
-                    temp = temp + j;
-                }
-                temp= temp+"-"+j;
-            }
-            score[i - 1]=temp;
-        }
-        Main.Instance.Web.UpdateChild(PK_Child, childname, childsurname, score[0], score[1], score[2], score[3], score[4], niveau, levelDB, fk_Character);
     }
 
     void GoToNextScene()
