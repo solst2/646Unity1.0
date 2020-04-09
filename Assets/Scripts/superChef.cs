@@ -10,19 +10,16 @@ public class superChef : MonoBehaviour
     public static string PK_Child;
     public static string childname;
     public static string childsurname;
-    public static string score1;
-    public static string score2;
-    public static string score3;
-    public static string score4;
-    public static string score5;
+    public static string[] score = new string[5];
     public static string levelDB;
     public static string niveau;
     public static string fk_Character;
+    public static Boolean dataloaded = false;
 
     //old
     public static int level = 0;
     public static int actualNiveau = 1;
-    public static string character="Astronaut";
+    public static string character = "Astronaut";
 
 
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
@@ -31,11 +28,12 @@ public class superChef : MonoBehaviour
     public static Dictionary<int, Boolean[]> infosNiveau = new Dictionary<int, Boolean[]>();
     public static Dictionary<int, int[]> pointsPerLevel = new Dictionary<int, int[]>();
 
-    public GameObject astronaut;
+    /*public GameObject astronaut;
     public GameObject explorer;
     public GameObject fairy;
     public GameObject train;
     public GameObject language;
+    public GameObject levels;*/
 
     public String nextLevel = "1";
     public GameObject levels;
@@ -48,7 +46,7 @@ public class superChef : MonoBehaviour
     {
 
         StartCoroutine(Main.Instance.Web.GetSelectedChild(PK_Child));
-
+        /*
         //smile depends on language
         for (int j = 0; j < 6; j++)
         {
@@ -60,7 +58,7 @@ public class superChef : MonoBehaviour
         levels.transform.Find("level2g").gameObject.SetActive(false);
         levels.transform.Find("level3").gameObject.SetActive(true);
         levels.transform.Find("level3g").gameObject.SetActive(false);
-
+        */
         //add backgroundcolors
         background.Add("blue", new Color32(190, 234, 250, 255));
         background.Add("pink", new Color32(190, 234, 250, 255));
@@ -71,7 +69,7 @@ public class superChef : MonoBehaviour
         backgroundCamera.Add("pink", new Color32(159, 196, 210, 255));
         backgroundCamera.Add("yellow", new Color32(204, 199, 133, 255));
         backgroundCamera.Add("red", new Color32(211, 176, 169, 255));
-        //default values to the infosNiveau
+        /*//default values to the infosNiveau
         for(int i = 1; i < 5; i++)
         {
             infosNiveau.Add(i, new Boolean[] { true, true, true, true, true });
@@ -80,12 +78,12 @@ public class superChef : MonoBehaviour
         for (int i = 1; i < 5; i++)
         {
             pointsPerLevel.Add(i, new int[] { 0, 0, 0, 0, 0 });
-        }
+        }*/
         //Niveau 2 Gender -> default girl
         System.Random r = new System.Random();
         int random = r.Next(0, 2);
         Debug.Log("random: " + random);
-        if(random == 1)
+        if (random == 1)
         {
             gender = "boy";
         }
@@ -94,6 +92,7 @@ public class superChef : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             //Debug.Log("click");
@@ -137,8 +136,8 @@ public class superChef : MonoBehaviour
                 GoToNextScene();
             }
         }
+        */
 
- 
     }
 
     void GoToNextScene()
@@ -146,6 +145,7 @@ public class superChef : MonoBehaviour
         actualNiveau = 2;
         SceneManager.LoadScene("Level2_1");
         */
+        /*
         if (hit.transform.name.Trim().Equals("0") || hit.transform.name.Trim().Equals("1") ||
             hit.transform.name.Trim().Equals("2") || hit.transform.name.Trim().Equals("3") ||
             hit.transform.name.Trim().Equals("4") || hit.transform.name.Trim().Equals("5"))
@@ -179,6 +179,6 @@ public class superChef : MonoBehaviour
         else
         {
             SceneManager.LoadScene("Level1_1");
-        }
+        }*/
     }
 }

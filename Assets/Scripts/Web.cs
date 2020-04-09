@@ -212,20 +212,68 @@ public class Web : MonoBehaviour
                 Debug.Log(www.downloadHandler.text);
                 superChef.childname = strlist[0];
                 superChef.childsurname = strlist[1];
-                superChef.score1 = strlist[2];
-                superChef.score2 = strlist[3];
-                superChef.score3 = strlist[4];
-                superChef.score4 = strlist[5];
-                superChef.score5 = strlist[6];
+                superChef.score[0] = strlist[2];
+                superChef.score[1] = strlist[3];
+                superChef.score[2] = strlist[4];
+                superChef.score[3] = strlist[5];
+                superChef.score[4] = strlist[6];
                 superChef.levelDB = strlist[7];
                 superChef.niveau = strlist[8];
                 superChef.fk_Character = strlist[9];
+
+                //new infos
+                for (int i = 1; i < 5; i++)
+                {
+                    string[] scoreAlone = strlist[i+1].Split('-');
+
+                    try
+                    {
+                        superChef.pointsPerLevel.Add(i, new int[] { Int32.Parse(scoreAlone[0]), Int32.Parse(scoreAlone[1]),
+                            Int32.Parse(scoreAlone[2]), Int32.Parse(scoreAlone[3]), Int32.Parse(scoreAlone[4])});
+
+                        superChef.infosNiveau.Add(i, new Boolean[] { scoreAlone[0].Equals("0"), scoreAlone[1].Equals("0"),
+                            scoreAlone[2].Equals("0"), scoreAlone[3].Equals("0"), scoreAlone[4].Equals("0") });
+                    }
+                    catch (Exception e)
+                    {
+                        superChef.pointsPerLevel[i] = new int[] { Int32.Parse(scoreAlone[0]), Int32.Parse(scoreAlone[1]),
+                            Int32.Parse(scoreAlone[2]), Int32.Parse(scoreAlone[3]), Int32.Parse(scoreAlone[4])};
+
+                        superChef.infosNiveau[i] = new Boolean[] { scoreAlone[0].Equals("0"), scoreAlone[1].Equals("0"),
+                            scoreAlone[2].Equals("0"), scoreAlone[3].Equals("0"), scoreAlone[4].Equals("0") };
+                    }
+                }
+                superChef.level = Int32.Parse(strlist[7]);
+                superChef.actualNiveau = Int32.Parse(strlist[8]);
+                //change to real version, this switch case is just to try
+                switch (strlist[9])
+                {
+                    case "0":
+                        superChef.character = "Astronaut";
+                        break;
+                    case "1":
+                        superChef.character = "explorateur";
+                        break;
+                    case "2":
+                        superChef.character = "HuaYao_01";
+                        break;
+                    case "3":
+                        superChef.character = "trainChief";
+                        break;
+                    default:
+                        superChef.character = "Astronaut";
+                        break;
+                }
             }
+            superChef.dataloaded = true;
         }
     }
 
     public IEnumerator UpdateChild(string PK_Child, string Name, string Surname, string Score1, string Score2, string Score3, string Score4, string Score5, string Niveau, string Level, string FK_Character)
     {
+
+        Debug.Log("UpdateChild");
+
         WWWForm form = new WWWForm();
         form.AddField("PK_Child", PK_Child);
         form.AddField("Name", Name);
@@ -242,8 +290,9 @@ public class Web : MonoBehaviour
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/UpdateChild.php", form))
         {
+         
             yield return www.SendWebRequest();
-
+            Debug.Log("DB2");
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);

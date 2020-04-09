@@ -13,12 +13,12 @@ public class TeacherInfo : MonoBehaviour
 
     void Start()
     {
-        email.text = Email;
     }
 
-    public void SetCredentials(string email, string password) {
-        Email = email;
+    public void SetCredentials(string emailDB, string password) {
+        Email = emailDB;
         Password = password;
+        //email.text = emailDB;
     }
 
     public void SetTeacherID(string id) {
