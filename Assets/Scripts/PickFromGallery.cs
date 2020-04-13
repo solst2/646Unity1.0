@@ -22,9 +22,9 @@ public class PickFromGallery : MonoBehaviour
 
         NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
         {
-            Debug.Log("Permission");
             if (path != null)
             {
+                
                 Texture2D texture = NativeGallery.LoadImageAtPath(path, maxSize);
                 if (texture == null)
                 {
