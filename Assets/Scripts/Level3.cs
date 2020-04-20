@@ -161,7 +161,32 @@ public class Level3 : MonoBehaviour
         //Wait for seconds
         yield return new WaitForSeconds(4f);
 
+        for (int i = 1; i < 5; i++)
+        {
+            String temp = "";
+            int tempNumber = 0;
+            foreach (int j in superChef.pointsPerLevel[i])
+            {
+                if (tempNumber == 0)
+                {
+                    tempNumber = 1;
+                    temp = temp + j;
+                }
+                else
+                {
+                    temp = temp + "-" + j;
+                }
+            }
+            superChef.score[i - 1] = temp;
+        }
+
+        superChef.levelDB = "" + superChef.level;
+        superChef.niveau = "" + superChef.actualNiveau;
+        PrintArray();
+        StartCoroutine(Main.Instance.Web.UpdateChild(superChef.PK_Child, superChef.childname, superChef.childsurname, superChef.score[0], superChef.score[1], superChef.score[2], superChef.score[3], superChef.score[4], superChef.niveau, superChef.levelDB, superChef.fk_Character));
+        Debug.Log("Update");
         SceneManager.LoadScene("Reward" + superChef.level);
+        superChef.dataloaded = true;
     }
 
     public void PrintArray()
