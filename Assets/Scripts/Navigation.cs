@@ -158,5 +158,9 @@ public class Navigation : MonoBehaviour
 
         SceneManager.LoadScene("Language");
     }
+    public void OpenWebsite()
+    {
+        Application.OpenURL("https://fr.wikipedia.org/wiki/Attention_conjointe");
+    }
 
 }
