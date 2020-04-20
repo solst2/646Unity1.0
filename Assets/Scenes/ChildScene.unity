@@ -3360,7 +3360,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Logout
 --- !u!222 &1352928027
 CanvasRenderer:
   m_ObjectHideFlags: 0
