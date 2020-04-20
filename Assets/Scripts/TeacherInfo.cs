@@ -40,7 +40,16 @@ public class TeacherInfo : MonoBehaviour
     public void SetCredentials(string emailDB, string password) {
         Email = emailDB;
         Password = password;
-        //email.text = emailDB;
+        try
+        {
+            email.text = emailDB;
+        }
+        catch (System.Exception)
+        {
+
+
+        }
+        
     }
 
     public void SetTeacherID(string id) {
