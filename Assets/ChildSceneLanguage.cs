@@ -70,16 +70,16 @@ public class ChildSceneLanguage : MonoBehaviour
         loginRegister.text = loginNames[changeLangage.setLanguage, 4];
 
 
-        teacherAdd.text = teacherProfilNames[changeLangage.setLanguage, 0];
         back2.text = changeLangage.names[changeLangage.setLanguage, 3];
+        teacherAdd.text = teacherProfilNames[changeLangage.setLanguage, 0];
 
+        back1.text = changeLangage.names[changeLangage.setLanguage, 3];
         createTitle.text = createNames[changeLangage.setLanguage, 0];
         createName.text = createNames[changeLangage.setLanguage, 1]+"...";
         createSurname.text = createNames[changeLangage.setLanguage, 2]+"...";
         createCamera.text = createNames[changeLangage.setLanguage, 3];
         createGallery.text = createNames[changeLangage.setLanguage, 4];
         createCreate.text = createNames[changeLangage.setLanguage, 5];
-        back1.text = changeLangage.names[changeLangage.setLanguage, 3];
 
     }
 

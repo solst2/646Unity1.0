@@ -981,7 +981,7 @@ MonoBehaviour:
   createCamera: {fileID: 0}
   createGallery: {fileID: 0}
   createCreate: {fileID: 0}
-  back: {fileID: 168577912}
+  back: {fileID: 0}
   back1: {fileID: 0}
   back2: {fileID: 0}
 --- !u!1 &379472873
@@ -2298,6 +2298,7 @@ MonoBehaviour:
   AstronautButton: {fileID: 1935288930}
   ExplorateurButton: {fileID: 1314680858}
   TrainButton: {fileID: 1073921089}
+  backButton: {fileID: 168577912}
 --- !u!1 &1137529520
 GameObject:
   m_ObjectHideFlags: 0
