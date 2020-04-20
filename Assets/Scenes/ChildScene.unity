@@ -1902,6 +1902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1057247286}
   - component: {fileID: 1057247287}
+  - component: {fileID: 1057247288}
   m_Layer: 5
   m_Name: TeacherProfile
   m_TagString: Untagged
@@ -1948,6 +1949,18 @@ MonoBehaviour:
   Profil: {fileID: 0}
   Login: {fileID: 0}
   CreateTeacher: {fileID: 0}
+--- !u!114 &1057247288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057247285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9956e4341fce1114ca0351ba96c4c53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1072394122
 GameObject:
   m_ObjectHideFlags: 0

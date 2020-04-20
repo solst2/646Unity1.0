@@ -85,7 +85,7 @@ public class Navigation : MonoBehaviour
                     }
                     if (i == 3 && tuto3.tutoplayed == 0)
                     {
-                        SceneManager.LoadScene("Tutorial2");
+                        SceneManager.LoadScene("Tutorial3");
                         return;
                     }
 
