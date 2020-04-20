@@ -231,9 +231,9 @@ public class RotateCube : MonoBehaviour
 
         superChef.levelDB = "" + superChef.level;
         superChef.niveau = "" + superChef.actualNiveau;
-
+        PrintArray();
         StartCoroutine(Main.Instance.Web.UpdateChild(superChef.PK_Child, superChef.childname, superChef.childsurname, superChef.score[0], superChef.score[1], superChef.score[2], superChef.score[3], superChef.score[4], superChef.niveau, superChef.levelDB, superChef.fk_Character));
-
+        Debug.Log("Update");
         SceneManager.LoadScene("Reward" + superChef.level);
         superChef.dataloaded = true;
     }
