@@ -209,6 +209,7 @@ public class RotateCube : MonoBehaviour
         //Wait for seconds
         yield return new WaitForSeconds(4f);
 
+        //make score to string
         for (int i = 1; i < 5; i++)
         {
             String temp = "";

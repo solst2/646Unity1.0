@@ -36,24 +36,26 @@ public class Navigation : MonoBehaviour
 
     public void BackButtonScorePage()
     {
+        TeacherInfo.fromWhere = "ScorePage";
         SceneManager.LoadScene("ChildScene");
-        // teacherProfil aktiviäru
-        Main.Instance.TeacherProfile.SetActive(true);
-        Main.Instance.Login.gameObject.SetActive(false);
     }
 
     public void BackButtonLogoutTeacher()
     {
         SceneManager.LoadScene("ChildScene");
-        // teacherProfil aktiviäru
-        Main.Instance.TeacherProfile.SetActive(false);
-        Main.Instance.Login.gameObject.SetActive(true);
+        TeacherInfo.fromWhere = "Profil";
     }
 
     public void nextToScore()
     {
 
         SceneManager.LoadScene("ScorePage1");
+    }
+
+    public void backToLanguage()
+    {
+
+        SceneManager.LoadScene("Language");
     }
 
     public void nextNiveau()

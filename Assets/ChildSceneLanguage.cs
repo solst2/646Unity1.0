@@ -11,6 +11,7 @@ public class ChildSceneLanguage : MonoBehaviour
     public Text loginUsername;
     public Text loginPassword;
     public Text loginLogin;
+    public Text loginRegister;
 
     public Text teacherAdd;
 
@@ -21,14 +22,18 @@ public class ChildSceneLanguage : MonoBehaviour
     public Text createGallery;
     public Text createCreate;
 
-    public string[,] loginNames = new string[6, 4] {
+    public Text back;
+    public Text back1;
+    public Text back2;
 
-         { "Connexion","Entrez votre nom d'utilisateur","Entrez le mot de passe","Connexion"}, //French  
-         { "Anmeldung","Benutzername eingeben","Passwort eingeben","Anmeldung"}, //German
-         { "Login", "Inserisci nome utente", "Inserisci password", "Login"}, //Italian
-         { "Login","Enter username","Enter password","Login"}, //English 
-         { "Ingresa en","Introduzca el nombre de usuario","Introduzca la contraseña","Ingresa en"}, //Spanish
-         { "ログイン", "ユーザー名を入力", "パスワードを入力", "ログイン"}, //Japanish
+    public string[,] loginNames = new string[6, 5] {
+
+         { "Connexion","Entrez votre nom d'utilisateur","Entrez le mot de passe","Connexion","Register"}, //French  
+         { "Anmeldung","Benutzername eingeben","Passwort eingeben","Anmeldung","Registrieren"}, //German
+         { "Login", "Inserisci nome utente", "Inserisci password", "Login", "Iscriviti"}, //Italian
+         { "Login","Enter username","Enter password","Login","Register"}, //English 
+         { "Ingresa en","Introduzca el nombre de usuario","Introduzca la contraseña","Ingresa en","Registro"}, //Spanish
+         { "ログイン", "ユーザー名を入力", "パスワードを入力", "ログイン","とうさいする"}, //Japanish
 
     };
 
@@ -61,8 +66,12 @@ public class ChildSceneLanguage : MonoBehaviour
         loginUsername.text = loginNames[changeLangage.setLanguage, 1];
         loginPassword.text = loginNames[changeLangage.setLanguage, 2];
         loginLogin.text = loginNames[changeLangage.setLanguage, 3];
+        back.text = changeLangage.names[changeLangage.setLanguage, 3];
+        loginRegister.text = loginNames[changeLangage.setLanguage, 4];
+
 
         teacherAdd.text = teacherProfilNames[changeLangage.setLanguage, 0];
+        back2.text = changeLangage.names[changeLangage.setLanguage, 3];
 
         createTitle.text = createNames[changeLangage.setLanguage, 0];
         createName.text = createNames[changeLangage.setLanguage, 1]+"...";
@@ -70,6 +79,7 @@ public class ChildSceneLanguage : MonoBehaviour
         createCamera.text = createNames[changeLangage.setLanguage, 3];
         createGallery.text = createNames[changeLangage.setLanguage, 4];
         createCreate.text = createNames[changeLangage.setLanguage, 5];
+        back1.text = changeLangage.names[changeLangage.setLanguage, 3];
 
     }
 
