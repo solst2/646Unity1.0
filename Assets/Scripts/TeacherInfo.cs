@@ -16,12 +16,11 @@ public class TeacherInfo : MonoBehaviour
     public GameObject CreateTeacher;
 
     void Start()
-    {
+    {/*
         //Navigation 
         if (fromWhere.Equals("ScorePage"))
         {
             // teacherProfil aktiviäru
-            SceneManager.LoadScene("ChildScene");
             Profil.SetActive(true);
             Login.SetActive(false);
             CreateTeacher.SetActive(false);
@@ -29,13 +28,12 @@ public class TeacherInfo : MonoBehaviour
         if (fromWhere.Equals("Profil"))
         {
             // teacherLogin aktiviäru
-            SceneManager.LoadScene("ChildScene");
             Profil.SetActive(false);
             Login.SetActive(true);
             CreateTeacher.SetActive(false);
         }
         
-
+        */
 
     }
 

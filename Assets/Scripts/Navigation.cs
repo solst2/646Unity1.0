@@ -38,6 +38,10 @@ public class Navigation : MonoBehaviour
     {
         TeacherInfo.fromWhere = "ScorePage";
         SceneManager.LoadScene("ChildScene");
+
+        //If we logged in correctly
+        Main.Instance.TeacherProfile.SetActive(true);
+        Main.Instance.Login.gameObject.SetActive(false);
     }
 
     public void BackButtonLogoutTeacher()
