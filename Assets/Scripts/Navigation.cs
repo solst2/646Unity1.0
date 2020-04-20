@@ -151,4 +151,10 @@ public class Navigation : MonoBehaviour
         SceneManager.LoadScene("Level"+i+"_1");
     }
 
+    public void GoToLanguage()
+    {
+
+        SceneManager.LoadScene("Language");
+    }
+
 }

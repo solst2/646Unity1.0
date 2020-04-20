@@ -81,6 +81,6 @@ public class changeLangage : MonoBehaviour
 
     void GoToNextScene()
     {
-        SceneManager.LoadScene("Character");
+        SceneManager.LoadScene("ChildScene");
     }
 }
