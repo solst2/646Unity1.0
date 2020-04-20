@@ -10,9 +10,31 @@ public class TeacherInfo : MonoBehaviour
     string Password;
     string Email;
     public Text email;
+    public static string fromWhere = "";
+    public GameObject Profil;
+    public GameObject Login;
+    public GameObject CreateTeacher;
 
     void Start()
     {
+        //Navigation 
+        if (fromWhere.Equals("ScorePage"))
+        {
+            // teacherProfil aktiviäru
+            Profil.SetActive(true);
+            Login.SetActive(false);
+            CreateTeacher.SetActive(false);
+        }
+        if (fromWhere.Equals("Profil"))
+        {
+            // teacherLogin aktiviäru
+            Profil.SetActive(false);
+            Login.SetActive(true);
+            CreateTeacher.SetActive(false);
+        }
+        
+
+
     }
 
     public void SetCredentials(string emailDB, string password) {
