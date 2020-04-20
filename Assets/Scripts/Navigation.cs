@@ -89,7 +89,7 @@ public class Navigation : MonoBehaviour
                         return;
                     }
 
-                    SceneManager.LoadScene("Level" + i + "_1");
+                    SceneManager.LoadScene("Level" + i + "_"+ levelNotDone);
                     return;
                 }
                 levelNotDone++;
