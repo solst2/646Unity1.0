@@ -35,7 +35,7 @@ public class ScorePage : MonoBehaviour
             {
                 //if the level can not be repeated, the name will be "";
                 // 1  ->  all is done || 0  -> nothing is done in that level
-                if (CalculateScore() == 1 || CalculateScore() == 0)
+                if (CalculateScore(i+1) == 1 || CalculateScore(i + 1) == 0)
                 {
                     repeat[i].text ="";
                 }
