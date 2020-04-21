@@ -18,11 +18,18 @@ public class ScorePage : MonoBehaviour
     public GameObject background;
     float maxScore = 50;
     Dictionary<string, Color32> colors = new Dictionary<string, Color32>();
+    public GameObject canvas;
+
+    private void Start()
+    {
+        canvas.SetActive(false);
+    }
 
     void Update()
     {
         if (superChef.dataloaded == true)
         {
+            canvas.SetActive(true);
             //depents on language, change repeat value
             for (int i = 0; i < 4; i++)
             {

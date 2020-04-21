@@ -16,7 +16,7 @@ public class TeacherInfo : MonoBehaviour
     public GameObject CreateTeacher;
 
     void Start()
-    {/*
+    {
         //Navigation 
         if (fromWhere.Equals("ScorePage"))
         {
@@ -33,7 +33,7 @@ public class TeacherInfo : MonoBehaviour
             CreateTeacher.SetActive(false);
         }
         
-        */
+        
 
     }
 
