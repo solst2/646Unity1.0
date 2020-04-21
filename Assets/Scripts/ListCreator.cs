@@ -35,13 +35,6 @@ public class ListCreator : MonoBehaviour
             GameObject SpawnedItem = Instantiate(item, pos, SpawnPoint.rotation);
             //setParent
             SpawnedItem.transform.SetParent(SpawnPoint, false);
-            //get ItemDetails Component
-            ItemDetails itemDetails = SpawnedItem.GetComponent<ItemDetails>();
-            //set name
-            itemDetails.text.text = itemNames[i];
-            //set image
-            itemDetails.image.sprite = itemImages[i];
-
 
         }
     }
