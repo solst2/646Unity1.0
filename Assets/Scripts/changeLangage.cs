@@ -14,14 +14,14 @@ public class changeLangage : MonoBehaviour
     public word setWord;
 
     //Here is the liste of words from 0 to 4 
-    public static string[,] names = new string[6, 7] {
+    public static string[,] names = new string[6, 8] {
 
-         { "Niveau","Score","répéter","retour", "suivant", "jouer", "nom"}, //French  
-         { "Ebene","Punktzahl","wiederholen","zurück", "weiter", "spielen","Name"}, //German
-         { "Livello", "punteggio", "ripetizione", "ritorno", "prossimo","giocare","Nome"}, //Italian
-         { "Level", "Score", "repeat", "back", "next" , "play","name"}, //English 
-         { "Nivel","Puntuación ","repetir","volver", "continuar","jugar","Nombre"}, //Spanish
-         { "レベル", "スコア", "リピート", "リターン", "ネクスト","あそ~ぶ","めいしょう"} //Japanish
+         { "Niveau","Score","répéter","retour", "suivant", "jouer", "nom","Tutoriel"}, //French  
+         { "Ebene","Punktzahl","wiederholen","zurück", "weiter", "spielen","Name","Tutorial"}, //German
+         { "Livello", "punteggio", "ripetizione", "ritorno", "prossimo","giocare","Nome","Tutorial"}, //Italian
+         { "Level", "Score", "repeat", "back", "next" , "play","name","Tutorial"}, //English 
+         { "Nivel","Puntuación ","repetir","volver", "continuar","jugar","Nombre","Tutorial"}, //Spanish
+         { "レベル", "スコア", "リピート", "リターン", "ネクスト","あそ~ぶ","めいしょう","チュートリアル"} //Japanish
 
     };
 

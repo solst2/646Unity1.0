@@ -8,10 +8,12 @@ using DG.Tweening;
 public class tuto3 : MonoBehaviour
 {
     public static int tutoplayed = 0;
+    public Text text;
 
     // Start is called before the first frame update
     void Start()
     {
+        text.text = changeLangage.names[changeLangage.setLanguage, 7];
         DOVirtual.DelayedCall(13, GoToNextScene);
     }
 

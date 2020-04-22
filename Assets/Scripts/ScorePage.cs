@@ -27,7 +27,7 @@ public class ScorePage : MonoBehaviour
 
     void Update()
     {
-        if (superChef.dataloaded == true)
+        if (superChef.dataloaded == true || superChef.offline == true)
         {
             canvas.SetActive(true);
             //depents on language, change repeat value 
