@@ -12,6 +12,7 @@ public class ChildSceneLanguage : MonoBehaviour
     public Text loginPassword;
     public Text loginLogin;
     public Text loginRegister;
+    public Text loginOffline;
 
     public Text teacherAdd;
 
@@ -26,14 +27,14 @@ public class ChildSceneLanguage : MonoBehaviour
     public Text back1;
     public Text back2;
 
-    public string[,] loginNames = new string[6, 5] {
+    public string[,] loginNames = new string[6, 6] {
 
-         { "Connexion","Entrez votre nom d'utilisateur","Entrez le mot de passe","Connexion","Register"}, //French  
-         { "Anmeldung","Benutzername eingeben","Passwort eingeben","Anmeldung","Registrieren"}, //German
-         { "Login", "Inserisci nome utente", "Inserisci password", "Login", "Iscriviti"}, //Italian
-         { "Login","Enter username","Enter password","Login","Register"}, //English 
-         { "Ingresa en","Introduzca el nombre de usuario","Introduzca la contraseña","Ingresa en","Registro"}, //Spanish
-         { "ログイン", "ユーザー名を入力", "パスワードを入力", "ログイン","とうさいする"}, //Japanish
+         { "Connexion","Entrez votre nom d'utilisateur","Entrez le mot de passe","Connexion","Register", "Offline"}, //French  
+         { "Anmeldung","Benutzername eingeben","Passwort eingeben","Anmeldung","Registrieren","Offline"}, //German
+         { "Login", "Inserisci nome utente", "Inserisci password", "Login", "Iscriviti","Offline"}, //Italian
+         { "Login","Enter username","Enter password","Login","Register","Offline"}, //English 
+         { "Ingresa en","Introduzca el nombre de usuario","Introduzca la contraseña","Ingresa en","Registro","Fuera de línea"}, //Spanish
+         { "ログイン", "ユーザー名を入力", "パスワードを入力", "ログイン","とうさいする","オフライン"}, //Japanish
 
     };
 
@@ -68,6 +69,8 @@ public class ChildSceneLanguage : MonoBehaviour
         loginLogin.text = loginNames[changeLangage.setLanguage, 3];
         back.text = changeLangage.names[changeLangage.setLanguage, 3];
         loginRegister.text = loginNames[changeLangage.setLanguage, 4];
+        loginOffline.text = loginNames[changeLangage.setLanguage, 5];
+        
 
 
         back2.text = changeLangage.names[changeLangage.setLanguage, 3];

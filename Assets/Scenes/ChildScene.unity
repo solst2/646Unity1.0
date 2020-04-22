@@ -721,6 +721,7 @@ MonoBehaviour:
   loginPassword: {fileID: 1497567401}
   loginLogin: {fileID: 241981393}
   loginRegister: {fileID: 1082858404}
+  loginOffline: {fileID: 240459218}
   teacherAdd: {fileID: 1268018610}
   createTitle: {fileID: 0}
   createName: {fileID: 0}
