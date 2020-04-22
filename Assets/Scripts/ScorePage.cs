@@ -30,7 +30,7 @@ public class ScorePage : MonoBehaviour
         if (superChef.dataloaded == true)
         {
             canvas.SetActive(true);
-            //depents on language, change repeat value
+            //depents on language, change repeat value 
             for (int i = 0; i < 4; i++)
             {
                 //if the level can not be repeated, the name will be "";
@@ -45,6 +45,7 @@ public class ScorePage : MonoBehaviour
                 }
                 level[i].text = changeLangage.names[changeLangage.setLanguage, 0] + " " + (i + 1);
             }
+
             back.text = changeLangage.names[changeLangage.setLanguage, 3];
             next.text = changeLangage.names[changeLangage.setLanguage, 4];
             //add colors
@@ -155,6 +156,10 @@ public class ScorePage : MonoBehaviour
 
     public float CalculateScore(int niv)
     {
+        if (niv == 4 && superChef.pointsPerLevel[niv][0] == 10)
+        {
+            return 1;
+        }
         int tempScore = 0;
         foreach (int i in superChef.pointsPerLevel[niv])
         {

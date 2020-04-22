@@ -17,6 +17,7 @@ public class TeacherInfo : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(fromWhere);
         //Navigation 
         if (fromWhere.Equals("ScorePage"))
         {
@@ -25,7 +26,7 @@ public class TeacherInfo : MonoBehaviour
             Login.SetActive(false);
             CreateTeacher.SetActive(false);
         }
-        if (fromWhere.Equals("Profil"))
+        if (fromWhere.Equals("Profil") || fromWhere.Equals("ScorePageOffline"))
         {
             // teacherLogin aktiviäru
             Profil.SetActive(false);

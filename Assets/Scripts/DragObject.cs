@@ -27,15 +27,17 @@ public class DragObject : MonoBehaviour
     {
         float Distance = Vector3.Distance(this.transform.position, correct.transform.position);
 
-        if ((Distance < 20 && (this.transform.name.Equals("1"))|| (Distance < 50 && this.transform.name.Equals("2"))))
+        //1 and 2 are for level 3 and the correct one in level 4 is number 3
+        if ((Distance < 20 && (this.transform.name.Equals("1"))|| (Distance < 50 && this.transform.name.Equals("2"))|| (Distance < 30 && this.transform.name.Equals("3"))))
         {
-            if (this.transform.name.Equals("1"))
+            if (this.transform.name.Equals("2"))
             {
-                Level3.eyes = true;
+                Level3.arm = true;
             }
             else
             {
-                Level3.arm = true;
+                //in level 3 eyes and level 4 we use the eyes variable
+                Level3.eyes = true;
             }
             Level3.sonBon1.Play();
             Debug.Log("Yeah");
@@ -46,8 +48,37 @@ public class DragObject : MonoBehaviour
         {
             Level3.sonPasBon1.Play();
             Level3.wrongClicks = Level3.wrongClicks + 0.5;
-            Debug.Log("no"+Distance);
+            Debug.Log("no" + Distance);
             transform.position = positionBase;
+            if (superChef.actualNiveau == 4)
+            {
+                StartCoroutine(waiterWrong());
+            }
+        }
+    }
+    
+    IEnumerator waiterWrong()
+    {
+        Level3.smileRight1.SetActive(false);
+        Level3.smile1.SetActive(true);
+        Level3.sonPasBon1.Play();
+        //Wait for 0.5 seconds
+        yield return new WaitForSeconds(0.5f);
+        Level3.smile1.SetActive(false);
+        Level3.smileRight1.SetActive(true);
+
+        //with niveau 4, we do the no part twice
+        if (superChef.actualNiveau == 4)
+        {
+            Debug.Log("no part twice");
+            yield return new WaitForSeconds(0.3f);
+            Level3.smileRight1.SetActive(false);
+            Level3.smile1.SetActive(true);
+            Level3.sonPasBon1.Play();
+            //Wait for 0.5 seconds
+            yield return new WaitForSeconds(0.5f);
+            Level3.smile1.SetActive(false);
+            Level3.smileRight1.SetActive(true);
         }
     }
 
