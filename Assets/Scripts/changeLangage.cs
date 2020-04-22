@@ -14,22 +14,16 @@ public class changeLangage : MonoBehaviour
     public word setWord;
 
     //Here is the liste of words from 0 to 4 
-    public static string[,] names = new string[6, 5] {
+    public static string[,] names = new string[6, 7] {
 
-         { "Niveau","Score","répéter","retour", "suivant"}, //French  
-         { "Ebene","Punktzahl","wiederholen","zurück", "weiter"}, //German
-         { "Livello", "punteggio", "ripetizione", "ritorno", "prossimo"}, //Italian
-         { "Level", "Score", "repeat", "back", "next" }, //English 
-         { "Nivel","Puntuación ","repetir","volver", "continuar"}, //Spanish
-         { "レベル", "スコア", "リピート", "リターン", "ネクスト"} //Japanish
+         { "Niveau","Score","répéter","retour", "suivant", "jouer", "nom"}, //French  
+         { "Ebene","Punktzahl","wiederholen","zurück", "weiter", "spielen","Name"}, //German
+         { "Livello", "punteggio", "ripetizione", "ritorno", "prossimo","giocare","Nome"}, //Italian
+         { "Level", "Score", "repeat", "back", "next" , "play","name"}, //English 
+         { "Nivel","Puntuación ","repetir","volver", "continuar","jugar","Nombre"}, //Spanish
+         { "レベル", "スコア", "リピート", "リターン", "ネクスト","あそ~ぶ","めいしょう"} //Japanish
 
     };
-
-    // Start is called before the first frame update
-  /*  void Start()
-    {
-        
-    }*/
 
     // Update is called once per frame
     void Update()

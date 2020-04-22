@@ -64,6 +64,11 @@ public class Childrens : MonoBehaviour
             item.transform.Find("Name").GetComponent<Text>().text = childInfoJson["Name"];
             item.transform.Find("Surname").GetComponent<Text>().text = childInfoJson["Surname"];
             item.transform.Find("Character").GetComponent<Text>().text = childInfoJson["Niveau"];
+            
+            //Fill language
+            item.transform.Find("TextName").GetComponent<Text>().text = changeLangage.names[changeLangage.setLanguage, 6];
+            item.transform.Find("TextNiveau").GetComponent<Text>().text = changeLangage.names[changeLangage.setLanguage, 0];
+            item.transform.Find("PlayButton").GetComponent<Button>().GetComponentInChildren<Text>().text = changeLangage.names[changeLangage.setLanguage, 5];
 
             //Listener to the playButton
             item.transform.Find("PlayButton").GetComponent<Button>().onClick.AddListener(() =>
