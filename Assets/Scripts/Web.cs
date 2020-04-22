@@ -10,6 +10,7 @@ public class Web : MonoBehaviour
 {
     //Errormessage
     public Text ErrorMessage;
+    public static string idProf = "";
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,7 @@ public class Web : MonoBehaviour
             else
             {
                 Debug.Log(www.downloadHandler.text);
+                idProf = www.downloadHandler.text;
                 Main.Instance.TeacherInfo.SetCredentials(email, password);
                 Main.Instance.TeacherInfo.SetTeacherID(www.downloadHandler.text);
 
