@@ -22,7 +22,7 @@ public class Web : MonoBehaviour
 
     IEnumerator GetUsers()
     {
-        using (UnityWebRequest www = UnityWebRequest.Get("http://localhost/Unity/GetChildren.php")) {
+        using (UnityWebRequest www = UnityWebRequest.Get("https://attentionconjointe.p645.hevs.ch/GetChildren.php")) {
             yield return www.SendWebRequest();
 
             if (www.isNetworkError || www.isHttpError)
@@ -45,7 +45,7 @@ public class Web : MonoBehaviour
         form.AddField("loginEmail", email);
         form.AddField("loginPass", password);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/Login.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch/Login.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -84,7 +84,7 @@ public class Web : MonoBehaviour
         form.AddField("loginEmail", email);
         form.AddField("loginPass", password);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/RegisterTeacher.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch//RegisterTeacher.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -116,7 +116,7 @@ public class Web : MonoBehaviour
         form.AddField("fk_Character", fk_Character);
         form.AddField("fk_Teacher", fk_Teacher);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/RegisterChild.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch/RegisterChild.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -146,7 +146,7 @@ public class Web : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("PK_Teacher", PK_Teacher);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/GetChildrenIDs.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch/GetChildrenIDs.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -170,7 +170,7 @@ public class Web : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("PK_Child", PK_Child);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/GetChild.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch/GetChild.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -194,7 +194,7 @@ public class Web : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("PK_Child", PK_Child);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/GetSelectedChild.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch/GetSelectedChild.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -288,7 +288,7 @@ public class Web : MonoBehaviour
         form.AddField("FK_Character", FK_Character);
 
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Unity/UpdateChild.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch/UpdateChild.php", form))
         {
          
             yield return www.SendWebRequest();

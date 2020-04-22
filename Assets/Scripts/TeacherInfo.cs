@@ -33,7 +33,7 @@ public class TeacherInfo : MonoBehaviour
             CreateTeacher.SetActive(false);
         }
         
-
+        
 
     }
 

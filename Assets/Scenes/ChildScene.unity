@@ -1901,8 +1901,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1057247286}
-  - component: {fileID: 1057247287}
   - component: {fileID: 1057247288}
+  - component: {fileID: 1057247287}
   m_Layer: 5
   m_Name: TeacherProfile
   m_TagString: Untagged
@@ -1945,7 +1945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa141a1cc2f003458a68d641e466553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  email: {fileID: 1240743185}
+  email: {fileID: 0}
   Profil: {fileID: 0}
   Login: {fileID: 0}
   CreateTeacher: {fileID: 0}
@@ -1956,7 +1956,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057247285}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9956e4341fce1114ca0351ba96c4c53f, type: 3}
   m_Name: 

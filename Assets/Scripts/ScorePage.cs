@@ -18,15 +18,31 @@ public class ScorePage : MonoBehaviour
     public GameObject background;
     float maxScore = 50;
     Dictionary<string, Color32> colors = new Dictionary<string, Color32>();
+    public GameObject canvas;
+
+    private void Start()
+    {
+        canvas.SetActive(false);
+    }
 
     void Update()
     {
         if (superChef.dataloaded == true)
         {
+            canvas.SetActive(true);
             //depents on language, change repeat value
             for (int i = 0; i < 4; i++)
             {
-                repeat[i].text = changeLangage.names[changeLangage.setLanguage, 2];
+                //if the level can not be repeated, the name will be "";
+                // 1  ->  all is done || 0  -> nothing is done in that level
+                if (CalculateScore(i+1) == 1 || CalculateScore(i + 1) == 0)
+                {
+                    repeat[i].text ="";
+                }
+                else
+                {
+                    repeat[i].text = changeLangage.names[changeLangage.setLanguage, 2];
+                }
                 level[i].text = changeLangage.names[changeLangage.setLanguage, 0] + " " + (i + 1);
             }
             back.text = changeLangage.names[changeLangage.setLanguage, 3];

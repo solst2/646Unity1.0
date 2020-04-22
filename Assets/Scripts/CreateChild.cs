@@ -25,9 +25,12 @@ public class CreateChild : MonoBehaviour
     string FK_Teacher = "1";
     string FK_Character = "1";
 
+    public Text backButton;
+
     // Start is called before the first frame update
     void Start()
     {
+        backButton.text = changeLangage.names[changeLangage.setLanguage, 3];
         /*SubmitButton.onClick.AddListener(() =>
         {
             StartCoroutine(Main.Instance.Web.RegisterChild(NameInput.text, SurnameInput.text, FK_Character, FK_Teacher));
