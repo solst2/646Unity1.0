@@ -18,9 +18,13 @@ public class Main : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Instance = this;
-        Web = GetComponent<Web>();
+        if(Web??true)
+        {
+            Web = GameObject.Find("Web").GetComponent<Web>();
+            Debug.Log("Web is added to main");
+        }
         TeacherInfo = GetComponent<TeacherInfo>();
+        Instance = this;
 
     }
 
