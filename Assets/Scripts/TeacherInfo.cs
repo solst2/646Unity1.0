@@ -23,6 +23,7 @@ public class TeacherInfo : MonoBehaviour
         {
             // teacherProfil aktiviäru
             PK_Teacher = Web.idProf;
+            email.text = Web.mailProf;
             Profil.SetActive(true);
             Login.SetActive(false);
             CreateTeacher.SetActive(false);
