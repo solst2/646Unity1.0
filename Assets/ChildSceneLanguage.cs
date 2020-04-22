@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class ChildSceneLanguage : MonoBehaviour
 {
@@ -63,32 +64,45 @@ public class ChildSceneLanguage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        loginTitle.text = loginNames[changeLangage.setLanguage, 0];
-        loginUsername.text = loginNames[changeLangage.setLanguage, 1];
-        loginPassword.text = loginNames[changeLangage.setLanguage, 2];
-        loginLogin.text = loginNames[changeLangage.setLanguage, 3];
-        back.text = changeLangage.names[changeLangage.setLanguage, 3];
-        loginRegister.text = loginNames[changeLangage.setLanguage, 4];
-        loginOffline.text = loginNames[changeLangage.setLanguage, 5];
-        
+        try
+        {
+            loginTitle.text = loginNames[changeLangage.setLanguage, 0];
+            loginUsername.text = loginNames[changeLangage.setLanguage, 1];
+            loginPassword.text = loginNames[changeLangage.setLanguage, 2];
+            loginLogin.text = loginNames[changeLangage.setLanguage, 3];
+            back.text = changeLangage.names[changeLangage.setLanguage, 3];
+            loginRegister.text = loginNames[changeLangage.setLanguage, 4];
+            loginOffline.text = loginNames[changeLangage.setLanguage, 5];
+        } catch (Exception e)
+        {
+            // script is used in several scenes, that is why it is an exception
+        }
 
+        try
+        {
+            back2.text = changeLangage.names[changeLangage.setLanguage, 3];
+            teacherAdd.text = teacherProfilNames[changeLangage.setLanguage, 0];
+        }
+        catch (Exception e)
+        {
+            // script is used in several scenes, that is why it is an exception
+        }
 
-        back2.text = changeLangage.names[changeLangage.setLanguage, 3];
-        teacherAdd.text = teacherProfilNames[changeLangage.setLanguage, 0];
-
-        back1.text = changeLangage.names[changeLangage.setLanguage, 3];
-        createTitle.text = createNames[changeLangage.setLanguage, 0];
-        createName.text = createNames[changeLangage.setLanguage, 1]+"...";
-        createSurname.text = createNames[changeLangage.setLanguage, 2]+"...";
-        createCamera.text = createNames[changeLangage.setLanguage, 3];
-        createGallery.text = createNames[changeLangage.setLanguage, 4];
-        createCreate.text = createNames[changeLangage.setLanguage, 5];
+        try
+        {
+            back1.text = changeLangage.names[changeLangage.setLanguage, 3];
+            createTitle.text = createNames[changeLangage.setLanguage, 0];
+            createName.text = createNames[changeLangage.setLanguage, 1] + "...";
+            createSurname.text = createNames[changeLangage.setLanguage, 2] + "...";
+            createCamera.text = createNames[changeLangage.setLanguage, 3];
+            createGallery.text = createNames[changeLangage.setLanguage, 4];
+            createCreate.text = createNames[changeLangage.setLanguage, 5];
+        }
+        catch (Exception e)
+        {
+            // script is used in several scenes, that is why it is an exception
+        }
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
