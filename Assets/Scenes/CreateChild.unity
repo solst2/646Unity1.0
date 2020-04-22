@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 282379386}
   - component: {fileID: 282379385}
   - component: {fileID: 282379388}
+  - component: {fileID: 282379389}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -728,6 +729,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 379472875}
+--- !u!114 &282379389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282379384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f8ae37a8903e642baf30ebf3be0795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deviceName: 
+  heightmap: {fileID: 0}
+  size: {x: 100, y: 10, z: 100}
 --- !u!1 &321659218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1687,7 @@ GameObject:
   - component: {fileID: 753820811}
   - component: {fileID: 753820810}
   - component: {fileID: 753820809}
+  - component: {fileID: 753820812}
   m_Layer: 5
   m_Name: Camera
   m_TagString: Untagged
@@ -1773,6 +1790,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753820807}
   m_CullTransparentMesh: 0
+--- !u!114 &753820812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753820807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f8ae37a8903e642baf30ebf3be0795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deviceName: 
+  heightmap: {fileID: 0}
+  size: {x: 100, y: 10, z: 100}
 --- !u!1 &849829277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3719,7 +3751,6 @@ GameObject:
   - component: {fileID: 1876508368}
   - component: {fileID: 1876508367}
   - component: {fileID: 1876508369}
-  - component: {fileID: 1876508370}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -3771,24 +3802,7 @@ MonoBehaviour:
   Login: {fileID: 0}
   CreateTeacher: {fileID: 0}
   CreateChild: {fileID: 0}
-  ChildInfo: {fileID: 0}
   TeacherProfile: {fileID: 0}
---- !u!114 &1876508370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876508366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa141a1cc2f003458a68d641e466553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  email: {fileID: 0}
-  Profil: {fileID: 0}
-  Login: {fileID: 0}
-  CreateTeacher: {fileID: 0}
 --- !u!1 &1914650438
 GameObject:
   m_ObjectHideFlags: 0
