@@ -22,6 +22,7 @@ public class TeacherInfo : MonoBehaviour
         if (fromWhere.Equals("ScorePage"))
         {
             // teacherProfil aktiviäru
+            PK_Teacher = Web.idProf;
             Profil.SetActive(true);
             Login.SetActive(false);
             CreateTeacher.SetActive(false);

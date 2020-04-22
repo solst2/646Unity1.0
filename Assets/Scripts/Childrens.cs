@@ -14,8 +14,10 @@ public class Childrens : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // Debug.Log("json: " + jsonArrayString);
         //DefineCallback
         _createChildrensCallback = (jsonArrayString) => {
+            Debug.Log("json: " + jsonArrayString);
             StartCoroutine(CreateChildrensRoutine(jsonArrayString));
         };
 
