@@ -218,6 +218,7 @@ public class Level3 : MonoBehaviour
         } catch (Exception e)
         {
             //offline game, can not be safed
+            Debug.Log("No Update");
         }
         Debug.Log("Update");
         superChef.dataloaded = true;
