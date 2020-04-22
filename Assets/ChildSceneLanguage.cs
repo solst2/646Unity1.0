@@ -20,17 +20,22 @@ public class ChildSceneLanguage : MonoBehaviour
     public Text createTitle;
     public Text createName;
     public Text createSurname;
-    public Text createCamera;
-    public Text createGallery;
     public Text createCreate;
 
     public Text back;
     public Text back1;
     public Text back2;
 
+    public Text NTtitle;
+    public Text NTname;
+    public Text NTsurname;
+    public Text NTemail;
+    public Text NTpwd;
+    public Text NTregister;
+
     public string[,] loginNames = new string[6, 6] {
 
-         { "Connexion","Entrez votre nom d'utilisateur","Entrez le mot de passe","Connexion","Register", "Offline"}, //French  
+         { "Connexion","Entrez votre nom d'utilisateur","Entrez le mot de passe","Connexion","Enregistrer","Hors Ligne"}, //French  
          { "Anmeldung","Benutzername eingeben","Passwort eingeben","Anmeldung","Registrieren","Offline"}, //German
          { "Login", "Inserisci nome utente", "Inserisci password", "Login", "Iscriviti","Offline"}, //Italian
          { "Login","Enter username","Enter password","Login","Register","Offline"}, //English 
@@ -39,14 +44,14 @@ public class ChildSceneLanguage : MonoBehaviour
 
     };
 
-    public string[,] teacherProfilNames = new string[6, 1] {
+    public string[,] teacherProfilNames = new string[6, 2] {
 
-         { "Ajouter un enfant"}, //French  
-         { "Neues Kind anlegen"}, //German
-         { "Aggiungi un bambino"}, //Italian
-         { "Create new Child"}, //English 
-         { "Crear un niño"}, //Spanish
-         { "子を加える"} //Japanish
+         { "Ajouter un enfant","Nouveau professeur"}, //French  
+         { "Neues Kind anlegen","Neue Lehrer"}, //German
+         { "Aggiungi un bambino","Nuovo Insegnante"}, //Italian
+         { "Create new Child","New Teacher"}, //English 
+         { "Crear un niño","Nuevo Maestro"}, //Spanish
+         { "子を加える","新しい先生"} //Japanish
 
     };
 
@@ -94,9 +99,21 @@ public class ChildSceneLanguage : MonoBehaviour
             createTitle.text = createNames[changeLangage.setLanguage, 0];
             createName.text = createNames[changeLangage.setLanguage, 1] + "...";
             createSurname.text = createNames[changeLangage.setLanguage, 2] + "...";
-            createCamera.text = createNames[changeLangage.setLanguage, 3];
-            createGallery.text = createNames[changeLangage.setLanguage, 4];
             createCreate.text = createNames[changeLangage.setLanguage, 5];
+        }
+        catch (Exception e)
+        {
+            // script is used in several scenes, that is why it is an exception
+        }
+
+        try
+        {
+            NTtitle.text = teacherProfilNames[changeLangage.setLanguage, 1];
+            NTname.text = createNames[changeLangage.setLanguage, 1] + "...";
+            NTsurname.text = createNames[changeLangage.setLanguage, 2] + "...";
+            NTemail.text = "Email ...";
+            NTpwd.text = loginNames[changeLangage.setLanguage, 2];
+            NTregister.text = loginNames[changeLangage.setLanguage, 4];
         }
         catch (Exception e)
         {
