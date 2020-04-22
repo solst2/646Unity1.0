@@ -17,6 +17,7 @@ public class Level3 : MonoBehaviour
     public GameObject barFirst;
     public GameObject target; 
     public GameObject correctEyes;
+    public GameObject WrongSmile;
     public Text scores;
     public Text back;
     public Text niveau;
@@ -31,6 +32,8 @@ public class Level3 : MonoBehaviour
     public static Boolean arm;
     public static AudioSource sonBon1;
     public static AudioSource sonPasBon1;
+    public static GameObject smile1;
+    public static GameObject smileRight1;
     Boolean updateDone = false;
 
     void Start()
@@ -38,6 +41,8 @@ public class Level3 : MonoBehaviour
         wrongClicks = 0;
         sonBon1 = sonBon;
         sonPasBon1 = sonPasBon;
+        smile1 = WrongSmile; //smile wrong for level4
+        smileRight1 = smile;
         //number of new level
         superChef.level++;
 
@@ -82,11 +87,27 @@ public class Level3 : MonoBehaviour
         //if it is right
         eyes = false;
         arm = false;
+        //Just for Niveau 4
+        if (superChef.actualNiveau == 4)
+        {
+            //set active depends on gender
+            smile.transform.GetChild(0).gameObject.SetActive(false);
+            smile.transform.GetChild(1).gameObject.SetActive(false);
+            smile.transform.Find(superChef.gender).gameObject.SetActive(true);
+            //set active depends on gender
+            smileRight.transform.GetChild(0).gameObject.SetActive(false);
+            smileRight.transform.GetChild(1).gameObject.SetActive(false);
+            smileRight.transform.Find(superChef.gender).gameObject.SetActive(true);
+            //set active depends on gender
+            WrongSmile.transform.GetChild(0).gameObject.SetActive(false);
+            WrongSmile.transform.GetChild(1).gameObject.SetActive(false);
+            WrongSmile.transform.Find(superChef.gender).gameObject.SetActive(true);
+        }
     }
 
     void Update()
     {
-        if (eyes && arm && !updateDone)
+        if ((eyes && arm && !updateDone) || (superChef.actualNiveau == 4 && eyes && !updateDone))
         {
             //just go ones through this
             updateDone = true;
@@ -133,8 +154,15 @@ public class Level3 : MonoBehaviour
             }
 
             calculateScore();
-            //delete the eyes
-            correctEyes.GetComponent<Renderer>().material.color = new Color(0f, 0f, 0f, 0f);
+            if(superChef.actualNiveau == 3)
+            {
+                //delete the eyes
+                correctEyes.GetComponent<Renderer>().material.color = new Color(0f, 0f, 0f, 0f);
+            } else
+            {
+                //actual niveau = 4
+
+            }
         }    
         if (rotate == 1)
         {
@@ -163,6 +191,7 @@ public class Level3 : MonoBehaviour
 
         for (int i = 1; i < 5; i++)
         {
+            //create String to safe in db
             String temp = "";
             int tempNumber = 0;
             foreach (int j in superChef.pointsPerLevel[i])
@@ -183,10 +212,25 @@ public class Level3 : MonoBehaviour
         superChef.levelDB = "" + superChef.level;
         superChef.niveau = "" + superChef.actualNiveau;
         PrintArray();
-        StartCoroutine(Main.Instance.Web.UpdateChild(superChef.PK_Child, superChef.childname, superChef.childsurname, superChef.score[0], superChef.score[1], superChef.score[2], superChef.score[3], superChef.score[4], superChef.niveau, superChef.levelDB, superChef.fk_Character));
+        try
+        {
+            StartCoroutine(Main.Instance.Web.UpdateChild(superChef.PK_Child, superChef.childname, superChef.childsurname, superChef.score[0], superChef.score[1], superChef.score[2], superChef.score[3], superChef.score[4], superChef.niveau, superChef.levelDB, superChef.fk_Character));
+        } catch (Exception e)
+        {
+            //offline game, can not be safed
+        }
         Debug.Log("Update");
-        SceneManager.LoadScene("Reward" + superChef.level);
         superChef.dataloaded = true;
+        //load new scene -> niveau 4 has just one level -> directly to the reward Finish
+        if (superChef.actualNiveau == 4)
+        {
+            SceneManager.LoadScene("RewardFinish");
+        }
+        else
+        {
+            //Level 3 -> to the next Reward
+            SceneManager.LoadScene("Reward" + superChef.level);
+        }
     }
 
     public void PrintArray()
