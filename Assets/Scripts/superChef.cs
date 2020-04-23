@@ -25,7 +25,6 @@ public class superChef : MonoBehaviour
     public static Dictionary<string, Color32> background = new Dictionary<string, Color32>();
     public static Dictionary<string, Color32> backgroundCamera = new Dictionary<string, Color32>();
     public static String gender = "boy";
-    public static Dictionary<int, Boolean[]> infosNiveau = new Dictionary<int, Boolean[]>();
     public static Dictionary<int, int[]> pointsPerLevel = new Dictionary<int, int[]>();
 
     /*public GameObject astronaut;

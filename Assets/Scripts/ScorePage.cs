@@ -172,18 +172,18 @@ public class ScorePage : MonoBehaviour
     {
         superChef.actualNiveau = niveau;
         // 1  ->  all is done || 0  -> nothing is done in that level
-        if (CalculateScore() == 1 || CalculateScore() == 0)
+        if (CalculateScore(niveau) == 1 || CalculateScore(niveau) == 0)
         {
             return;
         }
         int level = 0;
         //check the points
-        foreach(Boolean i in superChef.infosNiveau[superChef.actualNiveau])
+        foreach(int i in superChef.pointsPerLevel[niveau])
         {
             level++;
-            if (i)
+            if (i!=10)
             {
-                SceneManager.LoadScene("Level" + superChef.actualNiveau + "_" + level);
+                SceneManager.LoadScene("Level" + niveau + "_" + level);
                 superChef.level = level - 1;
                 break;
             }

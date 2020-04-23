@@ -137,8 +137,6 @@ public class Level3 : MonoBehaviour
             // Edit score
             if (wrongClicks == 0)
             {
-                //set the level as done
-                superChef.infosNiveau[superChef.actualNiveau][superChef.level - 1] = false;
                 //safe the new value in existing points
                 superChef.pointsPerLevel[superChef.actualNiveau][superChef.level - 1] = 10;
             }

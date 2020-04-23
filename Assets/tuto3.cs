@@ -36,7 +36,7 @@ public class tuto3 : MonoBehaviour
                 break;
             }
             //next level or after that is a level open
-            if (superChef.infosNiveau[superChef.actualNiveau][i - 1])
+            if (superChef.pointsPerLevel[superChef.actualNiveau][i - 1] != 10)
             {
                 Debug.Log("Level" + superChef.actualNiveau + "_" + i);
                 SceneManager.LoadScene("Level3_" + i);
