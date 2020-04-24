@@ -12,7 +12,7 @@ public class PickFromGallery : MonoBehaviour
 {
 
     public Image image;
-    public static string filename="";
+    public static string extentionName;
 
     void Start()
     {
@@ -65,6 +65,7 @@ public class PickFromGallery : MonoBehaviour
         // version 2
         Debug.Log("localFile.bytes = " + localFile.bytes);
         Debug.Log("localFileName = " + localFileName);
+        extentionName = localFileName.Substring(localFileName.Length - 4);
         postForm.AddBinaryData("theFile", localFile.bytes, name+surname+ localFileName.Substring(localFileName.Length - 4), "text/plain");
         WWW upload = new WWW("https://attentionconjointe.p645.hevs.ch/UploadImage.php", postForm);
         yield return upload;
