@@ -1125,7 +1125,6 @@ GameObject:
   - component: {fileID: 282379386}
   - component: {fileID: 282379385}
   - component: {fileID: 282379388}
-  - component: {fileID: 282379389}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1210,21 +1209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 379472875}
---- !u!114 &282379389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282379384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f8ae37a8903e642baf30ebf3be0795, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deviceName: 
-  heightmap: {fileID: 0}
-  size: {x: 100, y: 10, z: 100}
 --- !u!1 &285971833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,6 +1541,12 @@ MonoBehaviour:
   back: {fileID: 0}
   back1: {fileID: 168577912}
   back2: {fileID: 0}
+  NTtitle: {fileID: 0}
+  NTname: {fileID: 0}
+  NTsurname: {fileID: 0}
+  NTemail: {fileID: 0}
+  NTpwd: {fileID: 0}
+  NTregister: {fileID: 0}
 --- !u!1 &379472873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,7 +2537,6 @@ GameObject:
   - component: {fileID: 753820811}
   - component: {fileID: 753820810}
   - component: {fileID: 753820809}
-  - component: {fileID: 753820812}
   m_Layer: 5
   m_Name: Camera
   m_TagString: Untagged
@@ -2650,21 +2639,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753820807}
   m_CullTransparentMesh: 0
---- !u!114 &753820812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753820807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f8ae37a8903e642baf30ebf3be0795, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deviceName: 
-  heightmap: {fileID: 0}
-  size: {x: 100, y: 10, z: 100}
 --- !u!1 &849829277
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,6 +5256,7 @@ GameObject:
   - component: {fileID: 1876508368}
   - component: {fileID: 1876508367}
   - component: {fileID: 1876508369}
+  - component: {fileID: 1876508370}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -5334,6 +5309,20 @@ MonoBehaviour:
   CreateTeacher: {fileID: 0}
   CreateChild: {fileID: 0}
   TeacherProfile: {fileID: 0}
+--- !u!114 &1876508370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876508366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf0c5a1d78aaf1478bc7f2cabaf7e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 379472875}
+  url: https://attentionconjointe.p645.hevs.ch/Images/tetsststahah.jpg
 --- !u!1 &1914650438
 GameObject:
   m_ObjectHideFlags: 0
