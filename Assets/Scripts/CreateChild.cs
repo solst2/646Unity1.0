@@ -12,6 +12,9 @@ public class CreateChild : MonoBehaviour
     public Image ImageChild;
     public Button SubmitButton;
 
+    public static string nameEnter;
+    public static string surnameEnter;
+
     //Sound sources
     public AudioSource FairySound;
     public AudioSource AstronautSound;
@@ -44,8 +47,16 @@ public class CreateChild : MonoBehaviour
         });*/
     }
 
+    void Update()
+    {
+        nameEnter = NameInput.text;
+        surnameEnter = SurnameInput.text;
+    }
+
     public void CreatChild() {
+        //StartCoroutine(Main.Instance.Web.UploadFileCo(PickFromGallery.filename));
         StartCoroutine(Main.Instance.Web.RegisterChild(NameInput.text, SurnameInput.text, FK_Character, Web.idProf));
+        
     }
 
     public void Fairy() {
