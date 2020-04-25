@@ -12,7 +12,7 @@ public class PickFromGallery : MonoBehaviour
 {
 
     public Image image;
-    public static string extentionName;
+    public static string extentionName = ".jpg";
 
     void Start()
     {

@@ -114,11 +114,13 @@ public class Web : MonoBehaviour
 
     public IEnumerator RegisterChild(string name, string surname, string fk_Character, string fk_Teacher)
     {
+        string extension = PickFromGallery.extentionName;
         WWWForm form = new WWWForm();
         form.AddField("name", name);
         form.AddField("surname", surname);
         form.AddField("fk_Character", fk_Character);
         form.AddField("fk_Teacher", fk_Teacher);
+        form.AddField("extension", extension);
 
         using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch/RegisterChild.php", form))
         {
