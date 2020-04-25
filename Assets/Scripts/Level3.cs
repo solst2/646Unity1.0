@@ -8,7 +8,7 @@ using System;
 
 public class Level3 : MonoBehaviour
 {
-
+    //Attributes
     public AudioSource sonBon;
     public AudioSource sonPasBon;
     public GameObject smile;

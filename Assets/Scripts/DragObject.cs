@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class DragObject : MonoBehaviour
 {
+    //Attributes
     private Vector3 mOffset;
     private Vector3 positionBase;
     private float mZCoord;
     public GameObject correct;
 
-
+    //Select object
     private void OnMouseDown()
     {
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
@@ -18,11 +19,13 @@ public class DragObject : MonoBehaviour
         mOffset = gameObject.transform.position - GetMouseWorldPos();
     }
 
+    //Move object
     void OnMouseDrag()
     {
         transform.position = GetMouseWorldPos() + mOffset;
     }
 
+    //Place object
     void OnMouseUp()
     {
         float Distance = Vector3.Distance(this.transform.position, correct.transform.position);

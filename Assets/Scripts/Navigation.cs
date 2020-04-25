@@ -38,6 +38,7 @@ public class Navigation : MonoBehaviour
         }
     }
 
+    //Play the game offline
     public void Offline()
     {
         superChef.offline = true;
@@ -101,24 +102,28 @@ public class Navigation : MonoBehaviour
 
     }
 
+    //Logout -> go to Login
     public void BackButtonLogoutTeacher()
     {
         SceneManager.LoadScene("ChildScene");
         TeacherInfo.fromWhere = "Profil";
     }
 
+    //Load the score of a child
     public void nextToScore()
     {
 
         SceneManager.LoadScene("ScorePage1");
     }
 
+    //Select a language
     public void backToLanguage()
     {
 
         SceneManager.LoadScene("Language");
     }
 
+    //start the next niveau
     public void nextNiveau()
     {   
         // at the moment just 4 niveaus are done -> change it to add the next niveau
@@ -164,6 +169,7 @@ public class Navigation : MonoBehaviour
 
     }
 
+    //Start a new scene -> with scene id, start the tutorial yes / no
     public void goToScene(int i)
     {
         superChef.actualNiveau = i;
@@ -186,11 +192,13 @@ public class Navigation : MonoBehaviour
         SceneManager.LoadScene("Level"+i+"_1");
     }
 
+    //select language
     public void GoToLanguage()
     {
-
         SceneManager.LoadScene("Language");
     }
+
+    //go to a website
     public void OpenWebsite()
     {
         Application.OpenURL("https://fr.wikipedia.org/wiki/Attention_conjointe");

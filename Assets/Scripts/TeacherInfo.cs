@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class TeacherInfo : MonoBehaviour
 {
-
+    //Attributes
     public string PK_Teacher { get; private set; }
     string Username;
     string Password;
@@ -21,25 +21,24 @@ public class TeacherInfo : MonoBehaviour
         //Navigation 
         if (fromWhere.Equals("ScorePage"))
         {
-            // teacherProfil aktiviäru
+            //activate teacherProfil
             PK_Teacher = Web.idProf;
             email.text = Web.mailProf;
             Profil.SetActive(true);
             Login.SetActive(false);
             CreateTeacher.SetActive(false);
         }
+
         if (fromWhere.Equals("Profil") || fromWhere.Equals("ScorePageOffline"))
         {
-            // teacherLogin aktiviäru
+            //activate teacherLogin aktiviäru
             Profil.SetActive(false);
             Login.SetActive(true);
             CreateTeacher.SetActive(false);
         }
-        
-        
-
     }
 
+    //Display the email of the teacher on the screen
     public void SetCredentials(string emailDB, string password) {
         Email = emailDB;
         Password = password;
@@ -49,8 +48,6 @@ public class TeacherInfo : MonoBehaviour
         }
         catch (System.Exception)
         {
-
-
         }
         
     }
@@ -63,5 +60,4 @@ public class TeacherInfo : MonoBehaviour
     {
         SceneManager.LoadScene("CreateChild");
     }
-
 }

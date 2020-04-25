@@ -7,6 +7,7 @@ public class Main : MonoBehaviour
 {
     public static Main Instance;
 
+    //Attributes
     public Web Web;
     public TeacherInfo TeacherInfo;
     public Login Login;

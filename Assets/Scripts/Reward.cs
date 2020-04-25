@@ -26,6 +26,7 @@ public class Reward : MonoBehaviour
         fairy.SetActive(false);
         train.SetActive(false);
 
+        //display the right reward, depending on the character
         switch (characterChosen)
         {
             case "Astronaut":
@@ -46,7 +47,6 @@ public class Reward : MonoBehaviour
 
         //background
         background.GetComponent<Camera>().backgroundColor = superChef.backgroundCamera[RotateCube.color];
-
 
         StartCoroutine(GoToNextSceneN());
     }

@@ -90,6 +90,7 @@ public class Childrens : MonoBehaviour
         }
     }
 
+    //Play with one Child, pass on the child's id
     public void playButton(string PK_Child) {
         SceneManager.LoadScene("ScorePage1");
         superChef.PK_Child = PK_Child;
