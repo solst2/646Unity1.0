@@ -103,6 +103,11 @@ public class Level3 : MonoBehaviour
             WrongSmile.transform.GetChild(1).gameObject.SetActive(false);
             WrongSmile.transform.Find(superChef.gender).gameObject.SetActive(true);
         }
+        //when the game is offline, the data is loaded
+        if (superChef.offline)
+        {
+            superChef.dataloaded = true;
+        }
     }
 
     void Update()
