@@ -35,6 +35,9 @@ public class CreateChild : MonoBehaviour
     string FK_Teacher = "1";
     string FK_Character = "1";
 
+    //Errormessage
+    public Text ErrorMessageRegister;
+
     public Text backButton;
 
     int activated = 4;
@@ -87,7 +90,12 @@ public class CreateChild : MonoBehaviour
 
     public void CreatChild() {
         //StartCoroutine(Main.Instance.Web.UploadFileCo(PickFromGallery.filename));
-        StartCoroutine(Main.Instance.Web.RegisterChild(NameInput.text, SurnameInput.text, FK_Character, Web.idProf));
+        if (SurnameInput.text.Equals("") || NameInput.text.Equals(""))
+        {
+            ErrorMessageRegister.text = "Please fill in all fields";
+        } else {
+            StartCoroutine(Main.Instance.Web.RegisterChild(NameInput.text, SurnameInput.text, FK_Character, Web.idProf));
+        }
     }
     public void updateChild()
     {
