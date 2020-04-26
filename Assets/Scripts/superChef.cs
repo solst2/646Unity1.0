@@ -45,13 +45,9 @@ public class superChef : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        try
+        if (offline != true)
         {
             StartCoroutine(Main.Instance.Web.GetSelectedChild(PK_Child));
-        }
-        catch (Exception e)
-        {
-            // when all is offline, this will not work
         }
         /*
         //smile depends on language

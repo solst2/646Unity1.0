@@ -210,14 +210,13 @@ public class Level3 : MonoBehaviour
         superChef.levelDB = "" + superChef.level;
         superChef.niveau = "" + superChef.actualNiveau;
         PrintArray();
-        try
+
+        //offline game, can not be safed
+        if (!superChef.offline)
         {
             StartCoroutine(Main.Instance.Web.UpdateChild(superChef.PK_Child, superChef.childname, superChef.childsurname, superChef.score[0], superChef.score[1], superChef.score[2], superChef.score[3], superChef.score[4], superChef.niveau, superChef.levelDB, superChef.fk_Character));
-        } catch (Exception e)
-        {
-            //offline game, can not be safed
-            Debug.Log("No Update");
         }
+
         Debug.Log("Update");
         superChef.dataloaded = true;
         //load new scene -> niveau 4 has just one level -> directly to the reward Finish

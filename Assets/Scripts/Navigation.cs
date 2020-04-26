@@ -57,18 +57,17 @@ public class Navigation : MonoBehaviour
 
         //new infos
         for (int i = 1; i < 5; i++)
-        {
-            string[] scoreAlone = strlist[i + 1].Split('-');
-
+        { 
             try
             {
-                superChef.pointsPerLevel.Add(i, new int[] { Int32.Parse(scoreAlone[0]), Int32.Parse(scoreAlone[1]),
-                            Int32.Parse(scoreAlone[2]), Int32.Parse(scoreAlone[3]), Int32.Parse(scoreAlone[4])});
+                Debug.Log("Offline in try: " + i);
+                superChef.pointsPerLevel.Add(i, new int[] { 0,0,0,0,0});
             }
             catch (Exception e)
             {
-                superChef.pointsPerLevel[i] = new int[] { Int32.Parse(scoreAlone[0]), Int32.Parse(scoreAlone[1]),
-                            Int32.Parse(scoreAlone[2]), Int32.Parse(scoreAlone[3]), Int32.Parse(scoreAlone[4])};
+                Debug.Log("Offline begin of catch: " + i);
+                superChef.pointsPerLevel[i] = new int[] { 0,0,0,0,0};
+                Debug.Log("Offline end of catch: " + i);
             }
         }
         superChef.level = Int32.Parse(strlist[7]);

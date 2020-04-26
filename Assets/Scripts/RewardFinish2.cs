@@ -20,6 +20,11 @@ public class RewardFinish2 : MonoBehaviour
         //next field
         next.text = changeLangage.names[changeLangage.setLanguage, 4];
         count = 0;
+        //for the scorepage in offline mode
+        if(superChef.offline == true)
+        {
+            superChef.dataloaded = true;
+        }
     }
 
     // Update is called once per frame
