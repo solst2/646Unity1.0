@@ -63,6 +63,7 @@ public class CreateChild : MonoBehaviour
             SurnameInput.text = superChef.childsurname;
             SurnameInput.readOnly = true;
             //get character
+            activated = 4; //set to start, no character activated
             switch (superChef.character)
             {
                 case "Astronaut":
@@ -158,7 +159,6 @@ public class CreateChild : MonoBehaviour
 
     public void diableOldOne()
     {
-
         //disable the old one
         if (activated != 4)
         {
