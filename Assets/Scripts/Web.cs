@@ -395,6 +395,7 @@ public class Web : MonoBehaviour
                 Debug.Log(www.downloadHandler.text);
                 nameProf = strlist[0];
                 surnameProf = strlist[1];
+                Main.Instance.TeacherInfo.SetCredentialsName(nameProf + " " + surnameProf);
             }
         }
     }

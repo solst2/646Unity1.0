@@ -9,6 +9,7 @@ public class TeacherInfo : MonoBehaviour
     string Password;
     string Email;
     public Text email;
+    public Text name;
     public static string fromWhere = "";
     public GameObject Profil;
     public GameObject Login;
@@ -23,6 +24,7 @@ public class TeacherInfo : MonoBehaviour
             //activate teacherProfil
             PK_Teacher = Web.idProf;
             email.text = Web.mailProf;
+            name.text = Web.nameProf + " "+Web.surnameProf;
             Profil.SetActive(true);
             Login.SetActive(false);
             CreateTeacher.SetActive(false);
@@ -49,6 +51,19 @@ public class TeacherInfo : MonoBehaviour
         {
         }
         
+    }
+
+    //Display the email of the teacher on the screen
+    public void SetCredentialsName(string nameProf)
+    {
+        try
+        {
+            name.text = nameProf;
+        }
+        catch (System.Exception)
+        {
+        }
+
     }
 
     public void SetTeacherID(string id) {
