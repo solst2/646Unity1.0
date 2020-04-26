@@ -76,10 +76,24 @@ public class Childrens : MonoBehaviour
             Image img = item.transform.Find("Image").GetComponent<Image>();
             WWW www = new WWW(url);
             yield return www;
-            img.sprite = Sprite.Create(www.texture, new Rect(0f, 0f, www.texture.width, www.texture.height), new Vector2(0.5f, 0.5f));
-            img.SetNativeSize();
-            img.rectTransform.sizeDelta = new Vector2(100, 100);
-             
+
+            if (www.error == null)
+            {
+                img.sprite = Sprite.Create(www.texture, new Rect(0f, 0f, www.texture.width, www.texture.height), new Vector2(0.5f, 0.5f));
+                img.SetNativeSize();
+                img.rectTransform.sizeDelta = new Vector2(100, 100);
+            }
+            else
+            {
+                www = new WWW("https://attentionconjointe.p645.hevs.ch/Images/Logo.jpg");
+                yield return www;
+                img.sprite = Sprite.Create(www.texture, new Rect(0f, 0f, www.texture.width, www.texture.height), new Vector2(0.5f, 0.5f));
+                img.SetNativeSize();
+                img.rectTransform.sizeDelta = new Vector2(100, 100);
+            }
+
+            
+
 
             //Listener to the playButton
             item.transform.Find("PlayButton").GetComponent<Button>().onClick.AddListener(() =>
