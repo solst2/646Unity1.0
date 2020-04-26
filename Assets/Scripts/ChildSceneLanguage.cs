@@ -44,14 +44,14 @@ public class ChildSceneLanguage : MonoBehaviour
 
     };
 
-    public string[,] teacherProfilNames = new string[6, 3] {
+    public static string[,] teacherProfilNames = new string[6, 3] {
 
-         { "Ajouter un enfant","Nouveau professeur", "changer d'enfant"}, //French  
-         { "Neues Kind anlegen","Neue Lehrer", "Kind ändern"}, //German
-         { "Aggiungi un bambino","Nuovo Insegnante", "bambia bambino"}, //Italian
-         { "Create new Child","New Teacher", "change child"}, //English 
-         { "Crear un niño","Nuevo Maestro", "cambiar de niño"}, //Spanish
-         { "子を加える","新しい先生","子の変更"} //Japanish
+         { "Ajouter un enfant","Nouveau professeur", "changer de personnage"}, //French  
+         { "Neues Kind anlegen","Neue Lehrer", "Charakter ändern"}, //German
+         { "Aggiungi un bambino","Nuovo Insegnante", "cambia carattere"}, //Italian
+         { "Create new Child","New Teacher", "change character"}, //English 
+         { "Crear un niño","Nuevo Maestro", "cambiar el carácter"}, //Spanish
+         { "子を加える","新しい先生","文字の変更"} //Japanish
 
     };
 
@@ -95,20 +95,18 @@ public class ChildSceneLanguage : MonoBehaviour
 
         try
         {
+            if (superChef.edit)
+            {
+                createTitle.text = ChildSceneLanguage.teacherProfilNames[changeLangage.setLanguage, 2];
+            } else
+            {
+                createTitle.text = createNames[changeLangage.setLanguage, 0];
+            }
             back1.text = changeLangage.names[changeLangage.setLanguage, 9];
             createName.text = createNames[changeLangage.setLanguage, 1] + "...";
             createSurname.text = createNames[changeLangage.setLanguage, 2] + "...";
             createCreate.text = createNames[changeLangage.setLanguage, 5];
-            if (superChef.edit)
-            {
-                //modify child
-                createTitle.text = teacherProfilNames[changeLangage.setLanguage, 3];
-            }
-            else
-            {
-                //create child
-                createTitle.text = createNames[changeLangage.setLanguage, 0];
-            }
+            
         }
         catch (Exception e)
         {

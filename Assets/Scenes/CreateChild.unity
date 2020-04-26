@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3299,7 +3299,7 @@ MonoBehaviour:
   ImageChild: {fileID: 1197448121}
   SubmitButton: {fileID: 1325554161}
   UpdateButton: {fileID: 920361609}
-  gallery: {fileID: 379472873}
+  gallery: {fileID: 1176957332}
   FairySound: {fileID: 1110578138}
   AstronautSound: {fileID: 1110578137}
   ExplorateurSound: {fileID: 1110578140}

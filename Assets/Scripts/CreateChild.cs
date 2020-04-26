@@ -13,6 +13,7 @@ public class CreateChild : MonoBehaviour
     public Button SubmitButton;
     public Button UpdateButton;
     public GameObject gallery;
+    public Text createTitle;
 
     public static string nameEnter;
     public static string surnameEnter;
@@ -57,8 +58,10 @@ public class CreateChild : MonoBehaviour
         if (superChef.edit && loaded)
         {
             NameInput.text = superChef.childname;
+            NameInput.readOnly = true;
             Debug.Log("Childname: " + superChef.childname);
             SurnameInput.text = superChef.childsurname;
+            SurnameInput.readOnly = true;
             //get character
             switch (superChef.character)
             {
