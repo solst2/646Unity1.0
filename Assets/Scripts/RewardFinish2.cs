@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class RewardFinish2 : MonoBehaviour
 {
-
+    //Attributes
     public GameObject element;
     public AudioSource sound;
     public Text next;
@@ -20,6 +20,11 @@ public class RewardFinish2 : MonoBehaviour
         //next field
         next.text = changeLangage.names[changeLangage.setLanguage, 4];
         count = 0;
+        //for the scorepage in offline mode
+        if(superChef.offline == true)
+        {
+            superChef.dataloaded = true;
+        }
     }
 
     // Update is called once per frame
@@ -45,7 +50,7 @@ public class RewardFinish2 : MonoBehaviour
             Instantiate(element, mousePosition, Quaternion.identity);
             mousePosition.y += r.Next(0, 5);
             Instantiate(element, mousePosition, Quaternion.identity);
-            Debug.Log("Erstellt");
+            Debug.Log("Created");
         }
 
         if (count >= 10)
@@ -54,6 +59,7 @@ public class RewardFinish2 : MonoBehaviour
         }
     }
 
+    //Navigation
     IEnumerator GoToNextSceneN()
     {
         //Wait for seconds

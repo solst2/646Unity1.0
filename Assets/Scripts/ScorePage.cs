@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ScorePage : MonoBehaviour
 {
+    //Attributes
     public Slider[] scores;
     public GameObject[] levels;
     public GameObject[] characters;
@@ -27,8 +28,9 @@ public class ScorePage : MonoBehaviour
 
     void Update()
     {
-        if (superChef.dataloaded == true || superChef.offline == true)
+        if (superChef.dataloaded == true)
         {
+            PrintArray();
             canvas.SetActive(true);
             //depents on language, change repeat value 
             for (int i = 0; i < 4; i++)
@@ -126,8 +128,9 @@ public class ScorePage : MonoBehaviour
             }
             //background
             background.GetComponent<Image>().color = superChef.background[RotateCube.color];
+
+            superChef.dataloaded = false;
         }
-        superChef.dataloaded = false;
     }
 
     public void PrintArray()

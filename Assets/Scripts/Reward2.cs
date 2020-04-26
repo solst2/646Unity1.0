@@ -27,6 +27,7 @@ public class Reward2 : MonoBehaviour
 
         character = superChef.character;
 
+        //display the right reward, depending on the character
         switch (character)
         {
             case "Astronaut":

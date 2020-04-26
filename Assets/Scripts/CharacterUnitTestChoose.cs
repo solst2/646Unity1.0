@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterUnitTestChoose 
 {
+    //For the unittest, which chrachter is selected
     public string getCharacter(int number)
     {
         string character = "";

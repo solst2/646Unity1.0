@@ -75,7 +75,7 @@ public class ChildSceneLanguage : MonoBehaviour
             loginUsername.text = loginNames[changeLangage.setLanguage, 1];
             loginPassword.text = loginNames[changeLangage.setLanguage, 2];
             loginLogin.text = loginNames[changeLangage.setLanguage, 3];
-            back.text = changeLangage.names[changeLangage.setLanguage, 3];
+            back.text = changeLangage.names[changeLangage.setLanguage, 8];
             loginRegister.text = loginNames[changeLangage.setLanguage, 4];
             loginOffline.text = loginNames[changeLangage.setLanguage, 5];
         } catch (Exception e)
@@ -95,7 +95,7 @@ public class ChildSceneLanguage : MonoBehaviour
 
         try
         {
-            back1.text = changeLangage.names[changeLangage.setLanguage, 3];
+            back1.text = changeLangage.names[changeLangage.setLanguage, 9];
             createTitle.text = createNames[changeLangage.setLanguage, 0];
             createName.text = createNames[changeLangage.setLanguage, 1] + "...";
             createSurname.text = createNames[changeLangage.setLanguage, 2] + "...";

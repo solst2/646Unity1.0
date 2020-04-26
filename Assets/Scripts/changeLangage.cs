@@ -14,14 +14,14 @@ public class changeLangage : MonoBehaviour
     public word setWord;
 
     //Here is the liste of words from 0 to 4 
-    public static string[,] names = new string[6, 8] {
+    public static string[,] names = new string[6, 10] {
 
-         { "Niveau","Score","répéter","retour", "suivant", "jouer", "nom","Tutoriel"}, //French  
-         { "Ebene","Punktzahl","wiederholen","zurück", "weiter", "spielen","Name","Tutorial"}, //German
-         { "Livello", "punteggio", "ripetizione", "ritorno", "prossimo","giocare","Nome","Tutorial"}, //Italian
-         { "Level", "Score", "repeat", "back", "next" , "play","name","Tutorial"}, //English 
-         { "Nivel","Puntuación ","repetir","volver", "continuar","jugar","Nombre","Tutorial"}, //Spanish
-         { "レベル", "スコア", "リピート", "リターン", "ネクスト","あそ~ぶ","めいしょう","チュートリアル"} //Japanish
+         { "Niveau","Score","répéter","retour", "suivant", "jouer", "nom","Tutoriel","changer de langue","déconnexion"}, //French  
+         { "Ebene","Punktzahl","wiederholen","zurück", "weiter", "spielen","Name","Tutorial", "Sprache ändern","abmelden"}, //German
+         { "Livello", "punteggio", "ripetizione", "ritorno", "prossimo","giocare","Nome","Tutorial","cambia lingua","disconnettiti"}, //Italian
+         { "Level", "Score", "repeat", "back", "next" , "play","name","Tutorial","change language","logout"}, //English 
+         { "Nivel","Puntuación ","repetir","volver", "continuar","jugar","Nombre","Tutorial","cambiar el idioma","desconecta"}, //Spanish
+         { "レベル", "スコア", "リピート", "リターン", "ネクスト","あそ~ぶ","めいしょう","チュートリアル","言語の変更","ログオフ"} //Japanish
 
     };
 

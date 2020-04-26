@@ -70,19 +70,28 @@ public class Childrens : MonoBehaviour
             item.transform.Find("TextNiveau").GetComponent<Text>().text = changeLangage.names[changeLangage.setLanguage, 0];
             item.transform.Find("PlayButton").GetComponent<Button>().GetComponentInChildren<Text>().text = changeLangage.names[changeLangage.setLanguage, 5];
 
+            //Download Image
+            String url = childInfoJson["Picture"];
+            Image img = item.transform.Find("Image").GetComponent<Image>();
+            WWW www = new WWW(url);
+            yield return www;
+            img.sprite = Sprite.Create(www.texture, new Rect(0f, 0f, www.texture.width, www.texture.height), new Vector2(0.5f, 0.5f));
+            img.SetNativeSize();
             //Listener to the playButton
             item.transform.Find("PlayButton").GetComponent<Button>().onClick.AddListener(() =>
             {
                 playButton(PK_Child);
             });
 
-            //do not destroy
-            DontDestroyOnLoad(item);
+            //do not destroy -> do not need with this items
+            //DontDestroyOnLoad(item);
+
             //continue to the next item
 
         }
     }
 
+    //Play with one Child, pass on the child's id
     public void playButton(string PK_Child) {
         SceneManager.LoadScene("ScorePage1");
         superChef.PK_Child = PK_Child;

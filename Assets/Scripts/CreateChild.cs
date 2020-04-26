@@ -60,8 +60,8 @@ public class CreateChild : MonoBehaviour
     }
 
     public void Fairy() {
-        Debug.Log("1");
-        FK_Character = "1";
+        Debug.Log("3");
+        FK_Character = "3";
         FairySound.Play();
         active[0].SetActive(true);
         notActive[0].SetActive(false);
@@ -71,8 +71,8 @@ public class CreateChild : MonoBehaviour
 
     public void Astronaut()
     {
-        Debug.Log("2");
-        FK_Character = "2";
+        Debug.Log("1");
+        FK_Character = "1";
         AstronautSound.Play();
         active[1].SetActive(true);
         notActive[1].SetActive(false);
@@ -82,8 +82,8 @@ public class CreateChild : MonoBehaviour
 
     public void Explorateur()
     {
-        Debug.Log("3");
-        FK_Character = "3";
+        Debug.Log("2");
+        FK_Character = "2";
         ExplorateurSound.Play();
         active[2].SetActive(true);
         notActive[2].SetActive(false);

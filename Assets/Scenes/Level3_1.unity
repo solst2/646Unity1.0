@@ -2047,7 +2047,7 @@ RectTransform:
   m_GameObject: {fileID: 1295049752}
   m_LocalRotation: {x: 0.0000000018626451, y: 1, z: -9.313226e-10, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.63, y: 0.63, z: 0.63}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 1029119930}
   m_Father: {fileID: 1615595208}
@@ -2658,6 +2658,7 @@ MonoBehaviour:
   barFirst: {fileID: 672245964}
   target: {fileID: 1848638625}
   correctEyes: {fileID: 1128717875}
+  WrongSmile: {fileID: 0}
   scores: {fileID: 52769569}
   back: {fileID: 1029119931}
   niveau: {fileID: 985488115}

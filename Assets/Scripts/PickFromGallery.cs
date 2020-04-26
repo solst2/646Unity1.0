@@ -10,24 +10,26 @@ using UnityEngine.Networking;
 
 public class PickFromGallery : MonoBehaviour
 {
-
+    //Attributes
     public Image image;
-    public static string extentionName;
+    public static string extentionName = ".jpg";
 
     void Start()
     {
         image.gameObject.SetActive(false);
     } 
 
+    //Pick Image from the gallery
     public void PickImage(int maxSize)
     {
         Debug.Log("Click");
 
+        //Load the image and display it
         NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
         {
             if (path != null)
             {
-                
+           
                 Texture2D texture = NativeGallery.LoadImageAtPath(path, maxSize);
                 if (texture == null)
                 {
@@ -40,12 +42,14 @@ public class PickFromGallery : MonoBehaviour
                 image.sprite = sprite;
                 Debug.Log("The path is " + path);
 
+                //Save the image in the DB
                 StartCoroutine(UploadFileCo(path,CreateChild.nameEnter, CreateChild.surnameEnter));
 
             }
         });
     }
 
+    //Upload the image in the DB
     public IEnumerator UploadFileCo(string localFileName,string name, string surname)
     {
         Debug.Log("Start UploadFileCo");
