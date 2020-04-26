@@ -85,7 +85,7 @@ public class Childrens : MonoBehaviour
             }
             else
             {
-                www = new WWW("https://attentionconjointe.p645.hevs.ch/Images/Logo.jpg");
+                www = new WWW("https://attentionconjointe.p645.hevs.ch/Images/Default.jpg");
                 yield return www;
                 img.sprite = Sprite.Create(www.texture, new Rect(0f, 0f, www.texture.width, www.texture.height), new Vector2(0.5f, 0.5f));
                 img.SetNativeSize();
