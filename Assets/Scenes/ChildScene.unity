@@ -2030,7 +2030,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   email: {fileID: 0}
-  nameTeacher: {fileID: 0}
   Profil: {fileID: 0}
   Login: {fileID: 0}
   CreateTeacher: {fileID: 0}
@@ -5012,7 +5011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   email: {fileID: 1240743185}
-  nameTeacher: {fileID: 1992422383}
   Profil: {fileID: 1057247285}
   Login: {fileID: 1334233963}
   CreateTeacher: {fileID: 1749373126}
@@ -5097,7 +5095,7 @@ GameObject:
   - component: {fileID: 1992422384}
   - component: {fileID: 1992422383}
   m_Layer: 5
-  m_Name: NameTeacher
+  m_Name: nameTeacher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

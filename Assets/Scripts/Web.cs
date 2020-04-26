@@ -12,9 +12,11 @@ public class Web : MonoBehaviour
     public Text ErrorMessageLogin;
     public Text ErrorMessageRegister;
 
-    //Store the id and the mail of the teacher
+    //Store the infos of the teacher
     public static string idProf = "";
     public static string mailProf = "";
+    public static string nameProf = "";
+    public static string surnameProf = "";
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +69,7 @@ public class Web : MonoBehaviour
                 mailProf = email;
                 Main.Instance.TeacherInfo.SetCredentials(email, password);
                 Main.Instance.TeacherInfo.SetTeacherID(www.downloadHandler.text);
+                StartCoroutine(Main.Instance.Web.GetTeacher(idProf));
 
                 //Display the correct errormessage
                 if (www.downloadHandler.text.Contains("Wrong Credentials"))
@@ -280,7 +283,7 @@ public class Web : MonoBehaviour
                 superChef.levelDB = strlist[7];
                 superChef.niveau = strlist[8];
                 superChef.fk_Character = strlist[9];
-                Debug.Log("FK.." + strlist[9]);
+
                 //new infos
                 for (int i = 1; i < 5; i++)
                 {
@@ -361,6 +364,37 @@ public class Web : MonoBehaviour
             {
                 //Show Results as text
                 Debug.Log(www.downloadHandler.text);
+            }
+        }
+    }
+
+    //Get the informations of the Teacher
+    public IEnumerator GetTeacher(string PK_Teacher)
+    {
+        //Send attributes
+        WWWForm form = new WWWForm();
+        form.AddField("PK_Teacher", PK_Teacher);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch/GetTeacher.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            //Check if there is a network error
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                //Show Results as text
+                string valuesFromDB = www.downloadHandler.text;
+
+                string[] strlist = valuesFromDB.Split(',');
+
+                //Save the informations
+                Debug.Log(www.downloadHandler.text);
+                nameProf = strlist[0];
+                surnameProf = strlist[1];
             }
         }
     }
