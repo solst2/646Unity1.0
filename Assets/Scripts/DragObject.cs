@@ -22,6 +22,7 @@ public class DragObject : MonoBehaviour
     //Move object
     void OnMouseDrag()
     {
+        //Set the position of the object to the Mouse position
         transform.position = GetMouseWorldPos() + mOffset;
     }
 
@@ -30,7 +31,8 @@ public class DragObject : MonoBehaviour
     {
         float Distance = Vector3.Distance(this.transform.position, correct.transform.position);
 
-        //1 and 2 are for level 3 and the correct one in level 4 is number 3
+        //Check if it is in the distance and it is the right object
+        //"1" and "2" are for level 3 and the correct one in level 4 is number "3"
         if ((Distance < 20 && (this.transform.name.Equals("1"))|| (Distance < 50 && this.transform.name.Equals("2"))|| (Distance < 30 && this.transform.name.Equals("3"))))
         {
             if (this.transform.name.Equals("2"))
@@ -45,10 +47,12 @@ public class DragObject : MonoBehaviour
             Level3.sonBon1.Play();
             Debug.Log("Yeah");
             Destroy(gameObject);
+            //show the correct object on the right place
             correct.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f); 
         }
         else
         {
+            //not right
             Level3.sonPasBon1.Play();
             Level3.wrongClicks = Level3.wrongClicks + 0.5;
             Debug.Log("no" + Distance);
@@ -104,11 +108,5 @@ public class DragObject : MonoBehaviour
         //At the start we hide the correct eyes
         correct.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
