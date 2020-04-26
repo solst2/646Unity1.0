@@ -14,7 +14,7 @@ public class tuto3 : MonoBehaviour
     void Start()
     {
         text.text = changeLangage.names[changeLangage.setLanguage, 7];
-        DOVirtual.DelayedCall(13, GoToNextScene);
+        DOVirtual.DelayedCall(8, GoToNextScene);
     }
 
     // Update is called once per frame
