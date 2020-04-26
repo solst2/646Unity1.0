@@ -15,6 +15,9 @@ public class CreateTeacher : MonoBehaviour
     public GameObject Login;
     public GameObject Register;
 
+    //Errormessage
+    public Text ErrorMessageRegister;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,14 @@ public class CreateTeacher : MonoBehaviour
     public void call()
     {
         //Call the function to create a new teacher in the DB
-        StartCoroutine(Main.Instance.Web.RegisterTeacher(NameInput.text, SurnameInput.text, EmailInput.text, PasswordInput.text));
+        if (SurnameInput.text.Equals("") || NameInput.text.Equals("") || EmailInput.text.Equals("") || PasswordInput.text.Equals(""))
+        {
+            ErrorMessageRegister.text = "Please fill in all fields";
+        }
+        else
+        {
+            ErrorMessageRegister.text = "";
+            StartCoroutine(Main.Instance.Web.RegisterTeacher(NameInput.text, SurnameInput.text, EmailInput.text, PasswordInput.text));
+        }
     }
 }
