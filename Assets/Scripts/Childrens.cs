@@ -83,8 +83,9 @@ public class Childrens : MonoBehaviour
                 playButton(PK_Child);
             });
 
-            //do not destroy
-            DontDestroyOnLoad(item);
+            //do not destroy -> do not need with this items
+            //DontDestroyOnLoad(item);
+
             //continue to the next item
 
         }

@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class Web : MonoBehaviour
 {
     //Errormessage
-    public Text ErrorMessage;
+    public Text ErrorMessageLogin;
+    public Text ErrorMessageRegister;
 
     //Store the id and the mail of the teacher
     public static string idProf = "";
@@ -70,11 +71,11 @@ public class Web : MonoBehaviour
                 //Display the correct errormessage
                 if (www.downloadHandler.text.Contains("Wrong Credentials"))
                 {
-                    ErrorMessage.text = "Wrong Credentials";
+                    ErrorMessageLogin.text = "Wrong Credentials";
                 }
                 else if (www.downloadHandler.text.Contains("Email does not exist"))
                 {
-                    ErrorMessage.text = "Email does not exist";
+                    ErrorMessageLogin.text = "Email does not exist";
                 }
                 else {
                     //If we logged in correctly
@@ -110,7 +111,7 @@ public class Web : MonoBehaviour
                 //Dsiplay the errormessage
                 if (!www.downloadHandler.text.Contains("New record created successfully"))
                 {
-                    ErrorMessage.text = "Teacher could not be created";
+                    ErrorMessageRegister.text = "Teacher could not be created - Email already exists";
                 }
                 else
                 {
@@ -148,7 +149,7 @@ public class Web : MonoBehaviour
                 //Display the errormessage
                 if (!www.downloadHandler.text.Contains("New record created successfully"))
                 {
-                    ErrorMessage.text = "Child could not be created";
+                    ErrorMessageRegister.text = "Child could not be created - Child already exist";
                 }
                 else
                 {
