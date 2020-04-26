@@ -78,6 +78,9 @@ public class Childrens : MonoBehaviour
             yield return www;
             img.sprite = Sprite.Create(www.texture, new Rect(0f, 0f, www.texture.width, www.texture.height), new Vector2(0.5f, 0.5f));
             img.SetNativeSize();
+            img.rectTransform.sizeDelta = new Vector2(100, 100);
+             
+
             //Listener to the playButton
             item.transform.Find("PlayButton").GetComponent<Button>().onClick.AddListener(() =>
             {
