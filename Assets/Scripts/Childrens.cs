@@ -61,8 +61,7 @@ public class Childrens : MonoBehaviour
             item.transform.localPosition = Vector3.zero;
 
             //Fill Inromation
-            item.transform.Find("Name").GetComponent<Text>().text = childInfoJson["Name"];
-            item.transform.Find("Surname").GetComponent<Text>().text = childInfoJson["Surname"];
+            item.transform.Find("Name").GetComponent<Text>().text = childInfoJson["Name"] + " " + childInfoJson["Surname"];
             item.transform.Find("Character").GetComponent<Text>().text = childInfoJson["Niveau"];
             
             //Fill language
