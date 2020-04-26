@@ -2620,7 +2620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &753820808
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3300,6 +3300,7 @@ MonoBehaviour:
   SubmitButton: {fileID: 1325554161}
   UpdateButton: {fileID: 920361609}
   gallery: {fileID: 1176957332}
+  createTitle: {fileID: 0}
   FairySound: {fileID: 1110578138}
   AstronautSound: {fileID: 1110578137}
   ExplorateurSound: {fileID: 1110578140}
