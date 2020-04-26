@@ -25,6 +25,7 @@ public class Reward_moving : MonoBehaviour
 
         character = superChef.character;
 
+        //Look for the right reward, depending on the character
         switch (character)
         {
             case "Astronaut":
@@ -51,7 +52,7 @@ public class Reward_moving : MonoBehaviour
 
     IEnumerator GoToNextSceneN()
     {
-        //Wait for seconds
+        //Wait for 3 seconds
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("RewardFinish");
     }

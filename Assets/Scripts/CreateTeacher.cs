@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CreateTeacher : MonoBehaviour
 {
+    //Attributes
     public InputField NameInput;
     public InputField SurnameInput;
     public InputField EmailInput;
@@ -21,6 +22,7 @@ public class CreateTeacher : MonoBehaviour
 
     public void call()
     {
+        //Call the function to create a new teacher in the DB
         StartCoroutine(Main.Instance.Web.RegisterTeacher(NameInput.text, SurnameInput.text, EmailInput.text, PasswordInput.text));
     }
 }

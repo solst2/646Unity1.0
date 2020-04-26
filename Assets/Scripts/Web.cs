@@ -9,19 +9,20 @@ using UnityEngine.UI;
 public class Web : MonoBehaviour
 {
     //Errormessage
-    public Text ErrorMessage;
+    public Text ErrorMessageLogin;
+    public Text ErrorMessageRegister;
+
+    //Store the id and the mail of the teacher
     public static string idProf = "";
     public static string mailProf = "";
 
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(GetUsers());
-        //StartCoroutine(Login("testuser", "12345"));
-        //StartCoroutine(RegisterTeacher("testuser2", "12345"));
+
     }
 
-
+    //Get all Childrens of the Database
     IEnumerator GetUsers()
     {
         using (UnityWebRequest www = UnityWebRequest.Get("https://attentionconjointe.p645.hevs.ch/GetChildren.php")) {
@@ -41,8 +42,10 @@ public class Web : MonoBehaviour
         }
     }
 
+    //Call the Login.php File
     public IEnumerator Login(string email, string password)
     {
+        //Send attributes
         WWWForm form = new WWWForm();
         form.AddField("loginEmail", email);
         form.AddField("loginPass", password);
@@ -51,28 +54,32 @@ public class Web : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
+            //Check if there is a network error
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);
             }
             else
             {
+                //save the informations in variables
                 Debug.Log(www.downloadHandler.text);
                 idProf = www.downloadHandler.text;
                 mailProf = email;
                 Main.Instance.TeacherInfo.SetCredentials(email, password);
                 Main.Instance.TeacherInfo.SetTeacherID(www.downloadHandler.text);
 
+                //Display the correct errormessage
                 if (www.downloadHandler.text.Contains("Wrong Credentials"))
                 {
-                    ErrorMessage.text = "Wrong Credentials";
+                    ErrorMessageLogin.text = "Wrong Credentials";
                 }
                 else if (www.downloadHandler.text.Contains("Email does not exist"))
                 {
-                    ErrorMessage.text = "Email does not exist";
+                    ErrorMessageLogin.text = "Email does not exist";
                 }
                 else {
                     //If we logged in correctly
+                    superChef.offline = false;
                     Main.Instance.TeacherProfile.SetActive(true);
                     Main.Instance.Login.gameObject.SetActive(false);
                 }
@@ -80,14 +87,17 @@ public class Web : MonoBehaviour
         }
     }
 
+    //Create a new Teacher and save it in the db
     public IEnumerator RegisterTeacher(string name, string surname, string email, string password)
     {
+        //Send attributes
         WWWForm form = new WWWForm();
         form.AddField("loginName", name);
         form.AddField("loginSurname", surname);
         form.AddField("loginEmail", email);
         form.AddField("loginPass", password);
 
+        //Check if there is a network error
         using (UnityWebRequest www = UnityWebRequest.Post("https://attentionconjointe.p645.hevs.ch//RegisterTeacher.php", form))
         {
             yield return www.SendWebRequest();
@@ -98,9 +108,10 @@ public class Web : MonoBehaviour
             }
             else
             {
+                //Dsiplay the errormessage
                 if (!www.downloadHandler.text.Contains("New record created successfully"))
                 {
-                    ErrorMessage.text = "Teacher could not be created";
+                    ErrorMessageRegister.text = "Teacher could not be created - Email already exists";
                 }
                 else
                 {
@@ -112,8 +123,10 @@ public class Web : MonoBehaviour
         }
     }
 
+    //Create a new child and save it in the db
     public IEnumerator RegisterChild(string name, string surname, string fk_Character, string fk_Teacher)
     {
+        //Send attributes
         string extension = PickFromGallery.extentionName;
         WWWForm form = new WWWForm();
         form.AddField("name", name);
@@ -126,15 +139,17 @@ public class Web : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
+            //Check if there is a network error
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);
             }
             else
             {
+                //Display the errormessage
                 if (!www.downloadHandler.text.Contains("New record created successfully"))
                 {
-                    ErrorMessage.text = "Child could not be created";
+                    ErrorMessageRegister.text = "Child could not be created - Child already exist";
                 }
                 else
                 {
@@ -175,8 +190,10 @@ public class Web : MonoBehaviour
 
     }
 
+    //Get all ID's of the childrens of one teacher
     public IEnumerator GetChildrenIDs(string PK_Teacher, System.Action<string> callback)
     {
+        //Send attributes
         WWWForm form = new WWWForm();
         form.AddField("PK_Teacher", PK_Teacher);
 
@@ -184,6 +201,7 @@ public class Web : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
+            //Check if there is a network error
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);
@@ -199,8 +217,10 @@ public class Web : MonoBehaviour
         }
     }
 
+    //Get the informations of one child -> for the list of children
     public IEnumerator GetChild(string PK_Child, System.Action<string> callback)
     {
+        //Send attributes
         WWWForm form = new WWWForm();
         form.AddField("PK_Child", PK_Child);
 
@@ -208,6 +228,7 @@ public class Web : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
+            //Check if there is a network error
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);
@@ -223,8 +244,10 @@ public class Web : MonoBehaviour
         }
     }
 
+    //Get the informations of one single child -> play the game with it
     public IEnumerator GetSelectedChild(string PK_Child)
     {
+        //Send attributes
         WWWForm form = new WWWForm();
         form.AddField("PK_Child", PK_Child);
 
@@ -232,6 +255,7 @@ public class Web : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
+            //Check if there is a network error
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);
@@ -243,6 +267,7 @@ public class Web : MonoBehaviour
            
                 string[] strlist = valuesFromDB.Split(',');
 
+                //Save the informations
                 Debug.Log(www.downloadHandler.text);
                 superChef.childname = strlist[0];
                 superChef.childsurname = strlist[1];
@@ -254,7 +279,7 @@ public class Web : MonoBehaviour
                 superChef.levelDB = strlist[7];
                 superChef.niveau = strlist[8];
                 superChef.fk_Character = strlist[9];
-
+                Debug.Log("FK.." + strlist[9]);
                 //new infos
                 for (int i = 1; i < 5; i++)
                 {
@@ -271,21 +296,23 @@ public class Web : MonoBehaviour
                             Int32.Parse(scoreAlone[2]), Int32.Parse(scoreAlone[3]), Int32.Parse(scoreAlone[4])};
                     }
                 }
+
                 superChef.level = Int32.Parse(strlist[7]);
                 superChef.actualNiveau = Int32.Parse(strlist[8]);
-                //change to real version, this switch case is just to try
+
+                //Look for the right character
                 switch (strlist[9])
                 {
-                    case "0":
+                    case "1":
                         superChef.character = "Astronaut";
                         break;
-                    case "1":
+                    case "2":
                         superChef.character = "explorateur";
                         break;
-                    case "2":
+                    case "3":
                         superChef.character = "HuaYao_01";
                         break;
-                    case "3":
+                    case "4":
                         superChef.character = "trainChief";
                         break;
                     default:
@@ -297,11 +324,13 @@ public class Web : MonoBehaviour
         }
     }
 
+    //Update one child in the DB
     public IEnumerator UpdateChild(string PK_Child, string Name, string Surname, string Score1, string Score2, string Score3, string Score4, string Score5, string Niveau, string Level, string FK_Character)
     {
 
         Debug.Log("UpdateChild");
 
+        //Send attributes
         WWWForm form = new WWWForm();
         form.AddField("PK_Child", PK_Child);
         form.AddField("Name", Name);
@@ -320,7 +349,8 @@ public class Web : MonoBehaviour
         {
          
             yield return www.SendWebRequest();
-            Debug.Log("DB2");
+
+            //Check if there is a network error
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);

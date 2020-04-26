@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ScorePage : MonoBehaviour
 {
+    //Attributes
     public Slider[] scores;
     public GameObject[] levels;
     public GameObject[] characters;

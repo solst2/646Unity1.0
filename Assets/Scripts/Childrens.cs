@@ -83,13 +83,15 @@ public class Childrens : MonoBehaviour
                 playButton(PK_Child);
             });
 
-            //do not destroy
-            DontDestroyOnLoad(item);
+            //do not destroy -> do not need with this items
+            //DontDestroyOnLoad(item);
+
             //continue to the next item
 
         }
     }
 
+    //Play with one Child, pass on the child's id
     public void playButton(string PK_Child) {
         SceneManager.LoadScene("ScorePage1");
         superChef.PK_Child = PK_Child;
