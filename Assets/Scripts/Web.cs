@@ -78,6 +78,7 @@ public class Web : MonoBehaviour
                 }
                 else {
                     //If we logged in correctly
+                    superChef.offline = false;
                     Main.Instance.TeacherProfile.SetActive(true);
                     Main.Instance.Login.gameObject.SetActive(false);
                 }

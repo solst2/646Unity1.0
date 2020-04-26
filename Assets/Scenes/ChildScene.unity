@@ -1986,7 +1986,6 @@ GameObject:
   - component: {fileID: 1057247286}
   - component: {fileID: 1057247288}
   - component: {fileID: 1057247287}
-  - component: {fileID: 1057247289}
   m_Layer: 5
   m_Name: TeacherProfile
   m_TagString: Untagged
@@ -2043,18 +2042,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9956e4341fce1114ca0351ba96c4c53f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1057247289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057247285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20fcda439273dc14fb616a4ea1b2046b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1072394122
