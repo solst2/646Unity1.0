@@ -154,9 +154,9 @@ public class Web : MonoBehaviour
                 else
                 {
                     //If we created the child correctly
+                    //that it loads the child overview
+                    TeacherInfo.fromWhere = "toTeacherOverview";
                     SceneManager.LoadScene("ChildScene");
-                    Main.Instance.TeacherProfile.SetActive(true);
-                    Main.Instance.Login.gameObject.SetActive(false);
                 }
             }
         }
@@ -321,6 +321,7 @@ public class Web : MonoBehaviour
                 }
             }
             superChef.dataloaded = true;
+            CreateChild.loaded = true;
         }
     }
 

@@ -69,6 +69,7 @@ public class Childrens : MonoBehaviour
             item.transform.Find("TextName").GetComponent<Text>().text = changeLangage.names[changeLangage.setLanguage, 6];
             item.transform.Find("TextNiveau").GetComponent<Text>().text = changeLangage.names[changeLangage.setLanguage, 0];
             item.transform.Find("PlayButton").GetComponent<Button>().GetComponentInChildren<Text>().text = changeLangage.names[changeLangage.setLanguage, 5];
+            item.transform.Find("EditButton").GetComponent<Button>().GetComponentInChildren<Text>().text = changeLangage.names[changeLangage.setLanguage, 10];
 
             //Download Image
             String url = childInfoJson["Picture"];
@@ -83,6 +84,12 @@ public class Childrens : MonoBehaviour
                 playButton(PK_Child);
             });
 
+            //Listener to the editButton
+            item.transform.Find("EditButton").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                editButton(PK_Child);
+            });
+
             //do not destroy -> do not need with this items
             //DontDestroyOnLoad(item);
 
@@ -95,6 +102,14 @@ public class Childrens : MonoBehaviour
     public void playButton(string PK_Child) {
         SceneManager.LoadScene("ScorePage1");
         superChef.PK_Child = PK_Child;
+    }
+    
+    //Edit on child
+    public void editButton(string PK_Child)
+    {
+        SceneManager.LoadScene("CreateChild");
+        superChef.PK_Child = PK_Child;
+        superChef.edit = true;
     }
 
 }

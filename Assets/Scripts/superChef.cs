@@ -40,6 +40,7 @@ public class superChef : MonoBehaviour
     RaycastHit hit;
 
     public static Boolean offline = false;
+    public static Boolean edit = false;
 
 
     // Start is called before the first frame update

@@ -19,7 +19,7 @@ public class TeacherInfo : MonoBehaviour
     {
         Debug.Log(fromWhere);
         //Navigation 
-        if (fromWhere.Equals("ScorePage"))
+        if (fromWhere.Equals("ScorePage")|| fromWhere.Equals("toTeacherOverview"))
         {
             //activate teacherProfil
             PK_Teacher = Web.idProf;

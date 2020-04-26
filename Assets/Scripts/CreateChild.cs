@@ -11,6 +11,8 @@ public class CreateChild : MonoBehaviour
     public InputField SurnameInput;
     public Image ImageChild;
     public Button SubmitButton;
+    public Button UpdateButton;
+    public GameObject gallery;
 
     public static string nameEnter;
     public static string surnameEnter;
@@ -37,26 +39,67 @@ public class CreateChild : MonoBehaviour
 
     int activated = 4;
 
+    public static Boolean loaded = false;
+
     // Start is called before the first frame update
     void Start()
     {
         backButton.text = changeLangage.names[changeLangage.setLanguage, 3];
-        /*SubmitButton.onClick.AddListener(() =>
-        {
-            StartCoroutine(Main.Instance.Web.RegisterChild(NameInput.text, SurnameInput.text, FK_Character, FK_Teacher));
-        });*/
     }
 
     void Update()
     {
         nameEnter = NameInput.text;
         surnameEnter = SurnameInput.text;
+        if (superChef.edit && loaded)
+        {
+            NameInput.text = superChef.childname;
+            Debug.Log("Childname: " + superChef.childname);
+            SurnameInput.text = superChef.childsurname;
+            //get character
+            switch (superChef.character)
+            {
+                case "Astronaut":
+                    Astronaut();
+                    break;
+                case "explorateur":
+                    Explorateur();
+                    break;
+                case "HuaYao_01":
+                    Fairy();
+                    break;
+                case "trainChief":
+                    Train();
+                    break;
+                default:
+                    Astronaut();
+                    break;
+            }
+
+            //disable create button
+            SubmitButton.gameObject.SetActive(false);
+            UpdateButton.gameObject.SetActive(true);
+            gallery.SetActive(false);
+
+            loaded = false;
+        }
     }
 
     public void CreatChild() {
         //StartCoroutine(Main.Instance.Web.UploadFileCo(PickFromGallery.filename));
         StartCoroutine(Main.Instance.Web.RegisterChild(NameInput.text, SurnameInput.text, FK_Character, Web.idProf));
-        
+    }
+    public void updateChild()
+    {
+        superChef.childname = NameInput.text;
+        superChef.childsurname = SurnameInput.text;
+        superChef.fk_Character = FK_Character;
+
+        StartCoroutine(Main.Instance.Web.UpdateChild(superChef.PK_Child, NameInput.text, SurnameInput.text, superChef.score[0], superChef.score[1], superChef.score[2], superChef.score[3], superChef.score[4], superChef.niveau, superChef.levelDB, FK_Character));
+        superChef.edit = false;
+        // that is redirects to the profile
+        TeacherInfo.fromWhere = "toTeacherOverview";
+        SceneManager.LoadScene("ChildScene");
     }
 
     public void Fairy() {

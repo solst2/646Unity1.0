@@ -44,14 +44,14 @@ public class ChildSceneLanguage : MonoBehaviour
 
     };
 
-    public string[,] teacherProfilNames = new string[6, 2] {
+    public string[,] teacherProfilNames = new string[6, 3] {
 
-         { "Ajouter un enfant","Nouveau professeur"}, //French  
-         { "Neues Kind anlegen","Neue Lehrer"}, //German
-         { "Aggiungi un bambino","Nuovo Insegnante"}, //Italian
-         { "Create new Child","New Teacher"}, //English 
-         { "Crear un niño","Nuevo Maestro"}, //Spanish
-         { "子を加える","新しい先生"} //Japanish
+         { "Ajouter un enfant","Nouveau professeur", "changer d'enfant"}, //French  
+         { "Neues Kind anlegen","Neue Lehrer", "Kind ändern"}, //German
+         { "Aggiungi un bambino","Nuovo Insegnante", "bambia bambino"}, //Italian
+         { "Create new Child","New Teacher", "change child"}, //English 
+         { "Crear un niño","Nuevo Maestro", "cambiar de niño"}, //Spanish
+         { "子を加える","新しい先生","子の変更"} //Japanish
 
     };
 
@@ -96,10 +96,19 @@ public class ChildSceneLanguage : MonoBehaviour
         try
         {
             back1.text = changeLangage.names[changeLangage.setLanguage, 9];
-            createTitle.text = createNames[changeLangage.setLanguage, 0];
             createName.text = createNames[changeLangage.setLanguage, 1] + "...";
             createSurname.text = createNames[changeLangage.setLanguage, 2] + "...";
             createCreate.text = createNames[changeLangage.setLanguage, 5];
+            if (superChef.edit)
+            {
+                //modify child
+                createTitle.text = teacherProfilNames[changeLangage.setLanguage, 3];
+            }
+            else
+            {
+                //create child
+                createTitle.text = createNames[changeLangage.setLanguage, 0];
+            }
         }
         catch (Exception e)
         {
