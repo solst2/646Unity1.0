@@ -6,7 +6,6 @@ public class TeacherInfo : MonoBehaviour
 {
     //Attributes
     public string PK_Teacher { get; private set; }
-    string Username;
     string Password;
     string Email;
     public Text email;

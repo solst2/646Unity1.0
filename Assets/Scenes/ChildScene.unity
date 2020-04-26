@@ -2030,6 +2030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   email: {fileID: 0}
+  nameTeacher: {fileID: 0}
   Profil: {fileID: 0}
   Login: {fileID: 0}
   CreateTeacher: {fileID: 0}
@@ -5011,6 +5012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   email: {fileID: 1240743185}
+  nameTeacher: {fileID: 1992422383}
   Profil: {fileID: 1057247285}
   Login: {fileID: 1334233963}
   CreateTeacher: {fileID: 1749373126}
@@ -5095,12 +5097,12 @@ GameObject:
   - component: {fileID: 1992422384}
   - component: {fileID: 1992422383}
   m_Layer: 5
-  m_Name: Username
+  m_Name: NameTeacher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1992422382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5117,7 +5119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 163.1, y: 13.58}
+  m_AnchoredPosition: {x: 168, y: 35}
   m_SizeDelta: {x: 198.1, y: 34.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1992422383
@@ -5151,7 +5153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Irene Retuerto
+  m_Text: 
 --- !u!222 &1992422384
 CanvasRenderer:
   m_ObjectHideFlags: 0
